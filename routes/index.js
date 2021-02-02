@@ -11,8 +11,8 @@ router.get("/signup", csrfProtection, (req, res) => {
   res.render("signup", { csrfToken: req.csrfToken(), user: {} });
 });
 
-// router.get("/login", csrfProtection, (req, res) => {
-//   res.render("login", { csrfToken: req.csrfToken(), email: "" });
-// });
+router.get("/login", csrfProtection, (req, res) => {
+  res.render("login", { csrfToken: req.csrfToken(), title: "Log in"});
+});
 
 module.exports = router;

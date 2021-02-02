@@ -1,0 +1,29 @@
+extends layout
+append head
+
+    link(rel="stylesheet" href="/stylesheets/index.css")
+
+block content
+    div.mainContentContainer
+        div.contentContainer
+            .column_right
+                h1 Login In to Comic-Collection
+                p.intro Login to your account and see what your friends are reading, get comic recommendations,
+                ps.intro and join the world’s largest community of comic readers.
+            .signup Log In with Email
+            if errors
+                ul
+                for error in errors
+                    li.error=error
+            form(action="/login", method="POST")
+                fieldset
+                    div
+                        input(type="hidden" name="_csrf" value=csrfToken)
+                    div
+                        label(for="email") Email
+                    div
+                        input(type="text", name="email", placeholder="Email")
+                    div
+                        label(for="password") Password
+                    div
+                        input(type="password", name="password", placeholder="Password")
