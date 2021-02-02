@@ -1,6 +1,25 @@
+/*
+- Colors:
+- Buttons:
+- Text:
+- Header:
+- Footer:
+- Anchor tags:
+*/
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgba(244, 241, 234, 0.5)
+}
+
+button {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f4f1ea;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 3px;
+  border: 1px solid #d6d0c4
 }
 
 a {
@@ -24,4 +43,40 @@ body, header, nav {
 
 h1 {
   font-size: 2rem;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgba(241, 217, 160, 0.4);
+}
+
+button {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f4f1ea;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 3px;
+  border: 1px solid #d6d0c4;
+  margin: 20px 10px
+}
+
+a {
+  color: #00635d;
+}
+
+label {
+    font-size: 12px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+
+input {
+    width: 300px;
+    padding: 10px 4px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #333;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

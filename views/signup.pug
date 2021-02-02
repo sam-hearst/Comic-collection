@@ -1,7 +1,7 @@
 extends layout
 append head
   //- add page specific styles by appending to the head
-  link(rel="stylesheet" href="/stylesheets/index.css")
+//-   link(rel="stylesheet" href="/stylesheets/signup.css")
   //- add page specific js
 
 block content
@@ -22,15 +22,15 @@ block content
                input(type ="hidden" name="_csrf" value=csrfToken)
                fieldset
                   div
-                     label(for="firstName") First Name
-                        div
-                            input(type="text" name="firstName" placeholder="First Name" value=user.firstName required)
+                        label(for="firstName") First Name
                   div
-                     label(for="lastName") Last Name
-                        div
-                           input(type="text" name="lastName" placeholder="Last Name" value=user.lastName required)
+                        input(type="text" name="firstName" placeholder="First Name" value=user.firstName required)
                   div
-                     label(for="email") Email Address
+                        label(for="lastName") Last Name
+                  div
+                        input(type="text" name="lastName" placeholder="Last Name" value=user.lastName required)
+                  div
+                        label(for="email") Email Address
                         div
                            input(type="text" name="email" placeholder="you@yours.com" value=user.email required)
                   div
@@ -43,12 +43,12 @@ block content
                            input(type="password" name="confirmPassword"   value=user.email required)
                   div.submit
                         div
-                           button(type="submit" value="Submit") Sign Up
+                           button(type="submit" value="Submit") Sign up
                            span.signInOption       Already a member?
                            a(href="/login")        Log In
          pr    By clicking “Sign up” I agree to the Comic-Collection
             a(href="/about/terms")     Term of Service
          pr    and confirm that I am at least 13 years of age
             a(href="/about.privacy")   Read our Privacy Policy
-      div.tfooter
-         div.footer @ 2021 Comic-Collection Inc
+      footer
+         pr @ 2021 Comic-Collection Inc
