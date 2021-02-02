@@ -1,56 +1,58 @@
-'use strict';
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Comic = sequelize.define('Comic', {
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: Sequelize.INTEGER
+  const Comic = sequelize.define(
+    "Comic",
+    {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
+      title: {
+        allowNull: false,
+        type: DataTypes.STRING(200),
+      },
+      author: {
+        allowNull: false,
+        type: DataTypes.STRING(75),
+      },
+      price: {
+        allowNull: false,
+        type: DataTypes.DECIMAL,
+      },
+      publisher: {
+        allowNull: false,
+        type: DataTypes.STRING(100),
+      },
+      publishDate: {
+        allowNull: false,
+        type: DataTypes.DATEONLY,
+      },
+      pages: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+      },
+      available: {
+        allowNull: false,
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+      },
+      imageUrl: {
+        type: DataTypes.STRING(255),
+      },
+      createdAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
     },
-    title: {
-      allowNull: false,
-      type: Sequelize.STRING(200)
-    },
-    author: {
-      allowNull: false,
-      type: Sequelize.STRING(75)
-    },
-    price: {
-      allowNull: false,
-      type: Sequelize.DECIMAL
-    },
-    publisher: {
-      allowNull: false,
-      type: Sequelize.STRING(100)
-    },
-    publishDate: {
-      allowNull: false,
-      type: Sequelize.DATEONLY
-    },
-    pages: {
-      allowNull: false,
-      type: Sequelize.INTEGER
-    },
-    available: {
-      allowNull: false,
-      type: Sequelize.BOOLEAN,
-      defaultValue: true
-    },
-    imageUrl: {
-      type: Sequelize.STRING(255)
-    },
-    createdAt: {
-      allowNull: false,
-      type: Sequelize.DATE,
-      defaultValue: Sequelize.fn('now')
-    },
-    updatedAt: {
-      allowNull: false,
-      type: Sequelize.DATE,
-      defaultValue: Sequelize.fn('now')
-    }
-  }, {});
-  Comic.associate = function(models) {
+    {}
+  );
+  Comic.associate = function (models) {
     // associations can be defined here
   };
   return Comic;
