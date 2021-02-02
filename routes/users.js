@@ -35,7 +35,7 @@ const userValidators = [
     .isLength({ max: 50 })
     .withMessage("Password must not be more than 50 characters long")
     //  work on the Regex for passwords
-    // .matches(/^(?=._[a-z])(?=._[A-Z])(?=._[0-9])(?=._[!@#$%^&*])/, "g")
+    .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/, "g")
     .withMessage(
       'Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")'
     )
@@ -77,13 +77,7 @@ router.post(
   csrfProtection,
   userValidators,
   asyncHandler(async (req, res) => {
-    const {
-      firstName,
-      lastName,
-      email,
-      password,
-      confirmedPassword,
-    } = req.body;
+    const { firstName, lastName, email, password } = req.body;
 
     const validatorErrors = validationResult(req);
     if (validatorErrors.isEmpty()) {

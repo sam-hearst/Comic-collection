@@ -1,17 +1,54 @@
 extends layout
+append head
+  //- add page specific styles by appending to the head
+  link(rel="stylesheet" href="/stylesheets/index.css")
+  //- add page specific js
 
 block content
    title= title
-   if errors
-      ul
-         for error in errors
-            li.error=error
-   form(action="/users", method="POST")
-      div.form_input
-         input(type ="hidden" name="_csrf" value=csrfToken)
-         input(type="text" name="firstName" placeholder="First Name" value=user.firstName required)
-         input(type="text" name="lastName" placeholder="Last Name" value=user.lastName required)
-         input(type="text" name="email" placeholder="Email Address" value=user.email required)
-         input(type="password" name="password" placeholder="Password" value=user.password required)
-         input(type="password" name="confirmPassword" placeholder="Confirm Password"  value=user.email required)
-         button(type="submit" value="Submit") Sign UP
+   div.mainContentContainer
+      div.contentContainer
+         .column_right
+            h1 Sign up for Comic-Collection
+            p.intro Sign up to see what your friends are reading, get comic recommendations,
+               ps.intro and join the world’s largest community of comic readers.
+         .signup Sign Up with Email
+         if errors
+            ul
+               for error in errors
+                  li.error=error
+         form(action="/users", method="POST")
+            div.form_input
+               input(type ="hidden" name="_csrf" value=csrfToken)
+               fieldset
+                  div
+                     label(for="firstName") First Name
+                        div
+                           input(type="text" name="firstName" placeholder="First Name" value=user.firstName required)
+                  div
+                     label(for="lastName") Last Name
+                        div
+                           input(type="text" name="lastName" placeholder="Last Name" value=user.lastName required)
+                  div
+                     label(for="email") Email Address
+                        div
+                           input(type="text" name="email" placeholder="you@yours.com" value=user.email required)
+                  div
+                     label(for="password") Password
+                        div
+                           input(type="password" name="password"  value=user.password required)
+                  div
+                     label(for="confirmPassword") Confirm Password
+                        div
+                           input(type="password" name="confirmPassword"   value=user.email required)
+                  div.submit
+                        div
+                           button(type="submit" value="Submit") Sign UP
+                           span.signInOption       Already a member?
+                           a(href="/signin")        Sign in
+         pr    By clicking “Sign up” I agree to the Comic-Collection
+            a(href="/about/terms")     Term of Service
+         pr    and confirm that I am at least 13 years of age
+            a(href="/about.privacy")   Read our Privacy Policy
+      div.tfooter
+         div.footer @ 2021 Comic-Collection Inc
