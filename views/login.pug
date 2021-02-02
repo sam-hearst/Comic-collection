@@ -1,16 +1,14 @@
 extends layout
 append head
 
-    link(rel="stylesheet" href="/stylesheets/index.css")
+    link(rel="stylesheet" href="/stylesheets/signup.css")
+    link(rel="stylesheet" href="/stylesheets/login.css")
 
 block content
     div.mainContentContainer
         div.contentContainer
-            .column_right
-                h1 Login In to Comic-Collection
-                p.intro Login to your account and see what your friends are reading, get comic recommendations,
-                ps.intro and join the world’s largest community of comic readers.
-            .signup Log In with Email
+            h1 Login In to Comic-Collection
+            p.intro Login to your account and see what your friends are reading, get comic recommendations, and join the world’s largest community of comic readers.
             if errors
                 ul
                 for error in errors
@@ -19,11 +17,19 @@ block content
                 fieldset
                     div
                         input(type="hidden" name="_csrf" value=csrfToken)
-                    div
+                    div.inputContainer
                         label(for="email") Email
-                    div
                         input(type="text", name="email", placeholder="Email")
-                    div
+                    div.inputContainer
                         label(for="password") Password
-                    div
                         input(type="password", name="password", placeholder="Password")
+                    div.submit
+                        button(type="submit" value="Submit") Log in
+                        span.signInOption       Not a member?
+                        a(href="/signup")        Sign Up
+            pr    By clicking “Sign up” I agree to the Comic-Collection
+                a(href="/about/terms")     Term of Service
+            pr    and confirm that I am at least 13 years of age
+                a(href="/about.privacy")   Read our Privacy Policy
+    footer
+        pr @ 2021 Comic-Collection Inc
