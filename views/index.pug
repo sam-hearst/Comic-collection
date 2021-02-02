@@ -2,12 +2,42 @@ extends layout
 
 append head
   //- add page specific styles by appending to the head
-  link(rel="stylesheet" href="/stylesheets/index.css")
+  link(rel="stylesheet" href="/stylesheets/home.css")
   //- add page specific js
   script(src="/javascripts/index.js" type="module" defer)
 
-block content
-  h1= title
-  p Welcome to Comic-Collection
-    div
-      a(href="/signup") Sign Up
+
+  header#navbar
+    nav.navbar-container.container
+      div
+        a(href="/") Comic-Collection
+      div.navbar
+        a(href="/") Home
+        a(href="") My Comics
+        div.dropdown
+          button.dropbtn Browse
+          i(class="fa fa-caret-down")
+          div.dropdown-content
+            p FAVORITE GENRES
+            a(href="") Fantasy
+            a(href="") Fiction
+            a(href="") Superhero
+        div.dropdown
+          button.dropbtn Community
+          i(class="fa fa-caret-down")
+          div.dropdown-content
+            a(href="") Discussions
+            a(href="") People
+            a(href="") Ask the Author
+
+//- block content
+//-   h1= title
+//-   p Welcome to Comic-Collection
+//-     div
+//-       a(href="/signup") Sign up
+//-     div
+//-       a(href="/login") Log in
+//-   div
+//-     each comic in comics
+//-       td= comic.title
+//-       img(src= comic.imageUrl)
