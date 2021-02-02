@@ -8,6 +8,8 @@ append head
 
 block content
   h1= title
-  p Welcome to Comic-Collection
-    div
-      a(href="/signup") Sign Up
+  p Welcome to your Project Skeleton
+    each user in users
+        p= user.firstName
+        p= user.lastName
+        p= user.email
