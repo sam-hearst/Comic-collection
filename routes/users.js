@@ -106,4 +106,17 @@ router.post(
   })
 );
 
+const loginValidators = [
+    check("email")
+        .exists({ checkFalsy: true })
+        .withMessage("Please provide a value for Email Address"),
+    check("password")
+        .exists({ checkFalsy: true })
+        .withMessage("Please provide a value for Password")
+];
+
+router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, res) => {
+
+}));
+
 module.exports = router;
