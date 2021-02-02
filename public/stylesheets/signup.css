@@ -7,6 +7,13 @@ h1 {
   text-align: center;
   padding-bottom: 25px;
 } */
+ 
+.mainContentContainer {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 25px;
+} 
 
 /* .contentContainer {
   border: 1px solid #d0d0c8;
@@ -19,6 +26,37 @@ h1 {
   text-align: center;
 } */
 
+.signInOption {
+  font-size: 12px;
+}
+
+pr {
+  color: #aaa;
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 12px;
+}
+
+
+ .contentContainer {
+  border: 1px solid #d0d0c8;
+  text-align: center;
+} 
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4px;
+}
+
+fieldset {
+  width: 300px;
+  margin: 0 auto;
+}
 
 
 .footer {
