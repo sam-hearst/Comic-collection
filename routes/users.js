@@ -1,7 +1,11 @@
-const express = require('express');
-const bcrypt = require('bcrypt');
-const { asyncHandler, csrfProtection, handleValidationErrors } = require("../utils");
-const { check } = require("express-validator");
+const express = require("express");
+const bcrypt = require("bcrypt");
+const {
+  asyncHandler,
+  csrfProtection,
+  handleValidationErrors,
+} = require("../utils");
+const { check, validationResult } = require("express-validator");
 const { User } = require("../db/models");
 // const { User } = db;
 const { loginUser, logoutUser } = require("../auth");
@@ -30,7 +34,8 @@ const userValidators = [
     .withMessage("Please provide a value for Password")
     .isLength({ max: 50 })
     .withMessage("Password must not be more than 50 characters long")
-    .matches(/^(?=._[a-z])(?=._[A-Z])(?=._[0-9])(?=._[!@#$%^&*])/, "g")
+    //  work on the Regex for passwords
+    // .matches(/^(?=._[a-z])(?=._[A-Z])(?=._[0-9])(?=._[!@#$%^&*])/, "g")
     .withMessage(
       'Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")'
     )
@@ -56,24 +61,22 @@ const userValidators = [
     }),
 ];
 
-
-
-
-
-
 // console.log(User);
 /* GET users listing. */
-router.get('/', asyncHandler( async (req, res, next) => {
+router.get(
+  "/",
+  asyncHandler(async (req, res, next) => {
     const users = await User.findAll();
     console.log(req.session.auth);
-    res.render('users', {users, title: "im working" });
-}));
+    res.render("users", { users, title: "im working" });
+  })
+);
 
-router.get('/new', csrfProtection, (req, res) => {
-    res.render('signup', { csrfToken: req.csrfToken(), user: {} });
-    });
-
-router.post( "/new", csrfProtection, userValidators, asyncHandler(async (req, res) => {
+router.post(
+  "/",
+  csrfProtection,
+  userValidators,
+  asyncHandler(async (req, res) => {
     const {
       firstName,
       lastName,
@@ -82,35 +85,31 @@ router.post( "/new", csrfProtection, userValidators, asyncHandler(async (req, re
       confirmedPassword,
     } = req.body;
 
-
     const validatorErrors = validationResult(req);
-​
-        if (validatorErrors.isEmpty()) {
-            const hashedPassword = await bcrypt.hash(password, 10);
-            const user = await User.create({
-                firstName,
-                lastName,
-                email,
-                hashedPassword,
-            });
-            loginUser(req, res, user);
-            res.redirect('/');
-        } else {
-            const errors = validatorErrors.array().map((error) => {
-                console.log(error.msg);
-                return error.msg;
-            });
-            const user = { firstName, lastName, email };
-            res.render('signup', {
-                title: 'Sign Up',
-                user,
-                errors,
-                csrfToken: req.csrfToken(),
-            });
-        }
-    })
+    if (validatorErrors.isEmpty()) {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      const user = await User.create({
+        firstName,
+        lastName,
+        email,
+        hashedPassword,
+      });
+      loginUser(req, res, user);
+      res.redirect("/");
+    } else {
+      const errors = validatorErrors.array().map((error) => {
+        console.log(error.msg);
+        return error.msg;
+      });
+      const user = { firstName, lastName, email };
+      res.render("signup", {
+        title: "Sign Up",
+        user,
+        errors,
+        csrfToken: req.csrfToken(),
+      });
+    }
+  })
 );
-
-
 
 module.exports = router;

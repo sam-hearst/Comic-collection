@@ -1,4 +1,17 @@
 extends layout
 
 block content
-   form(action="/users/", method="POST") 
+   title= title
+   if errors
+      ul
+         for error in errors
+            li.error=error
+   form(action="/users", method="POST")
+      div.form_input
+         input(type ="hidden" name="_csrf" value=csrfToken)
+         input(type="text" name="firstName" placeholder="First Name" value=user.firstName required)
+         input(type="text" name="lastName" placeholder="Last Name" value=user.lastName required)
+         input(type="text" name="email" placeholder="Email Address" value=user.email required)
+         input(type="password" name="password" placeholder="Password" value=user.password required)
+         input(type="password" name="confirmPassword" placeholder="Confirm Password"  value=user.email required)
+         button(type="submit" value="Submit") Sign UP
