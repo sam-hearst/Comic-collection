@@ -28,10 +28,9 @@ append head
           a(href="") People
           a(href="") Ask the Author
     div.search-bar
-      form(action="/search" method="GET")
-        div
+        form(action="/search" method="GET")
           input(type="text" placeholder="search comics" name="searchString")
-          button(type="submit")
+          //- button(type="submit" class="search-btn")
     if locals.authenticated
       div.personal-nav
         div.dropdown
@@ -45,19 +44,18 @@ append head
         div.dropdown
             img(src="https://s.gr-assets.com/assets/nophoto/user/u_60x60-267f0ca0ea48fd3acfd44b95afa64f01.png")
             form(action="users/logout" method="POST")
-                button(class="dropbtn" type="submit") Log Out
+              div.dropdown-content
+                button(class="sign-out-btn" type="submit") Sign out
     else
       a(href="/signup") Sign Up
       a(href="/login") Log In
-
-//- block content
-//-   h1= title
-//-   p Welcome to Comic-Collection
-//-     div
-//-       a(href="/signup") Sign up
-//-     div
-//-       a(href="/login") Log in
-//-   div
-//-     each comic in comics
-//-       td= comic.title
-//-       img(src= comic.imageUrl)
+  block content
+  main
+    div.home-secondary-Column
+      div.home-first-container
+        each comic in comics
+            div.comic-collection
+              a(href="/login" class="comic-title")= comic.title
+              img(src=comic.imageUrl class="comic-img")
+              td(class="comic-author")= comic.author
+              td(class="comic-publisher")= comic.publisher
