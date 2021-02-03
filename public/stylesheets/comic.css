@@ -1,0 +1,67 @@
+.fullPageGrid {
+    display: grid;
+    width: 100%;
+    border: 1px solid red;
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+    "navbar navbar"
+    "sidebar content"
+}
+.grid {
+    display: grid;
+    width: 100%;
+    height: 1000px;
+    border: 1px solid blue;
+    grid-area: content;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas: 
+    "image details"
+    "reviews reviews"
+}
+.sidebar {
+    grid-area: sidebar;
+    border: 1px solid red;
+}
+.navbar {
+    grid-area: navbar;
+    border: 1px solid red;
+}
+.grid__section {
+    border: 1px solid black;
+}
+
+.section__image {
+    grid-area: image;
+}
+.section__details {
+    grid-area: details;
+}
+.section__reviews {
+    grid-area: reviews;
+}
+
+.dropdown {
+
+}
+
+.dropbtn:hover .dropdown-content{
+    display: block;
+}
+
+.dropbtn {
+
+}
+
+.dropdown-content {
+    display: none;
+}
+.dropdown-content a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+.dropdown-content a:hover {
+    background-color: purple;
+}

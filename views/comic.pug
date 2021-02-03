@@ -1,5 +1,45 @@
 extends layout
+append head
+  link(rel="stylesheet" href="/stylesheets/comic.css")
 
 block content
-    h1= comic.description
-    img(src=comic.imageUrl)
+
+    .fullPageGrid
+        .grid
+            .grid__section.section__image
+                .image__actual
+                    img(src=comic.imageUrl)
+                .image__bookshelf
+                    .dropdown
+                        button.dropbtn Add To Collection
+                            div.dropdown-content
+                                p Read Status
+                                a(href="") Want To Read
+                                a(href="") Read
+                                a(href="") Will Read
+                                p Collections
+                                //-     each collection in collections
+                                //-         a(href="collections/#{collection.id}")= collection.name
+                                a(href="") my favorites
+
+
+            .grid__section.section__details
+                h1= comic.title
+                h2 Author: #{comic.author}
+                p= comic.description
+                p Publisher: #{comic.publisher}
+                p Published: #{comic.publishDate}
+                p Cover Price: #{comic.price}
+                p Page Count: #{comic.pages}
+
+
+            .grid__section.section__reviews
+                h1 Reviews
+        .sidebar
+        .navbar
+
+
+
+
+    //- h1= comic.description
+    //- img(src=comic.imageUrl)
