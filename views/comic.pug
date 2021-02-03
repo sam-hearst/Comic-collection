@@ -3,13 +3,13 @@ append head
   link(rel="stylesheet" href="/stylesheets/comic.css")
 
 block content
-
+    .navbar
     .fullPageGrid
         .grid
             .grid__section.section__image
                 .image__actual
                     img(src=comic.imageUrl)
-                .image__bookshelf
+                .image__comicshelf
                     .dropdown
                         button.dropbtn Add To Collection
                             div.dropdown-content
@@ -36,7 +36,7 @@ block content
             .grid__section.section__reviews
                 h1 Reviews
         .sidebar
-        .navbar
+
 
 
 
