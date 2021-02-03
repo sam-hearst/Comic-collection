@@ -52,15 +52,23 @@ block content
   main
     div.grid
         div.grid__section.sidebar
-        div.grid__section.img-1
-        div.grid__section.img-2
-        div.grid__section.img-3
-        div.grid__section.img-4
-        div.grid__section.img-5
-        div.grid__section.img-6
-        div.grid__section.img-7
-        div.grid__section.img-8
-
-            //- each comic in comics
-            //-     img(src=comic.imageUrl class="comic-img")
-            //-     a(href="/login")
+        div.grid__section.img
+          img(src=comics[0].imageUrl)
+          a(href="/login" class="comics-title") By #{comics[0].title}
+        div.grid__section.img
+          img(src=comics[1].imageUrl)
+        div.grid__section.img
+          img(src=comics[2].imageUrl)
+        div.grid__section.img
+          img(src=comics[0].imageUrl)
+        div.grid__section.img
+          img(src=comics[1].imageUrl)
+        div.grid__section.img
+          img(src=comics[2].imageUrl)
+        div.grid__section.img
+          img(src=comics[0].imageUrl)
+        div.grid__section.img
+          img(src=comics[1].imageUrl)
+          //- each comic in comics
+          //-     img(src=comic.imageUrl class="comic-img")
+          //-     a(href="/login")
