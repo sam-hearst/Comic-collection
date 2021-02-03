@@ -7,6 +7,13 @@ h1 {
   text-align: center;
   padding-bottom: 25px;
 } */
+ 
+.mainContentContainer {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 25px;
+} 
 
 /* .contentContainer {
   border: 1px solid #d0d0c8;
@@ -19,6 +26,56 @@ h1 {
   text-align: center;
 } */
 
+.signInOption {
+  font-size: 12px;
+}
+
+pr {
+  color: #aaa;
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 12px;
+}
+
+h1 {
+  font-family: 'Merriweather', Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  color: #382110;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  line-height: 24px;
+  padding: 0px 0px 2px 0px;
+
+  font-size: 23px;
+}
+
+.intro {
+  padding: 10px 20px;
+  color: #333;
+}
+
+ .contentContainer {
+  border: 1px solid #d0d0c8;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px #d0d0c8;
+  background-color: white;
+} 
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 4px;
+}
+
+fieldset {
+  width: 300px;
+  margin: 0 auto;
+}
 
 
 .footer {
