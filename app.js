@@ -9,6 +9,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const { sessionSecret } = require('./config');
+const { restoreUser } = require('./auth')
 
 const app = express();
 
@@ -21,6 +22,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(sessionSecret));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use((req, res, next) => {
+   res.locals.session = req.session 
+   next();
+  })
+// need to fix restore user middleware to restore session 
+// app.use(restoreUser);
+
+
 
 // set up session middleware
 const store = new SequelizeStore({ db: sequelize });
@@ -28,6 +37,7 @@ const store = new SequelizeStore({ db: sequelize });
 
 app.use(
   session({
+    name: 'comic-collections.sid',
     secret: sessionSecret,
     store,
     saveUninitialized: false,
