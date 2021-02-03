@@ -1,18 +1,25 @@
-const { User } = require("./db/models");
+const db = require("./db/models");
 
 const loginUser = (req, res, user) => {
-    req.session.auth = { userId: user.id, email: user.email }
+  req.session.auth = { userId: user.id, email: user.email };
 };
+
+// const authAccess = (req, res, next) => {
+//   if (!res.locals.authenticated) {
+//     return res.redirect("/users/login");
+//   }
+//   return next();
+// };
 
 const restoreUser = async (req, res, next) => {
   // Log the session object to the console
   // to assist with debugging.
-  console.log(req.session)
+  console.log(req.session);
   if (req.session.auth) {
     const { userId } = req.session.auth;
 
     try {
-      const user = await User.findByPk(userId);
+      const user = await db.User.findByPk(userId);
 
       if (user) {
         res.locals.authenticated = true;
@@ -29,9 +36,8 @@ const restoreUser = async (req, res, next) => {
   }
 };
 
-
 const logoutUser = (req, res) => {
-    delete req.session.auth;
-}
+  delete req.session.auth;
+};
 
 module.exports = { loginUser, logoutUser, restoreUser };

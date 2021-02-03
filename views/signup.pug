@@ -16,7 +16,7 @@ block content
             ul
                for error in errors
                   li.error=error
-         form(action="/users/new", method="POST")
+         form(action="/users/signup", method="POST")
             div.form_input
                input(type ="hidden" name="_csrf" value=csrfToken)
                fieldset
