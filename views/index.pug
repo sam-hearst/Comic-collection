@@ -6,7 +6,7 @@ append head
   //- add page specific js
   script(src="/javascripts/index.js" type="module" defer)
 
-
+block content
   div.navbar
     a(href="/") Comic-Collection
     div.site-nav
@@ -49,13 +49,18 @@ append head
     else
       a(href="/signup") Sign Up
       a(href="/login") Log In
-  block content
   main
-    div.home-secondary-Column
-      div.home-first-container
-        each comic in comics
-            div.comic-collection
-              a(href="/login" class="comic-title")= comic.title
-              img(src=comic.imageUrl class="comic-img")
-              td(class="comic-author")= comic.author
-              td(class="comic-publisher")= comic.publisher
+    div.grid
+        div.grid__section.sidebar
+        div.grid__section.img-1
+        div.grid__section.img-2
+        div.grid__section.img-3
+        div.grid__section.img-4
+        div.grid__section.img-5
+        div.grid__section.img-6
+        div.grid__section.img-7
+        div.grid__section.img-8
+
+            //- each comic in comics
+            //-     img(src=comic.imageUrl class="comic-img")
+            //-     a(href="/login")

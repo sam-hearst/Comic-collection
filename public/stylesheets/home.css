@@ -145,10 +145,10 @@ body {
   display: inline-block;
 }
 
-main {
+/* main {
   display: block;
-}
-
+} */
+/*
 @media (min-width: 1220px) {
   main {
     width: 1220px;
@@ -170,9 +170,9 @@ main {
     margin-right: 20px;
     margin-left: 20px;
   }
-}
+} */
 
-.home-first-container {
+/* .home-first-container {
   border-bottom: 1px solid #d8d8d8;
   margin-bottom: 16px;
   padding-bottom: 16px;
@@ -189,3 +189,29 @@ main {
 .comic-title {
   padding-left: 125px;
 }
+
+.comic-publisher {
+    padding-left: 200px;
+}
+
+.comic-author {
+    display: inline-block;
+} */
+
+.grid {
+    display: grid;
+    width: 100%;
+    height: 600px;
+    border: 1px solid blue;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "sidebar image image image image"
+    "sidebar image image image image"
+}
+
+.grid__section {
+    border: 1px solid black;
+}
+
+
