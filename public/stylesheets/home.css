@@ -1,0 +1,129 @@
+/* Navigation */
+
+.navbar {
+  overflow: hidden;
+  background-color: #F4F1EA;
+  width: 100%;
+  color: #382110;
+  justify-content: space-between;
+  display: flex;
+  margin: 0em;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: #382110;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #382110;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #382110;
+  color: white;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.search-bar {
+  box-sizing: inherit;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 9px;
+  margin-bottom: 0px;
+  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  margin-right: 8px;
+}
+
+.search-bar form {
+  width: 100%;
+  margin-bottom: 0em;
+  display: block;
+  margin-top: 0em;
+}
+
+.search-bar input {
+  border-right: 3px;
+  height: 32px;
+  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  padding: 4px 26px 4px 8px;
+  width: 100%;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: textfield;
+}
+
+.search-bar button {
+  background-image: url(https://s.gr-assets.com/assets/layout/header/icn_nav_search.svg);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  display: inline-block;
+  /* right: 4px;
+  top: 6.5px;
+  height: 19px;
+  position: absolute;
+  width: 18px; */
+}
+
+
+
+/* Body */

@@ -2,12 +2,56 @@ extends layout
 
 append head
   //- add page specific styles by appending to the head
-  link(rel="stylesheet" href="/stylesheets/index.css")
+  link(rel="stylesheet" href="/stylesheets/home.css")
   //- add page specific js
   script(src="/javascripts/index.js" type="module" defer)
 
-block content
-  h1= title
-  p Welcome to Comic-Collection
-    div
-      a(href="/signup") Sign Up
+
+  div.navbar
+    a(href="/") Comic-Collection
+    div.site-nav
+      a(href="/") Home
+      a(href="") My Comics
+      div.dropdown
+        button.dropbtn Browse
+        i(class="fa fa-caret-down")
+        div.dropdown-content
+          p FAVORITE GENRES
+          a(href="") Fantasy
+          a(href="") Fiction
+          a(href="") Superhero
+      div.dropdown
+        button.dropbtn Community
+        i(class="fa fa-caret-down")
+        div.dropdown-content
+          a(href="") Discussions
+          a(href="") People
+          a(href="") Ask the Author
+    div.search-bar
+      form(action="/search" method="GET")
+        div
+          input(type="text" placeholder="search comics" name="searchString")
+          button(type="submit")
+    div.personal-nav
+      div.dropdown
+        button.dropbtn 🔔 Notifications
+        i(class="fa fa-caret-down")
+        div.dropdown-content
+          a(href="") No notifications
+      a(href="") 💬 Chat
+      a(href="") Messages
+      a(href="") Friends
+      a(href="")
+        img(src="https://s.gr-assets.com/assets/nophoto/user/u_60x60-267f0ca0ea48fd3acfd44b95afa64f01.png")
+
+//- block content
+//-   h1= title
+//-   p Welcome to Comic-Collection
+//-     div
+//-       a(href="/signup") Sign up
+//-     div
+//-       a(href="/login") Log in
+//-   div
+//-     each comic in comics
+//-       td= comic.title
+//-       img(src= comic.imageUrl)

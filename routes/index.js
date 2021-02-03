@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const { csrfProtection } = require("../utils");
+const db = require("../db/models");
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Comic-Collection " });
+router.get("/", async (req, res, next) => {
+  const comics = await db.Comic.findAll();
+  res.render("index", { comics });
 });
 
 router.get("/signup", csrfProtection, (req, res) => {
@@ -12,7 +14,7 @@ router.get("/signup", csrfProtection, (req, res) => {
 });
 
 router.get("/login", csrfProtection, (req, res) => {
-  res.render("login", { csrfToken: req.csrfToken(), title: "Log in"});
+  res.render("login", { csrfToken: req.csrfToken(), title: "Log in" });
 });
 
 module.exports = router;
