@@ -1,6 +1,10 @@
 /* Navigation */
 
+body {
+    padding: 0px;
+}
 .navbar {
+  /* height: 120px; */
   overflow: hidden;
   background-color: #F4F1EA;
   width: 100%;
@@ -8,6 +12,19 @@
   justify-content: space-between;
   display: flex;
   margin: 0em;
+  padding: 4px;
+  line-height: 20px;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.site-nav, .search-bar {
+    display: flex;
+    margin: 2px;
+}
+
+.site-nav, .search-bar:last-child {
+    justify-content: flex-end;
 }
 
 .navbar a {
@@ -35,7 +52,7 @@
   margin: 0;
 }
 
-.navbar a:hover,
+.site-nav a:hover,
 .dropdown:hover .dropbtn {
   background-color: #382110;
   color: white;
@@ -117,11 +134,6 @@
   background-clip: initial;
   background-color: initial;
   display: inline-block;
-  /* right: 4px;
-  top: 6.5px;
-  height: 19px;
-  position: absolute;
-  width: 18px; */
 }
 
 
