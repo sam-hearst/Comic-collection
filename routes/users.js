@@ -74,7 +74,7 @@ router.get(
 );
 
 router.post(
-  "/new",
+  "/",
   csrfProtection,
   userValidators,
   asyncHandler(async (req, res) => {
