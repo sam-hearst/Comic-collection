@@ -95,7 +95,9 @@ router.post(
         hashedPassword,
       });
       loginUser(req, res, user);
-      res.redirect("/");
+        return req.session.save(() => {
+        res.redirect('/');
+        })
     } else {
       const errors = validatorErrors.array().map((error) => {
         console.log(error.msg);
@@ -146,7 +148,9 @@ router.post(
         );
         if (passwordMatch) {
           loginUser(req, res, user);
-          return res.redirect("/");
+          return req.session.save(() => {
+            res.redirect('/');
+    })
         }
       }
       errors.push("Login failed for the provided email address and password");
@@ -165,7 +169,9 @@ router.post(
 
 router.post("/logout", (req, res) => {
   logoutUser(req, res);
-  res.redirect("/");
+    return req.session.save(() => {
+      res.redirect('/');
+    })
 });
 
 // router.get(
