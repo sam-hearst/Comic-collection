@@ -41,7 +41,7 @@ module.exports = {
           publishDate: new Date("2017-02-28"),
           pages: "170",
           available: true,
-          imageUrl: "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/882313/882313._SX360_CLs%7C360,553%7Ccu/cmx-cu-sash-lg.png%7C0,0,361,554%20208,401,152,152_QL80_TTD_.jpg",
+            imageUrl: "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/439378/439378._SX360_CLs%7C360,553%7Ccu/cmx-cu-sash-lg.png%7C0,0,361,554%20208,401,152,152_QL80_TTD_.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         }

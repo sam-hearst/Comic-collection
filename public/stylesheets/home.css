@@ -203,13 +203,10 @@ body {
   width: 97%;
   height: 600px;
   border: 1px solid red;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-areas:
-    "sidebar img img img img"
-    "sidebar img img img img";
-  grid-column-gap: 25px;
-  grid-row-gap: 25px;
+    "sidebar content";
 }
 
 .grid__section {
@@ -225,7 +222,13 @@ body {
   background-color: wheat;
 }
 
-/* .img {
-  grid-area: img;
-   background-color: black;
+.content {
+    grid-area: content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+/* .grid__image {
+
 } */
