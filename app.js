@@ -41,6 +41,10 @@ store.sync();
 
 // need to fix restore user middleware to restore session
 app.use(restoreUser);
+app.use((req, res, next) => {
+  res.locals.session = req.session;
+  next();
+});
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
@@ -60,10 +64,6 @@ app.use("/users", usersRouter);
 //   }
 // })
 
-// app.use((req, res, next) => {
-//   res.locals.session = req.session;
-//   next();
-// });
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
