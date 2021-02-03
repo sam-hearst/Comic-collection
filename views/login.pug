@@ -9,11 +9,11 @@ block content
         div.contentContainer
             h1 Login In to Comic-Collection
             p.intro Login to your account and see what your friends are reading, get comic recommendations, and join the world’s largest community of comic readers.
-            if errors 
+            if errors
                 ul
                     for error in errors
                         li.error=error
-            form(action="/login", method="POST")
+            form(action="users/login", method="POST")
                 fieldset
                     div
                         input(type="hidden" name="_csrf" value=csrfToken)

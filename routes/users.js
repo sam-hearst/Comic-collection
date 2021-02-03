@@ -74,7 +74,7 @@ router.get(
 );
 
 router.post(
-  "/",
+  "/new",
   csrfProtection,
   userValidators,
   asyncHandler(async (req, res) => {
@@ -144,7 +144,6 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
       errors,
       csrfToken: req.csrfToken(),
     });
-
 }));
 
 module.exports = router;
