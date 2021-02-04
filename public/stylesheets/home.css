@@ -45,7 +45,7 @@
 
 .grid__image--active:hover {
   cursor: pointer;
-  transform: translateY(-0.25rem);
+  transform: translateY(-0.50rem);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
