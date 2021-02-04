@@ -50,14 +50,16 @@ block content
       a(href="/signup") Sign Up
       a(href="/login") Log In
   main
+    div.grid-title Newly Released Comics
     div.grid
         div.grid__section.sidebar
+
         div.grid__section.content
             each comic in comics
                 div.grid__image-container
                     img(src=comic.imageUrl class="grid__image")
-                    p= comic.title
-                    p= comic.publisher
+                    a(class="grid__image-title" href="/login")= comic.title
+                    p.grid__image-publisher= comic.publisher
 
             //- div.grid__section.img
             //- img(src=comics[0].imageUrl)
