@@ -42,8 +42,17 @@
   padding-left: 13px;
 }
 
+.grid__image--active:hover {
+  cursor: pointer;
+  transform: translateY(-0.25rem);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
 .grid-title {
   font-size: medium;
   margin-top: auto;
-  padding-left: 35px;
+  padding-left: 100px;
+  padding-bottom: 60px;
+  font-size: 2em;
+  color: blue
 }
