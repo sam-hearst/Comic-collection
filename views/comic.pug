@@ -3,15 +3,16 @@ append head
   link(rel="stylesheet" href="/stylesheets/comic.css")
 
 block content
-    .navbar
+    .navbarContainer
+      +navbar
     .fullPageGrid
         .grid
             .grid__section.section__image
                 .image__actual
                     img(src=comic.imageUrl)
             .grid__section.section__readStatus
-                button.dropbtn Add To Collection
-                    div.dropdown-content
+                button.shelfButton Add To Collection
+                    div.shelf-content
                         p Read Status
                         a(href="") Want To Read
                         a(href="") Read
