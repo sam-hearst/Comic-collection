@@ -1,6 +1,7 @@
 extends layout
 append head
   link(rel="stylesheet" href="/stylesheets/comic.css")
+  script(async defer src="../public/javascript/reviews.js")
 
 block content
     .navbarContainer
@@ -44,9 +45,17 @@ block content
 
             .grid__section.section__reviews
               h1 Reviews
+                button.reviewTool.review--add add review
                 each review in reviews
-                  p Posted by: #{review.User.firstName} #{review.User.lastName}
-                  pre= review.description
+                  .review
+                    .review_tools
+                    if userId === review.userId
+                        button.reviewTool.review--delete delete review
+                        button.reviewTool.review--edit edit review
+                    .review_info
+                      p Posted by: #{review.User.firstName} #{review.User.lastName}
+                    .review_description
+                      pre= review.description
         .sidebar
 
 
