@@ -1,0 +1,53 @@
+extends layout
+append head
+  link(rel="stylesheet" href="/stylesheets/comic.css")
+
+block content
+    .navbar
+    .fullPageGrid
+        .grid
+            .grid__section.section__image
+                .image__actual
+                    img(src=comic.imageUrl)
+            .grid__section.section__readStatus
+                button.dropbtn Add To Collection
+                    div.dropdown-content
+                        p Read Status
+                        a(href="") Want To Read
+                        a(href="") Read
+                        a(href="") Will Read
+                        p Collections
+                        //-     each collection in collections
+                        //-         a(href="collections/#{collection.id}")= collection.name
+                        a(href="") my favorites
+
+
+            .grid__section.section__details
+                h1= comic.title
+                h2 Author: #{comic.author}
+                p#description= comic.description
+                .infoRow
+                    .infoElement
+                        p.label Publisher: 
+                        p.info=comic.publisher
+                    .infoElement
+                        p.label Published: 
+                        p.info=comic.publishDate
+                    .infoElement
+                        p.label Cover Price:
+                        p.info=comic.price
+                    .infoElement
+                        p.label Page Count: 
+                        p.info=comic.pages
+
+
+            .grid__section.section__reviews
+                h1 Reviews
+        .sidebar
+
+
+
+
+
+    //- h1= comic.description
+    //- img(src=comic.imageUrl)
