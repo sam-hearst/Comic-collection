@@ -43,7 +43,10 @@ block content
 
 
             .grid__section.section__reviews
-                h1 Reviews
+              h1 Reviews
+                each review in reviews
+                  p Posted by: #{review.User.firstName} #{review.User.lastName}
+                  pre= review.description
         .sidebar
 
 
