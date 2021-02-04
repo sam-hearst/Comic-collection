@@ -8,5 +8,10 @@ block content
     .fullPageGrid
         .grid
             .grid__section
+                each collection in collections
+                    p= collection.name
             .grid__section
+                each collection in collections
+                    ul
+                        li= collection.Comic.title
         .sidebar

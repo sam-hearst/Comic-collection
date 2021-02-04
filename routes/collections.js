@@ -1,23 +1,57 @@
 const express = require("express");
 const router = express.Router();
-const { csrfProtection, asyncHandler } = require("../utils");
-const { requireAuth } = require('../auth'); // wanna require for all things where user has to be logged in
+const { asyncHandler } = require("../utils");
+const { requireAuth } = require('../auth'); 
 
-const { Comic } = require("../db/models");
+const { Comic, Collection, User } = require("../db/models");
 
 
-router.get("/:id(\\d+)/collections", asyncHandler(async (req, res) => {
-    const userId = parseInt(req.params.id, 10);
-    console.log(userId);
+async function addComicToCollection(userId, comicId, collectionName) {
 
-    res.render('collection', {})
+    await Collection.create({
+        name: "reading",
+        userId,
+
+    })
+}
+
+
+router.get("/", requireAuth, asyncHandler(async (req, res) => {
+    const comicId = parseInt(req.params.id, 10);
+    let userId;
+    if (req.session.auth) {
+        userId = req.session.auth.userId
+    }
+
+    const collections = await Collection.findAll({
+        where: {
+            userId
+        },
+        include: [User, Comic]
+    })
+
+    res.render('collection', { collections })
 }))
 
-/*
-      //generate the read status tables for the new user
-      //find the user id
-      const userId = user.id;
-      //create the 3 tables in the utils file
-      generateDefaultCollections(userId)
 
+
+
+/*
+    Read Status Collection names:
+    Want to Read
+    Currently Reading
+    Read
 */
+
+router.post('/:name', requireAuth, asyncHandler(async (req, res) => {
+    const comicId = parseInt(req.params.id, 10);
+    const collectionName = req.params.name;
+    let userId;
+    if (req.session.auth) {
+        userId = req.session.auth.userId
+    }
+    addComicToCollection(userId, comicId, collectionName)
+}))
+
+
+module.exports = router;
