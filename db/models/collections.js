@@ -37,5 +37,6 @@ module.exports = (sequelize, DataTypes) => {
     Collection.belongsTo(models.User, { foreignKey: 'userId' });
     Collection.belongsTo(models.Comic, { foreignKey: 'comicId' })
   };
+
   return Collection;
 };
