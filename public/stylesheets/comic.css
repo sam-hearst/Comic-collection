@@ -1,5 +1,5 @@
 /* navigation */
-.navbar {
+.navbarContainer {
     width: 100%;
     height: 100px;
     border: 1px solid red;
@@ -75,25 +75,22 @@
     grid-area: reviews;
 }
 
-.dropdown {
-    margin: 0 auto;
-}
-.dropbtn:hover .dropdown-content{
+.shelfButton:hover .shelf-content{
     display: block;
 }
 
-.dropdown-content {
+.shelf-content {
     display: none;
 }
-.dropdown-content a {
+.shelf-content a {
     display: block;
     text-decoration: none;
     color: black;
 }
-.dropdown-content a:hover {
+.shelf-content a:hover {
     background-color: purple;
 }
-.dropbtn {
+.shelfButton {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
