@@ -3,6 +3,12 @@
 body {
   padding: 0px;
 }
+
+.navbarContainer {
+  z-index: 1;
+  position: fixed;
+}
+
 .navbar {
   height: 100px;
   overflow: hidden;

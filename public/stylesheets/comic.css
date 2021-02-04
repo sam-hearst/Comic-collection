@@ -7,6 +7,7 @@
 }
 
 /* body */
+/* Content Grid */
 .fullPageGrid {
     min-width: 1000;
     display: grid;
@@ -39,6 +40,33 @@
     border: 1px solid red;
 }
 
+
+
+.section__readStatus {
+    grid-area: readStatus;
+    position: relative;
+}
+
+
+/* review section of grid */
+
+.section__reviews {
+    grid-area: reviews;
+}
+
+
+
+
+/* image section of grid */
+
+.image__actual {
+    padding: 35px 10px 10px 10px;
+    max-width: 500px;
+    max-height: 650px;
+    border-radius: 5%;
+
+}
+
 .section__image {
     grid-area: image;
     display: flex;
@@ -48,17 +76,11 @@
 }
 
 
-.section__readStatus {
-    grid-area: readStatus;
-    position: relative;
-}
+/* Section Details of grid */
 
-.image__actual {
-    padding: 35px 10px 10px 10px;
-
-}
-
-.section__details {
+.section__details h1 {
+    padding: 30px 10px 10px 10px;
+    font-size: 4em;
     grid-area: details;
     display: flex;
     flex-direction: column;
@@ -66,14 +88,27 @@
     overflow: scroll;
 }
 
-.section__details h1 {
-    padding: 30px 10px 10px 10px;
-    font-size: 4em;
+.infoRow {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    margin-top: auto;
 }
 
-.section__reviews {
-    grid-area: reviews;
+#description {
+    padding: 20px;
 }
+
+
+
+::-webkit-scrollbar {
+width: 0px; /* Remove scrollbar space */
+background: transparent; /* Optional: just make scrollbar invisible */
+} 
+
+
+/* Add to bookshelf button  */
 
 .shelfButton:hover .shelf-content{
     display: block;
@@ -96,24 +131,4 @@
     transform: translateX(-50%);
 }
 
-.infoRow {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 20px;
-    margin-top: auto;
-}
 
-#description {
-    padding: 20px;
-}
-
-
-.infoElement {
-
-}
-
-::-webkit-scrollbar {
-width: 0px; /* Remove scrollbar space */
-background: transparent; /* Optional: just make scrollbar invisible */
-} 
