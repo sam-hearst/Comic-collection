@@ -144,3 +144,23 @@ body {
   background-color: initial;
   display: inline-block;
 }
+.sign-out-btn {
+  font-size: small;
+}
+
+@media screen and (max-width: 910px) {
+  .search-bar#search > input {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1099px) {
+  .personal-nav > a {
+    display: none;
+  }
+}
+@media screen and (max-width: 810px) {
+  #notify-div > #notify-btn {
+    display: none;
+  }
+}

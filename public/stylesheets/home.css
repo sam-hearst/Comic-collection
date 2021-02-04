@@ -20,6 +20,7 @@
 .sidebar {
   grid-area: sidebar;
   background-color: wheat;
+  opacity: 90%;
 }
 
 .content {
@@ -54,5 +55,5 @@
   padding-left: 100px;
   padding-bottom: 60px;
   font-size: 2em;
-  color: blue
+  color: blue;
 }
