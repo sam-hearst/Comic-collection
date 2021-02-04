@@ -3,11 +3,15 @@ const router = express.Router();
 const { csrfProtection, asyncHandler } = require("../utils");
 const { requireAuth } = require('../auth'); // wanna require for all things where user has to be logged in
 
-const { Comic } = require("../db/models");
+const { Comic, Review, User } = require("../db/models");
 
 router.get("/:id(\\d+)", asyncHandler(async (req, res, next) => {
   const comic = await Comic.findByPk(parseInt(req.params.id, 10));
-  res.render("comic", { comic });
+  const reviews = await Review.findAll({where: {
+    comicId: req.params.id
+  }, include: User });
+
+  res.render("comic", { comic, reviews });
 }));
 
 
