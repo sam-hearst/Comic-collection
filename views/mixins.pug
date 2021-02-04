@@ -39,5 +39,14 @@ mixin navbar
               div.dropdown-content
                 button(class="sign-out-btn" type="submit") Sign out
     else
-      a(href="/signup") Sign Up
-      a(href="/login") Log In
+      //- a(href="/signup") Sign Up
+      //- a(href="/login") Log In
+      div.dropdown
+        button.dropbtn Start
+          i(class="fa fa-caret-down")
+          div.dropdown-content
+            div(class="demo_user")
+              form(action="users/demo" method="POST")
+                input(type="submit" value="Demo User")
+            a(href="/signup") Sign Up
+            a(href="/login") Log In

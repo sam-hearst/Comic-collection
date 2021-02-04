@@ -95,9 +95,9 @@ router.post(
         hashedPassword,
       });
       loginUser(req, res, user);
-        return req.session.save(() => {
-        res.redirect('/');
-        })
+      return req.session.save(() => {
+        res.redirect("/");
+      });
     } else {
       const errors = validatorErrors.array().map((error) => {
         console.log(error.msg);
@@ -149,8 +149,8 @@ router.post(
         if (passwordMatch) {
           loginUser(req, res, user);
           return req.session.save(() => {
-            res.redirect('/');
-    })
+            res.redirect("/");
+          });
         }
       }
       errors.push("Login failed for the provided email address and password");
@@ -167,11 +167,21 @@ router.post(
   })
 );
 
+router.post(
+  "/demo",
+  asyncHandler(async (req, res) => {
+    const email = "demo@user.com";
+    const user = await User.findOne({ where: { email } });
+    loginUser(req, res, user);
+    res.redirect("/");
+  })
+);
+
 router.post("/logout", (req, res) => {
   logoutUser(req, res);
-    return req.session.save(() => {
-      res.redirect('/');
-    })
+  return req.session.save(() => {
+    res.redirect("/");
+  });
 });
 
 // router.get(
