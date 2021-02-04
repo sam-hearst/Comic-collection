@@ -56,7 +56,7 @@ block content
         div.grid__section.content
             each comic in comics
                 div.grid__image-container
-                    img(src=comic.imageUrl class="grid__image grid__image--active")
+                    a(href=`/comics/${comic.id}`): img(src=comic.imageUrl class="grid__image grid__image--active")
                     a(class="grid__image-title" href=`/comics/${comic.id}`)= comic.title
                     p.grid__image-publisher= comic.publisher
 
