@@ -1,3 +1,10 @@
+/* make space for navbar */
+.homeContent {
+  position: relative;
+  top: 100px;
+}
+
+/* grid layout for home page */
 .grid {
   display: grid;
   width: 97%;

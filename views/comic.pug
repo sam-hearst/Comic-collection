@@ -4,8 +4,7 @@ append head
   script(async defer src="../public/javascript/reviews.js")
 
 block content
-    .navbarContainer
-      +navbar
+    +navbar
     .fullPageGrid
         .grid
             .grid__section.section__image
@@ -43,18 +42,20 @@ block content
 
 
             .grid__section.section__reviews
-              h1 Reviews
-                button.reviewTool.review--add add review
+              .reviews__title
+                h1.reviews__title__element Reviews
+                button.reviews__title__element.reviewTool.review--add +
+              .reviews__container
                 each review in reviews
                   .review
-                    .review_tools
+                    .review__tools
                     if userId === review.userId
                         button.reviewTool.review--delete delete review
                         button.reviewTool.review--edit edit review
-                    .review_info
-                      p Posted by: #{review.User.firstName} #{review.User.lastName}
-                    .review_description
-                      pre= review.description
+                    .review__info
+                      h2.review__info__name  #{review.User.firstName} #{review.User.lastName}
+                  .review__description
+                    p= review.description
         .sidebar
 
 

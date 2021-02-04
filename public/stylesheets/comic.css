@@ -25,14 +25,13 @@
 .grid {
     display: grid;
     width: 100%;
-    height: 1000px;
     border: 1px solid blue;
     grid-area: content;
     grid-template-rows: 650px 100px 1fr;
     grid-template-columns: 2fr 2fr;
     grid-template-areas: 
     "image details"
-    "readStatus nothing"
+    "readStatus details"
     "reviews reviews"
 }
 .sidebar {
@@ -52,10 +51,31 @@
 
 .section__reviews {
     grid-area: reviews;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reviews__title {
+  display: flex;
+  align-items: center;
+}
+.reviews__title > h1 {
+  order: 1;
+  font-size: 3.5rem;
 }
 
+.reviews__title__element {
+  margin: 15px;
+}
+.review--add {
+  height: 50px;
+}
 
+.reviews__container {
+  display: flex;
+  flex-direction: column;
 
+}
 
 /* image section of grid */
 

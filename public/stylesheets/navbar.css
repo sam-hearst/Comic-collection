@@ -4,14 +4,10 @@ body {
   padding: 0px;
 }
 
-.navbarContainer {
-  z-index: 1;
-  position: fixed;
-}
-
 .navbar {
+  position: fixed;
+  z-index: 1;
   height: 100px;
-  overflow: hidden;
   background-color: #f4f1ea;
   width: 100%;
   color: #382110;
