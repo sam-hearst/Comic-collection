@@ -3,11 +3,10 @@ const bcrypt = require("bcrypt");
 const {
   asyncHandler,
   csrfProtection,
-  handleValidationErrors,
+  handleValidationErrors
 } = require("../utils");
 const { check, validationResult } = require("express-validator");
 const { User } = require("../db/models");
-// const { User } = db;
 const { loginUser, logoutUser } = require("../auth");
 const db = require("../db/models");
 const router = express.Router();
@@ -95,9 +94,9 @@ router.post(
         hashedPassword,
       });
       loginUser(req, res, user);
-        return req.session.save(() => {
+      return req.session.save(() => {
         res.redirect('/');
-        })
+      })
     } else {
       const errors = validatorErrors.array().map((error) => {
         console.log(error.msg);
