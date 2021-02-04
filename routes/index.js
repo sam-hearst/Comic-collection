@@ -5,7 +5,7 @@ const db = require("../db/models");
 
 /* GET home page. */
 router.get("/", asyncHandler(async (req, res, next) => {
-    const userId = req.session.auth.userId;
+    // const userId = req.session.auth.userId;
     //   let user; // this code can get use the user
 
     //   if (userId) {

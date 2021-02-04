@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Collections = sequelize.define('Collections', {
+  const Collection = sequelize.define('Collection', {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -33,8 +33,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE
     }
   }, {});
-  Collections.associate = function(models) {
-    // associations can be defined here
+  Collection.associate = function(models) {
+    Collection.belongsTo(models.User, { foreignKey: 'userId' });
+    Collection.belongsTo(models.Comic, { foreignKey: 'comicId' })
   };
-  return Collections;
+  return Collection;
 };
