@@ -23,10 +23,10 @@ block content
 
 
             .grid__section.section__details
-                h1= comic.title
-                h2 Author: #{comic.author}
-                p#description= comic.description
-                .infoRow
+                h1.details__element.details__title= comic.title
+                h2.details__element.details__author Author: #{comic.author}
+                p.details__element.details__description= comic.description
+                .details__infoRow
                     .infoElement
                         p.label Publisher: 
                         p.info=comic.publisher
