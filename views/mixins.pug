@@ -19,14 +19,14 @@ mixin navbar
           a(href="") Discussions
           a(href="") People
           a(href="") Ask the Author
-    div.search-bar
+    div(class="search-bar" id="search")
         form(action="/search" method="GET")
-          input(type="text" placeholder="search comics" name="searchString")
+        input(type="search" placeholder="search comics" name="searchString")
           //- button(type="submit" class="search-btn")
     if locals.authenticated
       div.personal-nav
-        div.dropdown
-          button.dropbtn 🔔 Notifications
+        div(class="dropdown" id="notify-div")
+          button(class="dropbtn" id="notify-btn") 🔔 Notifications
           i(class="fa fa-caret-down")
           div.dropdown-content
             a(href="") No notifications
