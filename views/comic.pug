@@ -12,16 +12,18 @@ block content
             .grid__section.section__image
                   img.image__actual(src=comic.imageUrl)
             .grid__section.section__readStatus
-                div.shelfButton Add To Collection
-                    div.shelf-content
-                        p Read Status
-                        button(type="button" id=comic.id value="Want to Read" name=userId).testButton Want to Read
-                        button(type="button" id=comic.id value="Read").testButton2 Currently Reading
-                        button(href="") Will Read
-                        p Collections
-                        //-     each collection in collections
-                        //-         a(href="collections/#{collection.id}")= collection.name
-                        button(href="") my favorites
+                div.shelfButton 
+                  .shelfButton__text Add To Collection
+                  div.shelf-content
+                      p Read Status
+                      button.collectionButton.readStatus__wantToRead.collectionButton--active(type="button" id=comic.id value="Want to Read" name=userId).testButton Want to Read
+                      button.collectionButton.readStatus__currentlyReading.collectionButton--active(type="button" id=comic.id value="Currently Reading").testButton2 Currently Reading
+                      button.collectionButton.readStatus__read(type="button" id=comic.id value="Read").testButton2 Read
+                      p Collections
+                      //-     each collection in collections
+                      //-         a(href="collections/#{collection.id}")= collection.name
+                      button.collectionButton.collectionButton--active(href="") my favorites
+                      button.collectionButton(href="") Not great
 
 
             .grid__section.section__details
