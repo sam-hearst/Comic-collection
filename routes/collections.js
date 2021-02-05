@@ -21,18 +21,23 @@ router.get("/", requireAuth, asyncHandler(async (req, res) => {
     if (req.session.auth) {
         userId = req.session.auth.userId
     }
+    // Query db
+    const collections = await Collection.findAll({
+        where: {
+            userId
+        },
+        include: [User, Comic]
+    })
 
-    // const collections = await Collection.findAll({
-    //     where: {
-    //         userId
-    //     },
-    //     include: [User, Comic]
-    // })
+    // Find all of the collections for the user
+    let collectionArray = []
+    for (let collection of collections) {
+        collectionArray.push(collection.name)
+    }
+    const collectionNames = [...new Set(collectionArray)];
 
-    // const collectionNames = collections.name;
-    // console.log('collection names', collectionNames)
-
-    res.render('collection', {  })
+    // Render
+    res.render('collection', { collectionNames, collections })
 }))
 
 

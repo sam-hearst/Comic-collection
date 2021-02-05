@@ -1,6 +1,6 @@
 extends layout
 append head
-  link(rel="stylesheet" href="/stylesheets/comic.css")
+  link(rel="stylesheet" href="/stylesheets/collections.css")
 
 block content
     .navbarContainer
@@ -8,16 +8,13 @@ block content
     .fullPageGrid
         .grid
             .grid__section
-                .collection__title
-                    h2 Currently Reading
-                .collection__title
-                    h2 Currently Reading
-                .collection__title
-                    h2 Currently Reading
-            //-     each collection in collections
-            //-         p= collection.name
-            //- .grid__section
-            //-     each collection in collections
-            //-         ul
-            //-             li= collection.Comic.title
+                each collectionName in collectionNames
+                    .collection__section
+                        h1= collectionName
+                            .collection__images
+                                each collection in collections
+                                    if collection.name === collectionName
+                                        img(src=collection.Comic.imageUrl)
+            .grid__section
+
         .sidebar

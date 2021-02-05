@@ -1,0 +1,13 @@
+.collection__section {
+    display: block;
+}
+
+.collection__images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.collection__images img {
+    padding: 20px;
+    height: 350px;
+}
