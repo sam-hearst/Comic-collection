@@ -3,9 +3,9 @@
 const baseRoute = 'http://localhost:8080'
 const wantToReadButton = document.querySelector(".testButton")
 
-const updateCollections = async (route) => {
+const updateCollections = async (comicId, route) => {
 
-    const response = await fetch(`/users/${userId}/collections/${route}`, {
+    const response = await fetch(`/api/collections/${route}/comics/${comicId}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -29,7 +29,7 @@ wantToReadButton.addEventListener('click', async (e) => {
     // console.log('userId: ', userId)
     console.log('comicId: ', comicId)
 
-    const newCollections = await updateCollections(route);
+    const newCollections = await updateCollections(comicId, collection);
 
     // change the side bar inner HTML
 
