@@ -59,10 +59,10 @@ block content
                   .review__description
                     p= review.description
         .sidebar
-          form(action="/collections", method="POST")
-            button(type="submit").testButton add to shelf
-          form(action="/collections/:id", method="POST")
-            button(type="submit").testButton2 add to shelf 2
+          form(action=`/users/${userId}/collections/wantToRead`, method="POST")
+            button(type="submit").testButton Want to Read
+          form(action=`/users/${userId}/collections/read`, method="POST")
+            button(type="submit").testButton2 Read
         footer
         .reviewTool__text
           form(action="/comics/:id/review", method="POST")
