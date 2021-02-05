@@ -5,7 +5,6 @@ body {
 }
 
 .navbar {
-  border-radius: 3px;
   position: fixed;
   z-index: 1;
   height: 100px;
@@ -14,12 +13,36 @@ body {
   width: 100%;
   color: #382110;
   justify-content: space-between;
+  align-items: center;
   display: flex;
   margin: 0em;
   padding: 4px;
   line-height: 20px;
   font-size: 16px;
   margin-bottom: 25px;
+}
+
+.navbar__logo {
+  background-color: #e6e1d8;
+  border-radius: 35% 10%;
+  width: 150px;
+  display:flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out 0s;
+}
+.navbar__logo:hover {
+  transform: rotate(-20deg);
+  transition: all 0.3s ease-in-out 0s;
+}
+.logo__1 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 35px;
+  padding: 5px;
+}
+.logo__2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 25px;
+  padding: 5px;
 }
 
 .site-nav,

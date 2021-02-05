@@ -1,6 +1,13 @@
 mixin navbar
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Londrina+Solid&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Indie+Flower&family=Londrina+Solid&display=swap" rel="stylesheet">
   div.navbar
-    a(href="/") Comic-Collection
+    div.navbar__logo
+      a(href="/") 
+        div.logo__1 COMIC
+        div.logo__2 Collection
     div.site-nav
       a(href="/") Home
       if locals.authenticated
