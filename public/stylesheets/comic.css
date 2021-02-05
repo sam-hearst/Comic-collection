@@ -2,26 +2,26 @@
 /* body */
 /* Content Grid */
 .fullPageGrid {
-    background-color: #dedbd3;
-    border-radius: 1%;
     min-width: 1000;
     display: grid;
     position: relative;
-    top: 100px;
+    top: 200px;
     max-width: 1650px;
     margin: 0 auto;
     width: 100%;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 50px 5fr;
     grid-template-areas: 
-    "sidebar content"
+    "sidebar break content"
 }
 .grid {
+    background-color: #dedbd3;
+    border-radius: 1%;
     display: grid;
     width: 100%;
     grid-area: content;
     grid-template-rows: 800px 100px 1fr;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 
     "image details"
     "readStatus blank"
@@ -29,7 +29,8 @@
 }
 .sidebar {
     grid-area: sidebar;
-    border: 1px solid red;
+    border-radius: 5px;
+    background-color: #bfbbb0;
 }
 
 
