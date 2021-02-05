@@ -8,6 +8,7 @@ const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const apiRouter = require("./routes/api/api-reviews");
 const comicsRouter = require("./routes/comics");
 const collectionsRouter = require("./routes/collections");
 const collectionsApi = require("./routes/api/api-collections");
@@ -57,6 +58,7 @@ app.use("/comics", comicsRouter);
 app.use("/collections", collectionsRouter);
 app.use("/api/collections", collectionsApi);
 app.use("/api/comics", comicsApi);
+app.use("/api", apiRouter);
 
 // when you register a user or login a user
 // express session docs => session.save
