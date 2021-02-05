@@ -18,17 +18,17 @@ router.post("/:name/comics/:id", requireAuth, asyncHandler(async (req,res) => {
             readStatus: true,
         }})
         await Collection.create({
-        name: collectionName,
-        userId,
-        comicId,
-        readStatus: true
+            name: collectionName,
+            userId,
+            comicId,
+            readStatus: true
         })
     } else {
         await Collection.create({
-        name: collectionName,
-        userId,
-        comicId,
-        readStatus: false
+            name: collectionName,
+            userId,
+            comicId,
+            readStatus: false
         })
     }
     return res.status(200);

@@ -1,6 +1,3 @@
-//add stuff here
-// const { getUserId } = require('../../auth')
-const baseRoute = 'http://localhost:8080'
 const wantToReadButton = document.querySelector(".testButton");
 const readButton = document.querySelector(".testButton2");
 
@@ -23,7 +20,6 @@ wantToReadButton.addEventListener('click', async (e) => {
     const collection = e.target.value.split(' ').join('-');
     const comicId = e.target.id 
     console.log('collection: ', collection);
-    // console.log('userId: ', userId)
     console.log('comicId: ', comicId)
 
     const newCollections = await updateCollections(comicId, collection);
@@ -35,7 +31,6 @@ readButton.addEventListener('click', async (e) => {
     const collection = e.target.value.split(' ').join('-');
     const comicId = e.target.id 
     console.log('collection: ', collection);
-    // console.log('userId: ', userId)
     console.log('comicId: ', comicId)
 
     const newCollections = await updateCollections(comicId, collection);

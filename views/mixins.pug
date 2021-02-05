@@ -13,7 +13,7 @@ mixin navbar
         a(href="/") Home
       .nav__child.nav__collections
         if locals.authenticated
-            a(href=`/users/${userId}/collections`) My Collections
+            a(href=`/collections`) My Collections
         else
           a(href="/login") My Collections
       div.dropdown.nav__child
