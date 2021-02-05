@@ -10,8 +10,12 @@ router.get("/:id(\\d+)", asyncHandler(async (req, res, next) => {
   const reviews = await Review.findAll({where: {
     comicId: req.params.id
   }, include: User });
+  let userId = null;
+  if (req.session.auth) {
+    userId = req.session.auth.userId;
+  }
 
-  res.render("comic", { comic, reviews });
+  res.render("comic", { comic, reviews, userId });
 }));
 
 
