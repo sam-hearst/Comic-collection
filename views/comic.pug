@@ -2,6 +2,8 @@ extends layout
 append head
   link(rel="stylesheet" href="/stylesheets/comic.css")
   script(async defer src="../public/javascript/reviews.js")
+  script(async defer src="../public/javascript/collections.js")
+
 
 block content
     +navbar
@@ -57,6 +59,16 @@ block content
                   .review__description
                     p= review.description
         .sidebar
+          form(action=`/users/${userId}/collections/wantToRead`, method="POST")
+            button(type="submit").testButton Want to Read
+          form(action=`/users/${userId}/collections/read`, method="POST")
+            button(type="submit").testButton2 Read
+        footer
+        .reviewTool__text
+          form(action="/comics/:id/review", method="POST")
+            label(for="review") Review goes here
+            textarea.text__input(name="review", id="review")
+            button.text--sumbit(type="submit")
 
 
 

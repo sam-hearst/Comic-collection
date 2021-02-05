@@ -4,42 +4,6 @@ body {
   padding: 0px;
 }
 
-.navbar {
-  border-radius: 3px;
-  position: fixed;
-  z-index: 1;
-  height: 100px;
-  background-color: #f4f1ea;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, .15);
-  width: 100%;
-  color: #382110;
-  justify-content: space-between;
-  display: flex;
-  margin: 0em;
-  padding: 4px;
-  line-height: 20px;
-  font-size: 16px;
-  margin-bottom: 25px;
-}
-
-.site-nav,
-.search-bar {
-  display: flex;
-  margin: 2px;
-}
-
-/* .search-btn {
-  display: inline-block;
-  left: 175px;
-  position: relative;
-  bottom: 48.5px;
-} */
-
-.site-nav,
-.search-bar:last-child {
-  justify-content: flex-end;
-}
-
 .navbar a {
   float: left;
   font-size: 16px;
@@ -49,9 +13,117 @@ body {
   text-decoration: none;
 }
 
+.navbar {
+  position: fixed;
+  z-index: 1;
+  height: 100px;
+  background-color: #f4f1ea;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .15);
+  width: 100%;
+  color: #382110;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  margin: 0;
+  line-height: 20px;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.navbar__logo {
+  background-color: #e6e1d8;
+  border-radius: 35% 10%;
+  width: 150px;
+  display:flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out 0s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+}
+.navbar__logo:hover {
+  transform: rotate(-10deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .15);
+  background-color: #d1ccc0;
+}
+.logo__1 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 35px;
+  padding: 5px;
+}
+.logo__2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 25px;
+  padding: 5px;
+}
+
+/* site-nav part of nav bar */
+
+
+.site-nav {
+  width: 600px;
+  background-color: rgba(219, 216, 210, .2);
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  border-radius: 10px;
+  height: 100%;
+  margin: 0;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(219, 216, 210, .3);
+}
+.site-nav:hover {
+  background-color: rgba(219, 216, 210, .4);
+  border: 1px solid rgba(219, 216, 210, .7);
+}
+
+
+.nav__child {
+  height: 100%;
+  width: 100%;
+}
+.nav__child__dropdown {
+  margin: auto;
+}
+
+.nav__collections,
+.nav__home {
+  display: flex;
+  
+}
+.nav__child a {
+  line-height: 1.35em;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav__child .dropbtn,
+.nav__child a {
+  height: 100%;
+  width: 100%;
+}
+
+
+.search-bar {
+  display: flex;
+}
+
+/* .search-btn {
+  display: inline-block;
+  left: 175px;
+  position: relative;
+  bottom: 48.5px;
+} */
+
+.search-bar:last-child {
+  justify-content: flex-end;
+}
+
+
 .dropdown {
   float: left;
   overflow: hidden;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 .dropdown .dropbtn {
@@ -64,20 +136,28 @@ body {
   font-family: inherit;
   margin: 0;
 }
+.site-nav a,
+.dropdown .dropbtn{
+  border: 1px solid rgba(219, 216, 210, 0);
+  transition: all 0.3s ease-in-out 0s;
+  font-size: 20px;
+  font-weight: 1em;
+}
 
 .site-nav a:hover,
 .dropdown:hover .dropbtn {
-  background-color: #382110;
-  color: white;
+  background-color: rgba(219, 216, 210, .7);
+  border: 1px solid rgba(219, 216, 210, .7);
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 100px;
+  min-width: 120px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  overflow: visible;
 }
 
 .dropdown-content a {
@@ -87,27 +167,42 @@ body {
   text-decoration: none;
   display: block;
   text-align: left;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: rgba(219, 216, 210, .7);
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
+
+/* search bar */
+.search-bar {
+  display: flex;
+}
+.search-bar__submit {
+  margin: 0;
+  height: 100%;
+}
+.search-bar__text {
+  height: 100%;
+  margin: 0;
+}
+
+
+/*
 .search-bar {
   box-sizing: inherit;
   display: inline-block;
-  vertical-align: top;
-  margin-top: 9px;
-  margin-bottom: 0px;
   flex: 1;
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 0;
-  margin-right: 8px;
+  width: 100px;
 }
 
 .search-bar form {
@@ -148,6 +243,7 @@ body {
   background-color: initial;
   display: inline-block;
 }
+*/
 .sign-out-btn {
   font-size: small;
 }

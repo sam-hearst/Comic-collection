@@ -1,27 +1,40 @@
 mixin navbar
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Londrina+Solid&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Indie+Flower&family=Londrina+Solid&display=swap" rel="stylesheet">
   div.navbar
-    a(href="/") Comic-Collection
+    div.navbar__logo
+      a(href="/") 
+        div.logo__1 COMIC
+        div.logo__2 Collection
     div.site-nav
-      a(href="/") Home
-      a(href="") My Comics
-      div.dropdown
+      .nav__child.nav__home.active
+        a(href="/") Home
+      .nav__child.nav__collections
+        if locals.authenticated
+            a(href=`/users/${userId}/collections`) My Collections
+        else
+          a(href="/login") My Collections
+      div.dropdown.nav__child
         button.dropbtn Browse
-        i(class="fa fa-caret-down")
+          i(class="fa fa-caret-down")
         div.dropdown-content
           p FAVORITE GENRES
           a(href="") Fantasy
           a(href="") Fiction
           a(href="") Superhero
-      div.dropdown
+      div.dropdown.nav__child
         button.dropbtn Community
-        i(class="fa fa-caret-down")
         div.dropdown-content
           a(href="") Discussions
           a(href="") People
           a(href="") Ask the Author
     div(class="search-bar" id="search")
         form(action="/search" method="GET")
-        input(type="search" placeholder="search comics" name="searchString")
+          input.search-bar__text(type="text" placeholder="search comics" name="searchString")
+          button.search-bar__submit(type="submit")
+            ion-icon(name="search-outline")
           //- button(type="submit" class="search-btn")
     if locals.authenticated
       div.personal-nav
@@ -35,7 +48,7 @@ mixin navbar
         a(href="") Friends
         div.dropdown
             img(src="https://s.gr-assets.com/assets/nophoto/user/u_60x60-267f0ca0ea48fd3acfd44b95afa64f01.png")
-            form(action="users/logout" method="POST")
+            form(action="/users/logout" method="POST")
               div.dropdown-content
                 button(class="sign-out-btn" type="submit") Sign out
     else
@@ -46,7 +59,8 @@ mixin navbar
           i(class="fa fa-caret-down")
           div.dropdown-content
             div(class="demo_user")
-              form(action="users/demo" method="POST")
+              form(action="/users/demo" method="POST")
                 input(type="submit" value="Demo User")
             a(href="/signup") Sign Up
             a(href="/login") Log In
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
