@@ -140,8 +140,10 @@ background: transparent; /* Optional: just make scrollbar invisible */
 
 /* Add to bookshelf button  */
 
-.shelfButton:hover .shelf-content{
-    display: block;
+.shelfButton:hover .shelf-content { 
+  display: flex;
+  flex-direction: column;
+  position:absolute;
 }
 
 .shelf-content {

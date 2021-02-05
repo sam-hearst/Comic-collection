@@ -1,8 +1,8 @@
 extends layout
 append head
   link(rel="stylesheet" href="/stylesheets/comic.css")
-  script(async defer src="../public/javascript/reviews.js")
-  script(async defer src="../public/javascript/collections.js")
+  //- script(async defer src="../public/javascript/reviews.js")
+  script(src="/javascripts/collections.js" type="module" defer)
 
 
 block content
@@ -12,16 +12,16 @@ block content
             .grid__section.section__image
                   img.image__actual(src=comic.imageUrl)
             .grid__section.section__readStatus
-                button.shelfButton Add To Collection
+                div.shelfButton Add To Collection
                     div.shelf-content
                         p Read Status
-                        a(href="") Want To Read
-                        a(href="") Read
-                        a(href="") Will Read
+                        button(type="button" id=comic.id value="Want to Read" name=userId).testButton Want to Read
+                        button(type="button" id=comic.id value="Read").testButton2 Currently Reading
+                        button(href="") Will Read
                         p Collections
                         //-     each collection in collections
                         //-         a(href="collections/#{collection.id}")= collection.name
-                        a(href="") my favorites
+                        button(href="") my favorites
 
 
             .grid__section.section__details
@@ -59,10 +59,8 @@ block content
                   .review__description
                     p= review.description
         .sidebar
-          form(action=`/users/${userId}/collections/wantToRead`, method="POST")
-            button(type="submit").testButton Want to Read
-          form(action=`/users/${userId}/collections/read`, method="POST")
-            button(type="submit").testButton2 Read
+          //- form(action=`/users/${userId}/collections/wantToRead`, method="POST")
+          //- form(action=`/users/${userId}/collections/read`, method="POST")
         footer
         .reviewTool__text
           form(action="/comics/:id/review", method="POST")

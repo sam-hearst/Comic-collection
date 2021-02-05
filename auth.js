@@ -22,7 +22,7 @@ const requireAuth = (req, res, next) => {
 const restoreUser = async (req, res, next) => {
   // Log the session object to the console
   // to assist with debugging.
-  console.log(req.session);
+  // console.log(req.session);
   if (req.session.auth) {
     const { userId } = req.session.auth;
 
@@ -48,4 +48,9 @@ const logoutUser = (req, res) => {
   delete req.session.auth;
 };
 
-module.exports = { loginUser, logoutUser, requireAuth, restoreUser };
+module.exports = { 
+  loginUser,
+  logoutUser,
+  requireAuth,
+  restoreUser
+};

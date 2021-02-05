@@ -10,6 +10,7 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const comicsRouter = require("./routes/comics");
 const collectionsRouter = require("./routes/collections")
+const collectionsApi = require("./routes/api/api-collections")
 const { sessionSecret } = require("./config");
 const { restoreUser } = require("./auth");
 
@@ -52,7 +53,8 @@ app.use((req, res, next) => {
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/comics", comicsRouter);
-app.use("/users/:id(\\d+)/collections", collectionsRouter);
+app.use("/collections", collectionsRouter);
+app.use("/api/collections", collectionsApi);
 
 // when you register a user or login a user
 // express session docs => session.save
