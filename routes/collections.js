@@ -53,7 +53,7 @@ router.post('/:name', requireAuth, asyncHandler(async (req, res) => {
     console.log('comicId: ', comicId)
     console.log('userId: ', userId)
     // addComicToCollection(userId, comicId, collectionName)
-
+    res.end();
 }))
 
 
