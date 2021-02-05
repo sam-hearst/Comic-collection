@@ -27,4 +27,8 @@ router.get("/login", csrfProtection, (req, res) => {
   res.render("login", { csrfToken: req.csrfToken(), userName: "" });
 });
 
+router.get('/test/sidebar', csrfProtection, asyncHandler(async (req, res) => {
+    res.render('sidebar', {csrfToken: req.csrfToken() });
+}))
+
 module.exports = router;
