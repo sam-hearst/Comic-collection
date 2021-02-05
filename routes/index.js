@@ -14,8 +14,12 @@ router.get(
     //   if (userId) {
     //     user = await db.User.findByPk(userId);
     //   }
+  let userId = null;
+  if (req.session.auth) {
+    userId = req.session.auth.userId;
+  }
     const comics = await db.Comic.findAll();
-    res.render("index", { comics });
+    res.render("index", { comics, userId });
   })
 );
 
