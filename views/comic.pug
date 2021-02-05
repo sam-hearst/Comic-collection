@@ -4,13 +4,11 @@ append head
   script(async defer src="../public/javascript/reviews.js")
 
 block content
-    .navbarContainer
-      +navbar
+    +navbar
     .fullPageGrid
         .grid
             .grid__section.section__image
-                .image__actual
-                    img(src=comic.imageUrl)
+                  img.image__actual(src=comic.imageUrl)
             .grid__section.section__readStatus
                 button.shelfButton Add To Collection
                     div.shelf-content
@@ -25,10 +23,10 @@ block content
 
 
             .grid__section.section__details
-                h1= comic.title
-                h2 Author: #{comic.author}
-                p#description= comic.description
-                .infoRow
+                h1.details__element.details__title= comic.title
+                h2.details__element.details__author Author: #{comic.author}
+                p.details__element.details__description= comic.description
+                .details__infoRow
                     .infoElement
                         p.label Publisher: 
                         p.info=comic.publisher
@@ -44,18 +42,20 @@ block content
 
 
             .grid__section.section__reviews
-              h1 Reviews
-                button.reviewTool.review--add add review
+              .reviews__title
+                h1.reviews__title__element Reviews
+                button.reviews__title__element.reviewTool.review--add +
+              .reviews__container
                 each review in reviews
                   .review
-                    .review_tools
+                    .review__tools
                     if userId === review.userId
                         button.reviewTool.review--delete delete review
                         button.reviewTool.review--edit edit review
-                    .review_info
-                      p Posted by: #{review.User.firstName} #{review.User.lastName}
-                    .review_description
-                      pre= review.description
+                    .review__info
+                      h2.review__info__name  #{review.User.firstName} #{review.User.lastName}
+                  .review__description
+                    p= review.description
         .sidebar
 
 

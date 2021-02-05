@@ -3,10 +3,14 @@
 body {
   padding: 0px;
 }
+
 .navbar {
+  border-radius: 3px;
+  position: fixed;
+  z-index: 1;
   height: 100px;
-  overflow: hidden;
   background-color: #f4f1ea;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .15);
   width: 100%;
   color: #382110;
   justify-content: space-between;

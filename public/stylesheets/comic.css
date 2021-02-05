@@ -1,42 +1,82 @@
-/* navigation */
-.navbarContainer {
-    width: 100%;
-    height: 100px;
-    border: 1px solid red;
-    position: fixed;
-}
 
 /* body */
+/* Content Grid */
 .fullPageGrid {
     min-width: 1000;
     display: grid;
     position: relative;
-    top: 100px;
+    top: 200px;
     max-width: 1650px;
     margin: 0 auto;
     width: 100%;
-    border: 1px solid red;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 50px 5fr;
     grid-template-areas: 
-    "sidebar content"
+    "sidebar break content"
 }
 .grid {
+    background-color: #dedbd3;
+    border-radius: 1%;
     display: grid;
     width: 100%;
-    height: 1000px;
-    border: 1px solid blue;
     grid-area: content;
-    grid-template-rows: 650px 100px 1fr;
-    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 800px 100px 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 
     "image details"
-    "readStatus nothing"
+    "readStatus blank"
     "reviews reviews"
 }
 .sidebar {
     grid-area: sidebar;
-    border: 1px solid red;
+    border-radius: 5px;
+    background-color: #bfbbb0;
+}
+
+
+
+.section__readStatus {
+    grid-area: readStatus;
+    position: relative;
+}
+
+
+/* review section of grid */
+
+.section__reviews {
+    grid-area: reviews;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reviews__title {
+  display: flex;
+  align-items: center;
+}
+.reviews__title > h1 {
+  order: 1;
+  font-size: 3.5rem;
+}
+
+.reviews__title__element {
+  margin: 15px;
+}
+.review--add {
+  height: 50px;
+}
+
+.reviews__container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* image section of grid */
+
+.image__actual {
+    padding: 35px 10px 10px 10px;
+    height: 100%;
+
 }
 
 .section__image {
@@ -48,32 +88,57 @@
 }
 
 
-.section__readStatus {
-    grid-area: readStatus;
-    position: relative;
-}
-
-.image__actual {
-    padding: 35px 10px 10px 10px;
-
-}
+/* Section Details of grid */
 
 .section__details {
-    grid-area: details;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: scroll;
-}
-
-.section__details h1 {
     padding: 30px 10px 10px 10px;
-    font-size: 4em;
+    grid-area: details;
+    display: grid;
+    grid-template-rows: min-content 80px 1fr 100px;
+    grid-template-areas: 
+    "title"
+    "author"
+    "details"
+    "infoRow"
+    ;
+}
+.details__element {
+  padding: 0px 30px;
 }
 
-.section__reviews {
-    grid-area: reviews;
+.details__title{ 
+  grid-area: title;
+  font-size: 80px;
+  font-weight: bold;
 }
+
+.details__author {
+  grid-area: author;
+  font-size: 2em;
+  color: grey;
+}
+
+.details__infoRow {
+    grid-area: infoRow;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+}
+
+.details__description {
+    grid-area: details;
+}
+
+
+
+::-webkit-scrollbar {
+width: 0px; /* Remove scrollbar space */
+background: transparent; /* Optional: just make scrollbar invisible */
+} 
+
+
+/* Add to bookshelf button  */
 
 .shelfButton:hover .shelf-content{
     display: block;
@@ -96,24 +161,4 @@
     transform: translateX(-50%);
 }
 
-.infoRow {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 20px;
-    margin-top: auto;
-}
 
-#description {
-    padding: 20px;
-}
-
-
-.infoElement {
-
-}
-
-::-webkit-scrollbar {
-width: 0px; /* Remove scrollbar space */
-background: transparent; /* Optional: just make scrollbar invisible */
-} 
