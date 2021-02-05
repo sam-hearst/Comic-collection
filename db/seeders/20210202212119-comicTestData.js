@@ -27,7 +27,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          title: "EdgeWord",
+          title: "EdgeWorld",
           author: "Chuck Austen",
           price: "2.99",
           description:
