@@ -5,6 +5,7 @@ const { requireAuth } = require('../../auth');
 
 const { Comic, Review, User, Collection } = require("../../db/models");
 
+//Add a comic to a collection
 router.post("/:name/comics/:id", requireAuth, asyncHandler(async (req,res) => {
     const collectionName = req.params.name.split('-').join(' ');
     const comicId = req.params.id;
