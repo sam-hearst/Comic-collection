@@ -2,7 +2,7 @@ extends layout
 append head
   link(rel="stylesheet" href="/stylesheets/comic.css")
   //- script(async defer src="../public/javascript/reviews.js")
-  script(src="/javacripts/collections.js" type="module" defer)
+  script(src="/javascripts/collections.js" type="module" defer)
 
 
 block content
@@ -61,8 +61,8 @@ block content
         .sidebar
           //- form(action=`/users/${userId}/collections/wantToRead`, method="POST")
           button(type="button" id=comic.id value="Want to Read" name=userId).testButton Want to Read
-          form(action=`/users/${userId}/collections/read`, method="POST")
-            button(type="submit").testButton2 Read
+          //- form(action=`/users/${userId}/collections/read`, method="POST")
+          button(type="button" id=comic.id value="Read").testButton2 Read
         footer
         .reviewTool__text
           form(action="/comics/:id/review", method="POST")

@@ -1,7 +1,8 @@
 //add stuff here
 // const { getUserId } = require('../../auth')
 const baseRoute = 'http://localhost:8080'
-const wantToReadButton = document.querySelector(".testButton")
+const wantToReadButton = document.querySelector(".testButton");
+const readButton = document.querySelector(".testButton2");
 
 const updateCollections = async (comicId, route) => {
 
@@ -19,13 +20,21 @@ const updateCollections = async (comicId, route) => {
 }
 
 wantToReadButton.addEventListener('click', async (e) => {
-    e.preventDefault();
     const collection = e.target.value.split(' ').join('-');
-    const route = e.target.value;
-    const userId = e.target.name;
     const comicId = e.target.id 
     console.log('collection: ', collection);
-    console.log('name: ', route)
+    // console.log('userId: ', userId)
+    console.log('comicId: ', comicId)
+
+    const newCollections = await updateCollections(comicId, collection);
+
+    // change the side bar inner HTML
+
+})
+readButton.addEventListener('click', async (e) => {
+    const collection = e.target.value.split(' ').join('-');
+    const comicId = e.target.id 
+    console.log('collection: ', collection);
     // console.log('userId: ', userId)
     console.log('comicId: ', comicId)
 
