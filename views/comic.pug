@@ -12,16 +12,16 @@ block content
             .grid__section.section__image
                   img.image__actual(src=comic.imageUrl)
             .grid__section.section__readStatus
-                button.shelfButton Add To Collection
+                div.shelfButton Add To Collection
                     div.shelf-content
                         p Read Status
-                        a(href="") Want To Read
-                        a(href="") Read
-                        a(href="") Will Read
+                        button(type="button" id=comic.id value="Want to Read" name=userId).testButton Want to Read
+                        button(type="button" id=comic.id value="Read").testButton2 Currently Reading
+                        button(href="") Will Read
                         p Collections
                         //-     each collection in collections
                         //-         a(href="collections/#{collection.id}")= collection.name
-                        a(href="") my favorites
+                        button(href="") my favorites
 
 
             .grid__section.section__details
@@ -60,9 +60,7 @@ block content
                     p= review.description
         .sidebar
           //- form(action=`/users/${userId}/collections/wantToRead`, method="POST")
-          button(type="button" id=comic.id value="Want to Read" name=userId).testButton Want to Read
           //- form(action=`/users/${userId}/collections/read`, method="POST")
-          button(type="button" id=comic.id value="Read").testButton2 Read
         footer
         .reviewTool__text
           form(action="/comics/:id/review", method="POST")
