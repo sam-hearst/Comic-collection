@@ -19,10 +19,18 @@ const requireAuth = (req, res, next) => {
     return next();
 }
 
+const getUserId = req => {
+  let userId = null;
+  if (req.session.auth) {
+    userId = req.session.auth.userId
+  }
+  return userId;
+}
+
 const restoreUser = async (req, res, next) => {
   // Log the session object to the console
   // to assist with debugging.
-  console.log(req.session);
+  // console.log(req.session);
   if (req.session.auth) {
     const { userId } = req.session.auth;
 
@@ -48,4 +56,10 @@ const logoutUser = (req, res) => {
   delete req.session.auth;
 };
 
-module.exports = { loginUser, logoutUser, requireAuth, restoreUser };
+module.exports = { 
+  loginUser,
+  logoutUser,
+  requireAuth,
+  restoreUser,
+  getUserId
+};

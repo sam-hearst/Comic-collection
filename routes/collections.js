@@ -28,7 +28,7 @@ router.get("/", requireAuth, asyncHandler(async (req, res) => {
 
 /*
 Read Status Collection names:
-Want to Read
+Want to Read => wantToRead
 Currently Reading
 Read
 */
@@ -43,17 +43,15 @@ async function addComicToCollection(userId, comicId, collectionName) {
 }
 
 router.post('/:name', requireAuth, asyncHandler(async (req, res) => {
-    const comicId = parseInt(req.params.id, 10);
+    // const comicId = parseInt(req.params.id, 10);
     const collectionName = req.params.name;
-    let userId;
-    if (req.session.auth) {
-        userId = req.session.auth.userId
-    }
+    
+    console.log('sent collection: ', req.body.collection)
     console.log('collectionName: ', collectionName)
-    console.log('comicId: ', comicId)
+    // console.log('comicId: ', comicId)
     console.log('userId: ', userId)
     // addComicToCollection(userId, comicId, collectionName)
-    res.end();
+    res.json({  });
 }))
 
 
