@@ -1,0 +1,40 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #0f0c03;
+  width: 20%;
+  height: 500px;
+  color: #f8f2f2;
+  justify-content: flex-start;
+  display: flex;
+  margin: 0em;
+  padding: 4px;
+  line-height: 20px;
+  font-size: 16px;
+  margin-bottom: 25px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.sidebar__collections {
+    font-size: 1rem;
+}
+
+
+.sidebar__collections a {
+    text-decoration: none;
+    color: rgb(97, 93, 93);
+}
+
+.sidebar__collections img {
+    height: 70px;
+    width: 60px;
+    padding: 10px;
+}
+
+
+.sidebar__want-to-read,
+.sidebar__currently-reading,
+.sidebar__read {
+    display: block;
+}
