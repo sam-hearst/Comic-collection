@@ -158,9 +158,22 @@ background: transparent; /* Optional: just make scrollbar invisible */
     background-color: purple;
 }
 .shelfButton {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  width: 25%;
+  height: 45px;
+  margin: auto auto 0;
+  background-color: grey;
+  align-self: center;
+}
+.shelfButton__text {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 30px 20px;
+}
+.collectionButton {
+  margin: 0;
 }
 
 
