@@ -3,7 +3,10 @@ mixin navbar
     a(href="/") Comic-Collection
     div.site-nav
       a(href="/") Home
-      a(href="") My Comics
+      if locals.authenticated
+        a(href=`/users/${userId}/collections`) My Collections
+      else
+        a(href="/login") My Collections
       div.dropdown
         button.dropbtn Browse
         i(class="fa fa-caret-down")
