@@ -39,3 +39,8 @@
 .sidebar__read {
     display: block;
 }
+
+.sidebar__img-container {
+    display: flex;
+    flex-direction: row;
+}
