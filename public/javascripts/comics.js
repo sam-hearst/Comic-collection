@@ -12,7 +12,7 @@ async function highlightActiveCollections() {
     
     // Edit the DOM here to alter classes for the buttons
     const collectionButtons = document.getElementsByClassName('collectionButton')
-    console.log('collectionButtons: ', collectionButtons)
+    // console.log('collectionButtons: ', collectionButtons)
     for (let i = 0; i < collectionButtons.length; i++) {
         let button = collectionButtons[i];
         if (collectionList.includes(button.value)) {
@@ -25,3 +25,26 @@ async function highlightActiveCollections() {
 document.addEventListener('DOMContentLoaded', highlightActiveCollections)
 
 // Add a comic to a collection and update the button classes
+document
+    .querySelector('.shelf-content')
+    .addEventListener('click', async (e) => {
+        const button = e.target
+        // if the target is already active -> remove the active class
+        if(button.classList.contains('collectionButton--active')) {
+            button.classList.remove('collectionButton--active')
+        } else { 
+
+            //first need to check if it is a default shelf
+            const readStatus = ['Want to Read', 'Read', 'Currently Reading'];
+            const defaultCollections = document.getElementsByClassName('defaultCollection');
+            if (readStatus.includes(button.value)) {
+                for (let i = 0; i < defaultCollections.length; i++) {
+                    if (defaultCollections[i].classList.contains('collectionButton--active')) {
+                        defaultCollections[i].classList.remove('collectionButton--active')
+                    }
+                }
+            }
+            // add the active class to the button
+            button.classList.add('collectionButton--active')
+        }
+})

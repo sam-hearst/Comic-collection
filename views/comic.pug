@@ -17,14 +17,14 @@ block content
                   .shelfButton__text Add To Collection
                   div.shelf-content
                       p Read Status
-                      button.collectionButton.readStatus__wantToRead(type="button" id=comic.id value="Want to Read" name=userId).testButton Want to Read
-                      button.collectionButton.readStatus__currentlyReading(type="button" id=comic.id value="Currently Reading").testButton2 Currently Reading
-                      button.collectionButton.readStatus__read(type="button" id=comic.id value="Read").testButton2 Read
+                      button.collectionButton.readStatus__wantToRead.defaultCollection(type="button" id=comic.id value="Want to Read" name=userId) Want to Read
+                      button.collectionButton.readStatus__currentlyReading.defaultCollection(type="button" id=comic.id value="Currently Reading") Currently Reading
+                      button.collectionButton.readStatus__read.defaultCollection(type="button" id=comic.id value="Read") Read
                       p Collections
                       //-     each collection in collections
                       //-         a(href="collections/#{collection.id}")= collection.name
-                      button.collectionButton(href="") my favorites
-                      button.collectionButton(href="") Not great
+                      button.collectionButton(type="button" id=comic.id value="my favorites") my favorites
+                      button.collectionButton(type="button" id=comic.id value="Not great") Not great
 
 
             .grid__section.section__details

@@ -1,8 +1,6 @@
-const wantToReadButton = document.querySelector(".testButton");
-const readButton = document.querySelector(".testButton2");
 
+// query the database and update the collection table for the specific comic and user
 const updateCollections = async (comicId, route) => {
-
     const response = await fetch(`/api/collections/${route}/comics/${comicId}`, {
         method: "POST",
         headers: {
@@ -16,25 +14,17 @@ const updateCollections = async (comicId, route) => {
     return data;
 }
 
-wantToReadButton.addEventListener('click', async (e) => {
-    const collection = e.target.value.split(' ').join('-');
-    const comicId = e.target.id 
-    console.log('collection: ', collection);
-    console.log('comicId: ', comicId)
+const collections = document.querySelector(".shelf-content")
 
-    const newCollections = await updateCollections(comicId, collection);
+collections.addEventListener('click', async (e) => {
+    if (e.target.type === "button") {
+        const collection = e.target.value.split(' ').join('-');
+        const comicId = e.target.id
+    
+        const response = await updateCollections(comicId, collection);
+        const data = response.json();
+        // change the side bar inner HTML here
 
-    // change the side bar inner HTML
-
-})
-readButton.addEventListener('click', async (e) => {
-    const collection = e.target.value.split(' ').join('-');
-    const comicId = e.target.id 
-    console.log('collection: ', collection);
-    console.log('comicId: ', comicId)
-
-    const newCollections = await updateCollections(comicId, collection);
-
-    // change the side bar inner HTML
+    }
 
 })
