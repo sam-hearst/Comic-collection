@@ -1,12 +1,39 @@
 const express = require("express");
 const { validationResult } = require("express-validator");
 const router = express.Router();
-const { Review } = require("../../db/models");
+const { Review, Comic } = require("../../db/models");
 const {
   asyncHandler,
   csrfProtection,
   handleValidationErrors,
 } = require("../../utils");
+// gets an array of all the comic title
+// router.get(
+//   "/titles",
+//   asyncHandler(async (req, res) => {
+//     const comics = await Comic.findAll({
+//       order: [["createdAt", "DESC"]],
+//     });
+
+//     let listTitles = [];
+//     comics.forEach((comic) => {
+//       listTitles.push(comic.title);
+//     });
+
+//     res.json(listTitles);
+//   })
+// );
+
+router.get(
+  "/titles",
+  asyncHandler(async (req, res) => {
+    const comics = await Comic.findAll({
+      order: [["createdAt", "DESC"]],
+    });
+
+    res.json({ comics });
+  })
+);
 
 router.get(
   "/new-review/:id(\\d+)",
