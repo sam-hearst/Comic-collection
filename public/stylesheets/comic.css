@@ -1,6 +1,9 @@
 
 /* body */
 /* Content Grid */
+.hidden {
+  display: none;
+}
 .fullPageGrid {
     min-width: 1000;
     display: grid;
@@ -174,6 +177,10 @@ background: transparent; /* Optional: just make scrollbar invisible */
 }
 .collectionButton {
   margin: 0;
+}
+
+.collectionButton--active {
+  background-color: green;
 }
 
 

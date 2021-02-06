@@ -1,8 +1,24 @@
 const express = require("express");
-const { validationResult } = require("express-validator")
+const { validationResult } = require("express-validator");
 const router = express.Router();
-const { Review, User } = require("../../db/models");
-const { asyncHandler, csrfProtection, handleValidationErrors } = require("../../utils");
+const { Review, User, Comic } = require("../../db/models");
+const {
+  asyncHandler,
+  csrfProtection,
+  handleValidationErrors,
+} = require("../../utils");
+
+// titles API
+router.get(
+  "/titles",
+  asyncHandler(async (req, res) => {
+    const comics = await Comic.findAll({
+      order: [["createdAt", "DESC"]],
+    });
+
+    res.json({ comics });
+  })
+);
 
 router.get(
   "/new-review",
@@ -26,11 +42,11 @@ router.post(
     let review;
     const validatorErrors = validationResult(req);
     if (validatorErrors.isEmpty()) {
-        review = await Review.create({
-            description: description,
-            userId: userId,
-            comicId: comicId,
-      })
+      review = await Review.create({
+        description: description,
+        userId: userId,
+        comicId: comicId,
+      });
     } else {
       const errors = validatorErrors.array().map((error) => {
         console.log(error.msg);
@@ -38,7 +54,7 @@ router.post(
       });
     }
     const userInfo = await User.findByPk(parseInt(userId));
-    const user = {}
+    const user = {};
     user.firstName = userInfo.firstName;
     user.lastName = userInfo.lastName;
 
@@ -47,10 +63,10 @@ router.post(
 );
 
 //router.put(
-  //'/reviews/edit/:id(\\d+)',
-  //asyncHandler(async (req, res) => {
+//'/reviews/edit/:id(\\d+)',
+//asyncHandler(async (req, res) => {
 //
-  //}))
+//}))
 //
 //
 //
@@ -60,19 +76,40 @@ router.delete(
   asyncHandler(async (req, res) => {
     const id = req.params.id;
     try {
-
-    await Review.destroy({
-      where: {
-        id
-      }
-    })
-    res.json({status: 200});
+      await Review.destroy({
+        where: {
+          id,
+        },
+      });
+      res.json({ status: 200 });
+    } catch {
+      res.json({ status: 500 });
     }
-    catch{
-      res.json({ status:500 })
-    }
-})
-)
+  })
+);
 
+router.put(
+  `/reviews/:id(\\d+)`,
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const { description } = req.body;
+    try {
+      await Review.update(
+        {
+          description,
+        },
+        {
+          where: {
+            id,
+          },
+        }
+      );
+
+      res.json({ status: 200 });
+    } catch {
+      res.json({ status: 500 });
+    }
+  })
+);
 
 module.exports = router;

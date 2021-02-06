@@ -13,6 +13,7 @@ const comicsRouter = require("./routes/comics");
 const collectionsRouter = require("./routes/collections");
 const collectionsApi = require("./routes/api/api-collections");
 const comicsApi = require("./routes/api/api-comics");
+const titleApi = require("./routes/api/api-reviews");
 const { sessionSecret } = require("./config");
 const { restoreUser } = require("./auth");
 
@@ -51,13 +52,13 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/comics", comicsRouter);
 app.use("/collections", collectionsRouter);
 app.use("/api/collections", collectionsApi);
 app.use("/api/comics", comicsApi);
+app.use("/api/title", titleApi);
 app.use("/api", apiRouter);
 
 // when you register a user or login a user
@@ -75,7 +76,6 @@ app.use("/api", apiRouter);
 //     res.render('login');
 //   }
 // })
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
