@@ -12,6 +12,7 @@ router.get(
     const comicId = req.params.id;
     const userId = req.session.auth.userId;
 
+
     const collections = await Collection.findAll({});
     let collectionList = [];
     collections.forEach((collection) => {

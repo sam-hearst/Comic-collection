@@ -1,12 +1,11 @@
 const express = require("express");
-const { validationResult } = require("express-validator");
+const { validationResult } = require("express-validator")
 const router = express.Router();
-
 const { Review, User } = require("../../db/models");
 const { asyncHandler, csrfProtection, handleValidationErrors } = require("../../utils");
 
 router.get(
-  "/new-review/:id(\\d+)",
+  "/new-review",
   asyncHandler(async (req, res) => {
     const reviews = await Review.findAll({
       order: [["createdAt", "DESC"]],
@@ -27,11 +26,11 @@ router.post(
     let review;
     const validatorErrors = validationResult(req);
     if (validatorErrors.isEmpty()) {
-      review = await Review.create({
-        description: description,
-        userId: userId,
-        comicId: comicId,
-      });
+        review = await Review.create({
+            description: description,
+            userId: userId,
+            comicId: comicId,
+      })
     } else {
       const errors = validatorErrors.array().map((error) => {
         console.log(error.msg);
@@ -67,6 +66,28 @@ router.delete(
         id
       }
     })
+    res.json({status: 200});
+    }
+    catch{
+      res.json({ status:500 })
+    }
+})
+)
+
+router.put(
+  `/reviews/:id(\\d+)`,
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const { description } = req.body;
+    try {
+      await Review.update(
+        {
+          description
+      },
+        {where: {
+          id
+        }})
+
     res.json({status: 200});
     }
     catch{
