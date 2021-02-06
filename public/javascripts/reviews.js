@@ -3,10 +3,6 @@ const btn = document.querySelector(".review-submit");
 const deleteButtons = [...document.getElementsByClassName('review--delete')];
 const editButtons = [...document.getElementsByClassName('review--edit')];
 
-  data = await res.json(); //parses into json
-  console.log(data);
-  return data;
-};
 
 btn.addEventListener("click", async (e) => {
   e.preventDefault();
