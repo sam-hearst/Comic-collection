@@ -1,39 +1,9 @@
 const express = require("express");
 const { validationResult } = require("express-validator");
 const router = express.Router();
-const { Review, Comic } = require("../../db/models");
-const {
-  asyncHandler,
-  csrfProtection,
-  handleValidationErrors,
-} = require("../../utils");
-// gets an array of all the comic title
-// router.get(
-//   "/titles",
-//   asyncHandler(async (req, res) => {
-//     const comics = await Comic.findAll({
-//       order: [["createdAt", "DESC"]],
-//     });
 
-//     let listTitles = [];
-//     comics.forEach((comic) => {
-//       listTitles.push(comic.title);
-//     });
-
-//     res.json(listTitles);
-//   })
-// );
-
-router.get(
-  "/titles",
-  asyncHandler(async (req, res) => {
-    const comics = await Comic.findAll({
-      order: [["createdAt", "DESC"]],
-    });
-
-    res.json({ comics });
-  })
-);
+const { Review, User } = require("../../db/models");
+const { asyncHandler, csrfProtection, handleValidationErrors } = require("../../utils");
 
 router.get(
   "/new-review/:id(\\d+)",
@@ -68,9 +38,42 @@ router.post(
         return error.msg;
       });
     }
+    const userInfo = await User.findByPk(parseInt(userId));
+    const user = {}
+    user.firstName = userInfo.firstName;
+    user.lastName = userInfo.lastName;
 
-    res.json({ review });
+    res.json({ review, user });
   })
 );
+
+//router.put(
+  //'/reviews/edit/:id(\\d+)',
+  //asyncHandler(async (req, res) => {
+//
+  //}))
+//
+//
+//
+
+router.delete(
+  `/reviews/:id(\\d+)`,
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    try {
+
+    await Review.destroy({
+      where: {
+        id
+      }
+    })
+    res.json({status: 200});
+    }
+    catch{
+      res.json({ status:500 })
+    }
+})
+)
+
 
 module.exports = router;
