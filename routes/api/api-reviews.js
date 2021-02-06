@@ -46,4 +46,33 @@ router.post(
   })
 );
 
+//router.put(
+  //'/reviews/edit/:id(\\d+)',
+  //asyncHandler(async (req, res) => {
+//
+  //}))
+//
+//
+//
+
+router.delete(
+  `/reviews/:id(\\d+)`,
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    try {
+
+    await Review.destroy({
+      where: {
+        id
+      }
+    })
+    res.json({status: 200});
+    }
+    catch{
+      res.json({ status:500 })
+    }
+})
+)
+
+
 module.exports = router;
