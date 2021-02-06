@@ -67,7 +67,7 @@ const editHandler = async (e) => {
   const reviewId = e.target.id.slice(2);
   const reviewContainer = document.querySelector('#rd' + reviewId).parentNode.parentNode;
   const reviewTools = reviewContainer.children[0];
-  const descriptionContainer = reviewContainer.children[1];
+  const descriptionContainer = reviewContainer.children[2];
 
 
   //const reviewContainer = document.querySelector('.review__description');
@@ -103,7 +103,7 @@ const cancelEditHandler = e => {
   const reviewContainer = reviewForm.parentNode.parentNode;
   //const reviewContainer = document.querySelector('' + e.target.id).parentNode.parentNode.parentNode;
   const reviewTools = reviewContainer.children[0];
-  const descriptionContainer = reviewContainer.children[1];
+  const descriptionContainer = reviewContainer.children[2];
   const description = reviewForm.children[0].innerHTML;
   console.log(description);
 
