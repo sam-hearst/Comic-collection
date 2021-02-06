@@ -14,7 +14,9 @@ btn.addEventListener("click", async (e) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
-    }, body: JSON.stringify({ description: input.value }), });
+    }, 
+    body: JSON.stringify({ description: input.value }), 
+  });
   let data = await res.json();   //parses into json
    const { review: dataInfo, user: userInfo } = data;
   const { id: reviewId, description } = dataInfo;
@@ -24,7 +26,15 @@ btn.addEventListener("click", async (e) => {
   const reviewContainer = document.querySelector('.reviews__container');
   const newReview = document.createElement('div');
   newReview.classList.add('review')
-  newReview.innerHTML = ` <div class="review__tools"><button class="reviewTool review--delete" id=rd${reviewId}>delete review</button><button class="reviewTool review--edit" id="re${reviewId}">edit review</button></div><div class="review__info"><h2 class="review__info__name">${firstName} ${lastName}</h2></div><div class="review__description">${description}</div>`
+  newReview.innerHTML = ` <div class="review__tools">
+                            <button class="reviewTool review--delete" id=rd${reviewId}>delete review </button>
+                            <button class="reviewTool review--edit" id="re${reviewId}">edit review</button>
+                          </div>
+                          <div class="review__info">
+                            <h2 class="review__info__name">${firstName} ${lastName}</h2> </div>
+                          <div class="review__description">
+                            <p class=description__text>${description}</p>
+                          </div>`
   reviewContainer.appendChild(newReview)
   const newDeleteButton = document.getElementById(`rd${reviewId}`);
   newDeleteButton.addEventListener('click', deleteHandler);
@@ -58,11 +68,6 @@ const deleteHandler = async(e) => {
 //handler function for handling edit routes
 
 const editHandler = async (e) => {
-  //check if other editors are open
-  const otherEditors = document.querySelector('.editForm');
-  if (otherEditors) {
-
-  }
 
   const reviewId = e.target.id.slice(2);
   const reviewContainer = document.querySelector('#rd' + reviewId).parentNode.parentNode;
@@ -72,48 +77,79 @@ const editHandler = async (e) => {
 
   //const reviewContainer = document.querySelector('.review__description');
   //const reviewTools = document.querySelector('.review__tools');
-  const description = document.querySelector('.description__text').innerHTML;
-  const backupReviewTools = reviewTools.innerHTML;
-  const backupDescription = reviewContainer.innerHTML;
+  const description = descriptionContainer.children[0].innerHTML;
 
-  reviewTools.innerHTML = '';
-
-  descriptionContainer.innerHTML = `
-<form id="ef${reviewId}"class="editForm" action="">
-  <textarea name="description" >${description}</textarea>
-  <button type="submit">Save Changes </button>
+  reviewTools.classList.add('hidden');
+  descriptionContainer.classList.add('hidden');
+  const formContainer = document.createElement('div');
+  formContainer.innerHTML = `
+  <textarea id="et${reviewId}"name="description" >${description}</textarea>
+  <button id="es${reviewId}">Save Changes </button>
   <button id="ec${reviewId}" class="editForm--cancel">Delete Changes</button>
-</form>
   `
+  reviewContainer.appendChild(formContainer);
 
   document.querySelector('#ec' + reviewId).addEventListener('click', cancelEditHandler)
+  document.querySelector('#es' + reviewId).addEventListener('click', submitEditHandler)
 
 
-  const res = await fetch(`/api/reviews/${reviewId}`, 
-    { method: 'PUT', 
+}
+
+const submitEditHandler = async (e) => {
+  e.preventDefault();
+
+  const reviewId = e.target.id.slice(2);
+
+  const reviewContainer = document.querySelector('#rd' + reviewId).parentNode.parentNode;
+  const reviewForm = reviewContainer.children[3];
+  const reviewTools = reviewContainer.children[0];
+  const descriptionContainer = reviewContainer.children[2];
+  const newDescription = reviewForm.children[0].value;
+
+  const res = await fetch(`/api/reviews/${reviewId}`, {
+    method: 'PUT', 
+    headers: {
       'Content-Type': 'application/json'
-    })
+    },
+    body: JSON.stringify({ description: newDescription })
+    }
+  )
+  const data = await res.json();
+  if (data.status === 200) {
+
+    reviewTools.classList.remove('hidden');
+
+    descriptionContainer.innerHTML = `
+    <p class="description__text"> ${newDescription}</p>
+    `;
+    descriptionContainer.classList.remove('hidden');
+
+    reviewForm.remove();
+
+
+  } else if(data.status == 500) {
+    console.log(`didn't work`)
+  } else {
+    console.log('dangit')
+  }
+
+
 }
 
 const cancelEditHandler = e => {
   e.preventDefault();
   const reviewId = e.target.id.slice(2);
 
-  const reviewForm = document.querySelector('#ef' + reviewId);
-  const reviewContainer = reviewForm.parentNode.parentNode;
-  //const reviewContainer = document.querySelector('' + e.target.id).parentNode.parentNode.parentNode;
+  const reviewContainer = document.querySelector('#rd' + reviewId).parentNode.parentNode;
+  const reviewForm = reviewContainer.children[3];
   const reviewTools = reviewContainer.children[0];
   const descriptionContainer = reviewContainer.children[2];
-  const description = reviewForm.children[0].innerHTML;
-  console.log(description);
+  const description = descriptionContainer.children[0].innerHTML;
 
-  reviewTools.innerHTML = `
-    <button class="reviewTool review--delete" id="rd${reviewId}"> delete review </button>
-    <button class="reviewTool review--edit" id="re${reviewId}"> edit review </button>
-  `;
-  descriptionContainer.innerHTML = `
-  <p class="description__text"> ${description}
-  `;
+  reviewTools.classList.remove('hidden');
+  descriptionContainer.classList.remove('hidden');
+
+  reviewForm.remove();
 
   //add functionality to new review tools
   //

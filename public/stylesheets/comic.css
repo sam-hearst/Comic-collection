@@ -1,6 +1,9 @@
 
 /* body */
 /* Content Grid */
+.hidden {
+  display: none;
+}
 .fullPageGrid {
     min-width: 1000;
     display: grid;

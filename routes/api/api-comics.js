@@ -19,7 +19,6 @@ router.get('/:id', requireAuth, asyncHandler(async (req, res) => {
     collections.forEach(collection => {
         collectionList.push(collection.name);
     })
-    // console.log(collectionList);
     return res.json(collectionList)
 }))
 
