@@ -52,7 +52,7 @@
 
 .grid__image--active:hover {
   cursor: pointer;
-  transform: translateY(-0.50rem);
+  transform: translateY(-0.5rem);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -63,4 +63,11 @@
   padding-bottom: 60px;
   font-size: 2em;
   color: blue;
+}
+
+/* let me know if u like a bg like this */
+
+body {
+  font-family: sans-serif;
+  background-color: #111d4a;
 }

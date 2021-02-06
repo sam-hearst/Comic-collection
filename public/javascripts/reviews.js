@@ -1,10 +1,17 @@
 const btn = document.querySelector(".review-submit");
+
 const deleteButtons = [...document.getElementsByClassName('review--delete')];
 const editButtons = [...document.getElementsByClassName('review--edit')];
 
+  data = await res.json(); //parses into json
+  console.log(data);
+  return data;
+};
 
 btn.addEventListener("click", async (e) => {
   e.preventDefault();
+
+
   const input = document.getElementById('user-review');
 
 
@@ -41,7 +48,9 @@ btn.addEventListener("click", async (e) => {
   const newEditButton = document.getElementById(`re${reviewId}`);
   newEditButton.addEventListener('click', editHandler);
 
-  return;
+
+  return data;
+
 });
 
 

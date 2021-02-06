@@ -5,7 +5,7 @@ append head
   link(rel="stylesheet" href="/stylesheets/home.css")
   //- add page specific js
   script(src="/javascripts/index.js" type="module" defer)
-
+  script(src="/javascripts/search.js" type="module" defer)
 block content
   +navbar
   main.homeContent
@@ -18,20 +18,3 @@ block content
                     a(href=`/comics/${comic.id}`): img(src=comic.imageUrl class="grid__image grid__image--active")
                     a(class="grid__image-title" href=`/comics/${comic.id}`)= comic.title
                     p.grid__image-publisher= comic.publisher
-                    //- div.grid__section.img
-                    //- img(src=comics[0].imageUrl)
-                    //- a(href="/login" class="comics-title") By #{comics[0].title}
-                    //- div.grid__section.img
-                    //- img(src=comics[1].imageUrl)
-                    //- div.grid__section.img
-                    //- img(src=comics[2].imageUrl)
-                    //- div.grid__section.img
-                    //- img(src=comics[0].imageUrl)
-                    //- div.grid__section.img
-                    //- img(src=comics[1].imageUrl)
-                    //- div.grid__section.img
-                    //- img(src=comics[2].imageUrl)
-                    //- div.grid__section.img
-                    //- img(src=comics[0].imageUrl)
-                    //- div.grid__section.img
-                    //- img(src=comics[1].imageUrl)

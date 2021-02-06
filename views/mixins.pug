@@ -5,7 +5,7 @@ mixin navbar
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Indie+Flower&family=Londrina+Solid&display=swap" rel="stylesheet">
   div.navbar
     div.navbar__logo
-      a(href="/") 
+      a(href="/")
         div.logo__1 COMIC
         div.logo__2 Collection
     div.site-nav
@@ -31,11 +31,12 @@ mixin navbar
           a(href="") People
           a(href="") Ask the Author
     div(class="search-bar" id="search")
-        form(action="/search" method="GET")
-          input.search-bar__text(type="text" placeholder="search comics" name="searchString")
-          button.search-bar__submit(type="submit")
-            ion-icon(name="search-outline")
+          //-  form(action="/search" method="GET")
+          input.search-bar__text(type="text" placeholder="search comics" name="searchBar" id="searchBar")
+          //- button.search-bar__submit(type="submit")
+          //-   ion-icon(name="search-outline")
           //- button(type="submit" class="search-btn")
+    ul(id="comicsList")
     if locals.authenticated
       div.personal-nav
         div(class="dropdown" id="notify-div")
