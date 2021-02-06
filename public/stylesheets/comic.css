@@ -179,4 +179,8 @@ background: transparent; /* Optional: just make scrollbar invisible */
   margin: 0;
 }
 
+.collectionButton--active {
+  background-color: green;
+}
+
 

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     const response = await fetch(`/api/comics/${comicId}`)
     const collectionList = await response.json()
-    //console.log('collList: ', collectionList)
+    console.log('collList: ', collectionList)
 
     // Edit the DOM here to alter classes for the buttons
     
