@@ -8,15 +8,24 @@ html(lang="en")
         div.grid__section.sidebar
             p.sidebar__collections-title View your collections
                 div.sidebar__collections
-                    a(class="sidebar__want-to-read" href="/login") Want to Read
-                        div.sidebar__img-container
-                            a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
-                            a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
-                    a(class="sidebar__currently-reading" href="/login") Currently Reading
-                        div.sidebar__img-container
-                            a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
-                            a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
-                    a(class="sidebar__read" href="/login") Read
-                        div.sidebar__img-container
-                            a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
-                            a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
+                    each collectionName in collectionNames
+                        a(class="sidebar__want-to-read" href="/collections") #{collectionName}
+                            div.sidebar__img-container
+                                    - var x = 0
+                                    each collection in collections
+                                        if collection.name === collectionName
+                                            - x+= 1
+                                            if x < 4
+                                                a(href=`/comics/${collection.comicId}`): img(src=collection.Comic.imageUrl class="sidebar__img")
+
+
+                        //- a(class="sidebar__currently-reading" href="/collections") Currently Reading
+                        //-     div.sidebar__img-container
+                        //-         a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
+                        //-         a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
+                        //-         a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
+                        //- a(class="sidebar__read" href="/collections") Read
+                        //-     div.sidebar__img-container
+                        //-         a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
+                        //-         a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
+                        //-         a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
