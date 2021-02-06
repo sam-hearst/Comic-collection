@@ -100,9 +100,9 @@ body {
   width: 100%;
 }
 
-.search-bar {
+/* .search-bar {
   display: flex;
-}
+} */
 
 #search {
   border-radius: 3px;
