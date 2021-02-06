@@ -45,7 +45,7 @@
 // });
 
 const comicList = document.getElementById("comicsList");
-
+console.log(comicList);
 const searchBar = document.getElementById("searchBar");
 
 let comics = [];
@@ -63,11 +63,9 @@ searchBar.addEventListener("keyup", (e) => {
       comic.publisher.toLowerCase().includes(searchString) ||
       comic.price.includes(searchString)
     );
-
-    // displayComics(filteredComics);
   });
-
-  console.log(filteredComics);
+  displayComics(filteredComics);
+  // console.log(filteredComics);
 });
 
 // this makes a request and get all the comics json
@@ -76,7 +74,7 @@ const loadComics = async () => {
     const res = await fetch("/api/titles");
     comics = await res.json();
     // displayComics(comics);
-    // console.log(comics);
+    console.log(comics);
   } catch (err) {
     console.error(err);
   }
@@ -85,20 +83,17 @@ const loadComics = async () => {
 // If you prefer to render html dynamically
 // it could be done this way!
 
-// const displayComics = (comics) => {
-//   const htmlString = comics.comics
-//     .map((comic) => {
-//       return `
-//   <li class="comics">
-//       <h2>${comic.title}</h2>
-//       <p>publisher:${comic.publisher}</p>
-//       <img src="${comic.imageUrl}"></img>
-//       </li>
-
-//   `;
-//     })
-//     .join("");
-//   comicList.innerHTML = htmlString;
-// };
+const displayComics = (comics) => {
+  const htmlString = comics
+    .map((comic) => {
+      return `
+  <li class="comics">
+      <a href="http://localhost:8080/comics/${comic.id}"> ${comic.title}</a>
+  </li>
+  `;
+    })
+    .join("");
+  comicList.innerHTML = htmlString;
+};
 
 loadComics();
