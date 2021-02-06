@@ -54,13 +54,13 @@ block content
                 each review in reviews
                   .review
                     .review__tools
-                    if userId === review.userId
-                        button.reviewTool.review--delete delete review
+                      if userId === review.userId
+                        button.reviewTool.review--delete(id=`r${review.id}`) delete review
                         button.reviewTool.review--edit edit review
                     .review__info
                       h2.review__info__name  #{review.User.firstName} #{review.User.lastName}
-                  .review__description
-                    p= review.description
+                    .review__description
+                      p= review.description
         .sidebar
           //- form(action=`/users/${userId}/collections/wantToRead`, method="POST")
           //- form(action=`/users/${userId}/collections/read`, method="POST")
