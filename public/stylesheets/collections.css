@@ -18,3 +18,9 @@
     padding: 20px;
     height: 350px;
 }
+
+.collection__images img:hover {
+  cursor: pointer;
+  transform: translateY(-0.50rem);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
