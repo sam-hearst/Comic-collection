@@ -1,9 +1,9 @@
 extends layout
 append head
   link(rel="stylesheet" href="/stylesheets/comic.css")
-  //- script(async defer src="../public/javascript/reviews.js")
   script(src="/javascripts/collections.js" type="module" defer)
   script(src="/javascripts/comics.js" type="module" defer)
+  script(async defer src="/javascripts/reviews.js")
 
 
 block content
@@ -13,7 +13,7 @@ block content
             .grid__section.section__image
                   img.image__actual(src=comic.imageUrl)
             .grid__section.section__readStatus
-                div.shelfButton 
+                div.shelfButton
                   .shelfButton__text Add To Collection
                   div.shelf-content
                       p Read Status
@@ -33,16 +33,16 @@ block content
                 p.details__element.details__description= comic.description
                 .details__infoRow
                     .infoElement
-                        p.label Publisher: 
+                        p.label Publisher:
                         p.info=comic.publisher
                     .infoElement
-                        p.label Published: 
+                        p.label Published:
                         p.info=comic.publishDate
                     .infoElement
                         p.label Cover Price:
                         p.info=comic.price
                     .infoElement
-                        p.label Page Count: 
+                        p.label Page Count:
                         p.info=comic.pages
 
 
@@ -54,26 +54,23 @@ block content
                 each review in reviews
                   .review
                     .review__tools
-                    if userId === review.userId
-                        button.reviewTool.review--delete delete review
+                      if userId === review.userId
+                        button.reviewTool.review--delete(id=`r${review.id}`) delete review
                         button.reviewTool.review--edit edit review
                     .review__info
                       h2.review__info__name  #{review.User.firstName} #{review.User.lastName}
-                  .review__description
-                    p= review.description
+                    .review__description
+                      p= review.description
         .sidebar
           //- form(action=`/users/${userId}/collections/wantToRead`, method="POST")
           //- form(action=`/users/${userId}/collections/read`, method="POST")
         footer
         .reviewTool__text
-          form(action="/comics/:id/review", method="POST")
-            label(for="review") Review goes here
-            textarea.text__input(name="review", id="review")
-            button.text--sumbit(type="submit")
+            form(class="review-form")
+                label(for="description") Review goes here
+                input(type="text" name="description" id="user-review" class="user-review text__input" placeholder=" Add a review... ")
+                button(type="submit" value="Submit" class="review-submit" id=comic.id) Submit your Review!
 
 
 
 
-
-    //- h1= comic.description
-    //- img(src=comic.imageUrl)
