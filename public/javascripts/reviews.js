@@ -1,9 +1,16 @@
 const btn = document.querySelector(".review-submit");
+
 const deleteButtons = [...document.getElementsByClassName('review--delete')];
 
+  data = await res.json(); //parses into json
+  console.log(data);
+  return data;
+};
 
 btn.addEventListener("click", async (e) => {
   e.preventDefault();
+
+
   const input = document.getElementById('user-review');
 
 
@@ -35,6 +42,7 @@ btn.addEventListener("click", async (e) => {
   //   p.innerHTML = `${description.description}`;
   //   div.appendChild(p);
   // }
+
 });
 //handler function for handling delete routes 
 const deleteHandler = async(e) => {
