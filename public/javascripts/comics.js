@@ -1,18 +1,27 @@
-document.addEventListener('DOMContentLoaded', async () => {
 
-    // need to find the comicId by parsing the url
+//function to find the active collections (those that the comic is added to)
+//   and append the 'collectionButton--active' class to each classList
+async function highlightActiveCollections() {
+    //find the comic id from the url
     const url = window.location.href.split('/')
-    // console.log(url)
     const comicId = url[url.length - 1]
-    // console.log('comicId: ', comicId)
-
-
     
+    // fetch the list of collections for the given comic and user
     const response = await fetch(`/api/comics/${comicId}`)
     const collectionList = await response.json()
-    console.log('collList: ', collectionList)
-
+    
     // Edit the DOM here to alter classes for the buttons
-    
-    
-})
+    const collectionButtons = document.getElementsByClassName('collectionButton')
+    console.log('collectionButtons: ', collectionButtons)
+    for (let i = 0; i < collectionButtons.length; i++) {
+        let button = collectionButtons[i];
+        if (collectionList.includes(button.value)) {
+            button.classList.add('collectionButton--active')
+        }
+    }
+}
+
+// append the class to active buttons on page load
+document.addEventListener('DOMContentLoaded', highlightActiveCollections)
+
+// Add a comic to a collection and update the button classes
