@@ -1,7 +1,7 @@
 const express = require("express");
 const { validationResult } = require("express-validator")
 const router = express.Router();
-const { Review } = require("../../db/models");
+const { Review, User } = require("../../db/models");
 const { asyncHandler, csrfProtection, handleValidationErrors } = require("../../utils");
 
 router.get(
@@ -37,8 +37,12 @@ router.post(
         return error.msg;
       });
     }
+    const userInfo = await User.findByPk(parseInt(userId));
+    const user = {}
+    user.firstName = userInfo.firstName;
+    user.lastName = userInfo.lastName;
 
-    res.json({ review });
+    res.json({ review, user });
   })
 );
 

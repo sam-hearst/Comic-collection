@@ -59,8 +59,8 @@ block content
                         button.reviewTool.review--edit edit review
                     .review__info
                       h2.review__info__name  #{review.User.firstName} #{review.User.lastName}
-                  .review__description
-                    p= review.description
+                    .review__description
+                      p= review.description
         .sidebar
           //- form(action=`/users/${userId}/collections/wantToRead`, method="POST")
           //- form(action=`/users/${userId}/collections/read`, method="POST")
