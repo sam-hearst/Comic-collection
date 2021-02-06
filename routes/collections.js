@@ -26,7 +26,7 @@ router.get("/", requireAuth, asyncHandler(async (req, res) => {
 }))
 
 
-router.post("/custom", asyncHandler(async (req, res) => {
+router.post("/", asyncHandler(async (req, res) => {
     const collectionName = req.body.custom;
     const userId = req.session.auth.userId;
     // bootleg: prepopulate the collection with a random comic because it is too
@@ -39,39 +39,21 @@ router.post("/custom", asyncHandler(async (req, res) => {
         comicId,
         readStatus: true
     })
-
-    // res.render('collection');
+    
+    const collections = await Collection.findAll({
+        where: {
+            userId
+        },
+        include: [User, Comic]
+    })
+    let collectionArray = []
+    for (let collection of collections) {
+        collectionArray.push(collection.name)
+    }
+    const collectionNames = [...new Set(collectionArray)];
+    res.render('collection', { collectionNames, collections });
 
 }))
-
-
-/*
-Read Status Collection names:
-Want to Read => wantToRead
-Currently Reading
-Read
-*/
-// STILL WORKING ON ADDING A COMIC TO A COLLECTION
-// async function addComicToCollection(userId, comicId, collectionName) {
-
-//     await Collection.create({
-//         name: "reading",
-//         userId,
-
-//     })
-// }
-
-// router.post('/:name', requireAuth, asyncHandler(async (req, res) => {
-//     // const comicId = parseInt(req.params.id, 10);
-//     const collectionName = req.params.name;
-    
-//     console.log('sent collection: ', req.body.collection)
-//     console.log('collectionName: ', collectionName)
-//     // console.log('comicId: ', comicId)
-//     console.log('userId: ', userId)
-//     // addComicToCollection(userId, comicId, collectionName)
-//     res.json({  });
-// }))
 
 
 module.exports = router;
