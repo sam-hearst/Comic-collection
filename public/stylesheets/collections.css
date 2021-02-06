@@ -1,3 +1,10 @@
+
+.fullPageGrid {
+    position: relative;
+    top: 200px;
+    
+}
+
 .collection__section {
     display: block;
 }
