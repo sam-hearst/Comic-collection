@@ -72,13 +72,10 @@ div {
 /* review section of grid */
 
 .section__reviews {
-    margin-top: 40px;
     grid-area: reviews;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 2px solid rgba(186,210,255,.08);
-    border-bottom: 2px solid rgba(186,210,255,.08);
 }
 .reviews__title {
   display: flex;
@@ -106,25 +103,6 @@ div {
   align-items: center;
   justify-content: space-around;
 }
-.review-form textarea {
-	width: 600px;
-	height: 120px;
-	border: 3px solid #cccccc;
-	padding: 5px;
-	font-family: Tahoma, sans-serif;
-	background-image: url(bg.gif);
-	background-position: bottom right;
-	background-repeat: no-repeat;
-}
-.review{ 
-  border-top: 2px solid rgba(186,210,255,.08);
-  border-bottom: 2px solid rgba(186,210,255,.08);
-  padding: 50px 15px;
-
-}
-.review__tools button {
-
-}
 
 /* image section of grid */
 
@@ -146,11 +124,11 @@ div {
 /* Section Details of grid */
 
 .section__details {
-    padding: 30px 10px 0px 0px;
+    padding: 30px 10px 10px 10px;
     grid-area: details;
     display: flex;
     flex-direction: column;
-    border-left: 2px solid rgba(186,210,255,.08);
+    ;
 }
 .details__element {
   padding: 0px 30px;
@@ -160,20 +138,19 @@ div {
   grid-area: title;
   font-size: 90px;
   font-weight: bold;
-  padding: 10px 30px;
+  padding: 10px;
 }
 
 .details__author {
   font-size: 2em;
   color: grey;
-  padding: 0px 60px;
 }
 
 .details__infoRow {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin: 0;
+    margin: auto 20px 0 20px;
     margin-top: auto;
     padding: 30px 20px;
     border-top: 2px solid rgba(186,210,255,.08);
