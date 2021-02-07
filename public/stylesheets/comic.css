@@ -4,9 +4,7 @@
 body{
   background-color: rgba(8,15,31,1);
 }
-.navbar{
-  background-color:rgba(8,15,31,1);
-}
+
 .hidden {
   display: none;
 }
