@@ -8,59 +8,61 @@ append head
 
 block content
     +navbar
+    .backgroundImage
+      img(src=comic.backgroundImageUrl)
     .fullPageGrid
         .grid
-            .grid__section.section__image
-                  img.image__actual(src=comic.imageUrl)
-            .grid__section.section__readStatus
-                div.shelfButton
-                  .shelfButton__text Add To Collection
-                  div.shelf-content
-                      p Read Status
-                      button.collectionButton.readStatus__wantToRead.defaultCollection(type="button" id=comic.id value="Want to Read" name=userId) Want to Read
-                      button.collectionButton.readStatus__currentlyReading.defaultCollection(type="button" id=comic.id value="Currently Reading") Currently Reading
-                      button.collectionButton.readStatus__read.defaultCollection(type="button" id=comic.id value="Read") Read
-                      p Collections
-                      //-     each collection in collections
-                      //-         a(href="collections/#{collection.id}")= collection.name
-                      button.collectionButton(type="button" id=comic.id value="my favorites") my favorites
-                      button.collectionButton(type="button" id=comic.id value="Not great") Not great
+          .grid__section.section__image
+                img.image__actual(src=comic.imageUrl)
+          .grid__section.section__readStatus
+              div.shelfButton
+                .shelfButton__text Add To Collection
+                div.shelf-content
+                    p Read Status
+                    button.collectionButton.readStatus__wantToRead.defaultCollection(type="button" id=comic.id value="Want to Read" name=userId) Want to Read
+                    button.collectionButton.readStatus__currentlyReading.defaultCollection(type="button" id=comic.id value="Currently Reading") Currently Reading
+                    button.collectionButton.readStatus__read.defaultCollection(type="button" id=comic.id value="Read") Read
+                    p Collections
+                    //-     each collection in collections
+                    //-         a(href="collections/#{collection.id}")= collection.name
+                    button.collectionButton(type="button" id=comic.id value="my favorites") my favorites
+                    button.collectionButton(type="button" id=comic.id value="Not great") Not great
 
 
-            .grid__section.section__details
-                h1.details__element.details__title= comic.title
-                h2.details__element.details__author Author: #{comic.author}
-                p.details__element.details__description= comic.description
-                .details__infoRow
-                    .infoElement
-                        p.label Publisher:
-                        p.info=comic.publisher
-                    .infoElement
-                        p.label Published:
-                        p.info=comic.publishDate
-                    .infoElement
-                        p.label Cover Price:
-                        p.info=comic.price
-                    .infoElement
-                        p.label Page Count:
-                        p.info=comic.pages
+          .grid__section.section__details
+              h1.details__element.details__title= comic.title
+              h2.details__element.details__author Author: #{comic.author}
+              p.details__element.details__description= comic.description
+              .details__infoRow
+                  .infoElement
+                      p.label Publisher:
+                      p.info=comic.publisher
+                  .infoElement
+                      p.label Published:
+                      p.info=comic.publishDate
+                  .infoElement
+                      p.label Cover Price:
+                      p.info=comic.price
+                  .infoElement
+                      p.label Page Count:
+                      p.info=comic.pages
 
 
-            .grid__section.section__reviews
-              .reviews__title
-                h1.reviews__title__element Reviews
-                button.reviews__title__element.reviewTool.review--add +
-              .reviews__container
-                each review in reviews
-                  .review
-                    .review__tools
-                      if userId === review.userId
-                        button.reviewTool.review--delete(id=`rd${review.id}`) delete review
-                        button.reviewTool.review--edit(id=`re${review.id}`) edit review
-                    .review__info
-                      h2.review__info__name  #{review.User.firstName} #{review.User.lastName}
-                    .review__description
-                      p.description__text= review.description
+          .grid__section.section__reviews
+            .reviews__title
+              h1.reviews__title__element Reviews
+              button.reviews__title__element.reviewTool.review--add +
+            .reviews__container
+              each review in reviews
+                .review
+                  .review__tools
+                    if userId === review.userId
+                      button.reviewTool.review--delete(id=`rd${review.id}`) delete review
+                      button.reviewTool.review--edit(id=`re${review.id}`) edit review
+                  .review__info
+                    h2.review__info__name  #{review.User.firstName} #{review.User.lastName}
+                  .review__description
+                    p.description__text= review.description
         .sidebar
         
         footer

@@ -23,6 +23,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/882313/882313._SX360_CLs%7C360,553%7Ccu/cmx-cu-sash-lg.png%7C0,0,361,554%20208,401,152,152_QL80_TTD_.jpg",
+          backgroundImageUrl: 
+            "https://fastly.syfy.com/sites/syfy/files/styles/syfy_image_gallery_full_breakpoints_theme_syfy_smartphone_1x/public/2020/08/40.seconds.1.p10.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -38,6 +40,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/888319/888319._SX360_CLs%7C360,553%7Ccu/cmx-cu-sash-lg.png%7C0,0,361,554%20208,401,152,152_QL80_TTD_.jpg",
+          backgroundImageUrl: 
+            "https://i.ytimg.com/vi/u4cAJ-6sc3c/maxresdefault.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -52,7 +56,9 @@ module.exports = {
           pages: "170",
           available: true,
           imageUrl:
-            "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/439378/439378._SX360_CLs%7C360,553%7Ccu/cmx-cu-sash-lg.png%7C0,0,361,554%20208,401,152,152_QL80_TTD_.jpg",
+             "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/439378/439378._SX360_CLs%7C360,553%7Ccu/cmx-cu-sash-lg.png%7C0,0,361,554%20208,401,152,152_QL80_TTD_.jpg",
+          backgroundImageUrl:
+            "https://www.dccomics.com/sites/default/files/imce/2017/06-JUN/WW_31CVR%5B1%5D_5948217073ecd1.80821745.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -68,6 +74,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/882762/882762._SX360_QL80_TTD_.jpg",
+          backgroundImageUrl:
+            "https://i.pinimg.com/originals/c5/f8/c4/c5f8c41264851a17cb0227618409a5db.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -83,6 +91,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/77594/77594._SX360_CLs%7C360,553%7Ccu/cmx-cu-sash-lg.png%7C0,0,361,554%20208,401,152,152_QL80_TTD_.jpg",
+          backgroundImageUrl:
+            "https://static1.srcdn.com/wordpress/wp-content/uploads/2020/06/Daredevil-Suit-Marvel-Comic-Cover-Art.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -99,6 +109,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/736406/736406._SX360_QL80_TTD_.jpg",
+          backgroundImageUrl:
+            "https://i0.wp.com/media.criticalhit.net/2017/03/Superman_JimLee1.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -115,6 +127,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/22178/22178._SX360_QL80_TTD_.jpg",
+          backgroundImageUrl:
+            "https://cdn.mos.cms.futurecdn.net/mPXoTxV855LN8fzWpa2g8D.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -131,6 +145,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/909608/909608._SX360_QL80_TTD_.jpg",
+          backgroundImageUrl: 
+            "https://i2.wp.com/conskipper.com/wp-content/uploads/2020/10/avatardarkhorsecomics.jpg?fit=792%2C350&ssl=1",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -146,6 +162,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-9032588.jpg?1538407549",
+          backgroundImageUrl:
+            "https://media.comicbook.com/wp-content/uploads/2014/05/DELINQ_001_VARIANT_LUPACCHINO.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -161,6 +179,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-1132063.jpg?1598723662",
+          backgroundImageUrl:
+            "https://media.comicbook.com/wp-content/uploads/2014/05/DELINQ_001_VARIANT_LUPACCHINO.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -175,6 +195,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-5722032.jpg?1598723900",
+          backgroundImageUrl:
+            "https://media.comicbook.com/wp-content/uploads/2014/05/DELINQ_001_VARIANT_LUPACCHINO.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -189,6 +211,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-4180958.jpg?1538407568",
+          backgroundImageUrl:
+            "https://media.comicbook.com/wp-content/uploads/2014/05/DELINQ_001_VARIANT_LUPACCHINO.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -203,6 +227,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-8913579.jpg?1538407570",
+          backgroundImageUrl:
+            "https://media.comicbook.com/wp-content/uploads/2014/05/DELINQ_001_VARIANT_LUPACCHINO.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -217,6 +243,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-7663498.jpg?1538407572",
+          backgroundImageUrl:
+            "https://media.comicbook.com/wp-content/uploads/2014/05/DELINQ_001_VARIANT_LUPACCHINO.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -234,6 +262,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-2526344.jpg?1491755579",
+          backgroundImageUrl:
+            "https://bleedingcool.com/wp-content/uploads/2015/07/BLOODSHOT_1-600x9231-1200x900.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -251,6 +281,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-7451024.jpg?1491755579",
+          backgroundImageUrl:
+            "https://bleedingcool.com/wp-content/uploads/2015/07/BLOODSHOT_1-600x9231-1200x900.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -268,6 +300,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-7881070.jpg?1491755579",
+          backgroundImageUrl:
+            "https://bleedingcool.com/wp-content/uploads/2015/07/BLOODSHOT_1-600x9231-1200x900.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -284,6 +318,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-1468410.jpg?1409703892",
+          backgroundImageUrl:
+            "https://comicvine1.cbsistatic.com/uploads/original/0/6063/5093419-untitled-2.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -300,6 +336,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-6201543.jpg?1412633660",
+          backgroundImageUrl:
+            "https://comicvine1.cbsistatic.com/uploads/original/0/6063/5093419-untitled-2.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -315,6 +353,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-5154964.jpg?1415033110",
+          backgroundImageUrl:
+            "https://comicvine1.cbsistatic.com/uploads/original/0/6063/5093419-untitled-2.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -333,6 +373,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035",
+          backgroundImageUrl:
+            "http://www.comicbookcritic.net/wp-content/uploads/2015/03/DIVINITY_002_VARIANT_BERNARD.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -350,6 +392,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-6963312.jpg?1426594096",
+          backgroundImageUrl:
+            "http://www.comicbookcritic.net/wp-content/uploads/2015/03/DIVINITY_002_VARIANT_BERNARD.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -366,6 +410,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-3956927.jpg?1429651084",
+          backgroundImageUrl:
+            "http://www.comicbookcritic.net/wp-content/uploads/2015/03/DIVINITY_002_VARIANT_BERNARD.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -382,6 +428,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-7036626.jpg?1432686418",
+          backgroundImageUrl:
+            "http://www.comicbookcritic.net/wp-content/uploads/2015/03/DIVINITY_002_VARIANT_BERNARD.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -399,6 +447,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-2560342.jpg?1583885243",
+          backgroundImageUrl:
+            "https://bleedingcool.com/wp-content/uploads/2019/06/fallen-world-2-cover-900x900.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -414,6 +464,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-2796213.jpg?1559693602",
+          backgroundImageUrl:
+            "https://bleedingcool.com/wp-content/uploads/2019/06/fallen-world-2-cover-900x900.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -429,6 +481,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-1594853.jpg?1562716279",
+          backgroundImageUrl:
+            "https://bleedingcool.com/wp-content/uploads/2019/06/fallen-world-2-cover-900x900.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -444,6 +498,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-3109884.jpg?1565133768",
+          backgroundImageUrl:
+            "https://bleedingcool.com/wp-content/uploads/2019/06/fallen-world-2-cover-900x900.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -459,6 +515,8 @@ module.exports = {
           available: true,
           imageUrl:
             "https://s3.amazonaws.com/comicgeeks/comics/covers/large-4033784.jpg?1585986924",
+          backgroundImageUrl:
+            "https://bleedingcool.com/wp-content/uploads/2019/06/fallen-world-2-cover-900x900.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },

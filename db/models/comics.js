@@ -45,6 +45,9 @@ module.exports = (sequelize, DataTypes) => {
       imageUrl: {
         type: DataTypes.STRING(255),
       },
+      backgroundImageUrl: {
+        type: DataTypes.STRING(255),
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,
