@@ -9,20 +9,20 @@ block content
         .grid
             .grid__section-form
                 form.custom-collection(action="/collections" method="POST")
-                    fieldset
-                        label(for="custom") Create your custom comic collection
-                        input(type="text" name="custom" maxlength="25" required)
-                        button(type="submit" value="Submit") Create
+                      label(for="custom") Create your custom comic collection
+                      input(type="text" name="custom" maxlength="25" required)
+                      button(type="submit" value="Submit") Create
             .grid__section-collections
                 each collectionName in collectionNames
                     .collection__section
+                      div.collection__item
                         h1.collection__title= collectionName
-                            .collection__images
-                                each collection in collections
-                                    if collection.name === collectionName && collection.Comic
-                                        div.grid__image-container
-                                            a(href=`/comics/${collection.Comic.id}`): img(src=collection.Comic.imageUrl class="grid__image grid__image--active")
-                                            a(class="grid__image-title" href=`/comics/${collection.Comic.id}`)= collection.Comic.title
-                                            p.grid__image-publisher= collection.Comic.publisher
+                        .collection__images
+                            each collection in collections
+                                if collection.name === collectionName && collection.Comic
+                                    div.grid__image-container
+                                        a(href=`/comics/${collection.Comic.id}`): img(src=collection.Comic.imageUrl class="grid__image grid__image--active")
+                                        a(class="grid__image-title" href=`/comics/${collection.Comic.id}`)= collection.Comic.title
+                                        p.grid__image-publisher= collection.Comic.publisher
 
         .sidebar
