@@ -52,8 +52,6 @@ router.get('/test/sidebar', csrfProtection, asyncHandler(async (req, res) => {
     }
     const collectionNames = [...new Set(collectionArray)];
 
-    console.log(collections);
-
     res.render('sidebar', { collections, collectionNames, csrfToken: req.csrfToken() });
 }))
 
