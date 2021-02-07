@@ -6,7 +6,6 @@ let comics = [];
 
 // filter search listening with keyup case insensitive
 searchBar.addEventListener("keyup", (e) => {
-  // console.log(e.target.value);
   const searchString = e.target.value.toLowerCase();
   if (!searchString.length || searchString.length < 3) {
   } else {
@@ -21,7 +20,6 @@ searchBar.addEventListener("keyup", (e) => {
       );
     });
     displayComics(filteredComics);
-    // console.log(filteredComics);
   }
 });
 
