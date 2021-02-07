@@ -44,6 +44,9 @@ module.exports = {
       imageUrl: {
         type: Sequelize.STRING(255)
       },
+      backgroundImageUrl: {
+        type: Sequelize.STRING(255)
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

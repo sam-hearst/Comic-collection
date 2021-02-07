@@ -1,24 +1,44 @@
 
 /* body */
 /* Content Grid */
+.navbar{
+  background-color:rgba(8,15,31,1);
+}
 .hidden {
   display: none;
 }
+.backgroundImage {
+  top: 100px;
+  position: absolute;
+  width: 100%;
+  height: 1000px;
+  overflow: hidden;
+}
+.backgroundImage img {
+  width: 100%;
+  height: auto;
+}
+
+p, 
+h1,
+h2,
+div {
+  color: white;
+}
 .fullPageGrid {
-    min-width: 1000;
+    background-image: linear-gradient(to bottom, rgba(8,15,31,0.75), rgba(8, 15, 31, .9) 400px, rgba(8, 15, 31, 1) 1000px);
+    min-height: 100%;
     display: grid;
     position: relative;
-    top: 200px;
-    max-width: 1650px;
+    top: 100px;
     margin: 0 auto;
     width: 100%;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 50px 5fr;
+    grid-template-columns: 250px 50px 5fr;
     grid-template-areas: 
     "sidebar break content"
 }
 .grid {
-    background-color: #dedbd3;
+    background-color: none;
     border-radius: 1%;
     display: grid;
     width: 100%;
@@ -28,12 +48,12 @@
     grid-template-areas: 
     "image details"
     "readStatus blank"
-    "reviews reviews"
+    "reviews reviews";
+    padding: 30px;
 }
 .sidebar {
     grid-area: sidebar;
     border-radius: 5px;
-    background-color: #bfbbb0;
 }
 
 
