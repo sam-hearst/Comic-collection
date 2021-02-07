@@ -9,12 +9,12 @@ append head
 block content
   +navbar
   main.homeContent
-    div.grid-title Browse for comics you want to read!
+    div.grid__title-text Browse for comics you want to read!
     div.grid
         div.grid__section.sidebar
         div.grid__section.content
             each comic in comics
-                div.grid__image-container
+                div(class="grid__image-container" id="div__container" )
                     a(href=`/comics/${comic.id}`): img(src=comic.imageUrl class="grid__image grid__image--active")
                     a(class="grid__image-title" href=`/comics/${comic.id}`)= comic.title
                     p.grid__image-publisher= comic.publisher
