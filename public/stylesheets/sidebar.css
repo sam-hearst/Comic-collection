@@ -2,33 +2,30 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  width: 30%;
+  width: 100%;
   height: 100%;
   color: #f8f2f2;
   justify-content: flex-start;
   display: flex;
-  margin: 0em;
-  padding: 4px;
+  padding-left: 4px;
   line-height: 20px;
   font-size: 16px;
   margin-bottom: 25px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Exo", sans-serif;
   border-radius: 5px;
   background-color: #bfbbb0;
 }
-
 
 
 .sidebar__collections {
     font-size: 2rem;
 }
 
-
 .sidebar__collections a {
     text-decoration: none;
-    color: rgb(97, 93, 93);
+    color: rgb(201, 195, 195);
+    font-size: 1.2rem;
 }
-
 
 
 .sidebar__collections a:hover {
@@ -56,10 +53,35 @@
 }
 
 .sidebar__collections-title {
+    font-family: "Exo", sans-serif;
+    font-size: 25px;
+}
+
+.sidebar__welcome-msg {
+    font-family: "Exo", sans-serif;
     font-size: 25px;
 }
 
 .sidebar__collection {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.sidebar__no-login a {
+    text-decoration: none;
+    color: rgb(136, 133, 133);
+}
+
+.sidebar__no-login a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.sidebar__no-login-collections {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.sidebar__no-login-collections-title {
+    font-size: 16px;
 }
