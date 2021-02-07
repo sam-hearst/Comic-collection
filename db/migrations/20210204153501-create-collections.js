@@ -18,7 +18,7 @@ module.exports = {
         references: { model: 'Users' }
       },
       comicId: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER,
         references: { model: 'Comics' }
       },
