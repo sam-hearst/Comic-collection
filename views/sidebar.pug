@@ -1,25 +1,25 @@
 mixin sidebar
     div.grid__section.sidebar
-        p.sidebar__collections-title View your collections!
-            if locals.authenticated
-                div.sidebar__collections
-                    each collectionName in collectionNames
-                        div.sidebar__collection
-                            a(class="sidebar__want-to-read" href="/collections") #{collectionName}
-                                div.sidebar__img-container
-                                        - var x = 0
-                                        each collection in collections
-                                            if collection.name === collectionName
-                                                - x+= 1
-                                                if x < 4
-                                                    a(href=`/comics/${collection.comicId}`): img(src=collection.Comic.imageUrl class="sidebar__img")
-            else
+        if locals.authenticated
+            p.sidebar__welcome-msg Hi #{collections[0].User.firstName}
+            p.sidebar__collections-title View your collections!
+                    div.sidebar__collections
+                        each collectionName in collectionNames
+                            div.sidebar__collection
+                                a(class="sidebar__want-to-read" href="/collections") #{collectionName}
+                                    div.sidebar__img-container
+                                            - var x = 0
+                                            each collection in collections
+                                                if collection.name === collectionName
+                                                    - x+= 1
+                                                    if x < 4
+                                                        a(href=`/comics/${collection.comicId}`): img(src=collection.Comic.imageUrl class="sidebar__img")
+        else
+            p.sidebar__no-login-collections-title Sign in and start adding to your collections!
                 div.sidebar__no-login
-                    a(class="sidebar__currently-reading" href="/collections") Want to Read
-                    p Sign in to view your Collections!
-                    a(class="sidebar__currently-reading" href="/collections") Currently Reading
-                    p Sign in to view your Collections!
-                    a(class="sidebar__read" href="/collections") Read
-                    p Sign in to view your Collections!
-                    form(action="/users/demo" method="POST")
-                        button(type="submit") hello
+                    div.sidebar__no-login-collections
+                        a(class="sidebar__currently-reading" href="/collections") Want to Read
+                    div.sidebar__no-login-collections
+                        a(class="sidebar__currently-reading" href="/collections") Currently Reading
+                    div.sidebar__no-login-collections
+                        a(class="sidebar__read" href="/collections") Read
