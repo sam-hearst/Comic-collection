@@ -51,7 +51,11 @@ block content
           .grid__section.section__reviews
             .reviews__title
               h1.reviews__title__element Reviews
-              button.reviews__title__element.reviewTool.review--add +
+            .reviews__add.reviewTool__text
+                form(class="review-form")
+                    label(for="description") What did you think? 
+                    textarea(type="text" name="description" id="user-review" class="user-review text__input" placeholder="Your thoughts here...")
+                    button(type="submit" value="Submit" class="review-submit" id=comic.id) Submit your Review!
             .reviews__container
               each review in reviews
                 .review
@@ -66,11 +70,6 @@ block content
         .sidebar
         
         footer
-        .reviewTool__text
-            form(class="review-form")
-                label(for="description") Review goes here
-                input(type="text" name="description" id="user-review" class="user-review text__input" placeholder=" Add a review... ")
-                button(type="submit" value="Submit" class="review-submit" id=comic.id) Submit your Review!
 
 
 
