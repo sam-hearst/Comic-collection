@@ -10,19 +10,26 @@ const { User } = db;
 router.get(
     "/",
     asyncHandler(async (req, res, next) => {
-        // const userId = req.session.auth.userId;
-
-        //   let user; // this code can get use the user
-
-        //   if (userId) {
-        //     user = await db.User.findByPk(userId);
-        //   }
         let userId = null;
         if (req.session.auth) {
             userId = req.session.auth.userId;
         }
         const comics = await db.Comic.findAll();
-        res.render("index", { comics, userId });
+
+        const collections = await db.Collection.findAll({
+            where: {
+                userId
+            },
+            include: [User, Comic]
+        })
+        let collectionArray = []
+        for (let collection of collections) {
+            collectionArray.push(collection.name)
+        }
+        const collectionNames = [...new Set(collectionArray)];
+
+
+        res.render("index", { collections, collectionNames, comics, userId });
     })
 );
 
@@ -51,8 +58,6 @@ router.get('/test/sidebar', csrfProtection, asyncHandler(async (req, res) => {
         collectionArray.push(collection.name)
     }
     const collectionNames = [...new Set(collectionArray)];
-
-    console.log(collections);
 
     res.render('sidebar', { collections, collectionNames, csrfToken: req.csrfToken() });
 }))
