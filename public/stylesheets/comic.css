@@ -196,8 +196,9 @@ background: transparent; /* Optional: just make scrollbar invisible */
 }
 .shelf-content p {
   align-self: center;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
+  padding: 0px 20px;
 }
 
 
@@ -231,13 +232,13 @@ background: transparent; /* Optional: just make scrollbar invisible */
 }
 
 .collectionButton:hover {
-  border: 2px solid rgba(66, 78, 111, .7);
+  border: 3px solid rgba(66, 78, 111, .4);
   background-color: rgba(39,54,87,.22);
 }
 
 .collectionButton--active {
-  background-color: white;
-  color: black;
+  background-color: rgba(39,54,87,.4);
+  border: 1px solid rgba(39,54,87,.7);
 }
 
 
