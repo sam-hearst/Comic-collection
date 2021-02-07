@@ -282,7 +282,8 @@ background: transparent; /* Optional: just make scrollbar invisible */
 }
 
 
-.shelfButton {
+.shelfButton,
+.addButton {
   transition: all 0.3s ease-in-out 0s;
   width: 25%;
   height: 65px;
@@ -290,10 +291,11 @@ background: transparent; /* Optional: just make scrollbar invisible */
   background-color: none;
   border: 2px solid #424e6f;
   border-radius: 5%;
-
+  cursor: pointer;
   align-self: center;
 }
-.shelfButton__text {
+.shelfButton__text,
+.addButton__text {
   text-align: center;
   display: flex;
   align-items: center;
@@ -320,4 +322,14 @@ background: transparent; /* Optional: just make scrollbar invisible */
   border: 1px solid rgba(39,54,87,.7);
 }
 
+.customForm--active {
+  position: relative;
+  top: 100px;
+}
+.customForm--hidden {
+  display: none;
+}
 
+.error {
+  color: red;
+}

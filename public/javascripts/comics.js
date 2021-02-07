@@ -25,6 +25,7 @@ async function highlightActiveCollections() {
 document.addEventListener('DOMContentLoaded', highlightActiveCollections)
 
 // Add a comic to a collection and update the button classes
+// NEED TO MIX IN THE COLLECTIONS SCRIPT THAT UPDATES THE DB SO THEY ARE IN SYNC
 document
     .querySelector('.shelf-content')
     .addEventListener('click', async (e) => {
@@ -47,4 +48,64 @@ document
             // add the active class to the button
             button.classList.add('collectionButton--active')
         }
+})
+
+//display the custom collections add form when the button is clicked
+const addButton = document.querySelector('.addButton__text')
+addButton.addEventListener('click', async (e) => {
+    const addForm = document.querySelector('.customForm')
+    if (addForm.classList.contains('customForm--active')) {
+        addForm.classList.remove('customForm--active')
+        addForm.classList.add('customForm--hidden')
+    } else {
+        addForm.classList.add('customForm--active')
+        addForm.classList.remove('customForm--hidden')
+    }
+})
+
+
+// Create the new collection when the 'Create' button is clicked
+//     add the collection to the drop down list
+//     add the comic to the collection
+const createButton = document.querySelector('.custom-submit');
+createButton.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const collectionName = document.getElementById('collectionName').value;
+    const url = window.location.href.split('/')
+    const comicId = url[url.length - 1]
+
+    const res = await fetch(`/api/collections/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 
+            collectionName,
+            comicId
+        }),
+    });
+    const json = await res.json()
+    const { error, message } = json;
+    const responseMessage = document.querySelector('.response')
+    const addForm = document.querySelector('.customForm')
+    addForm.classList.remove('customForm--active')
+    addForm.classList.add('customForm--hidden')
+
+    if (message) {
+        const dropdown = document.querySelector('.shelf-content');
+        const newCollection = document.createElement('button');
+        newCollection.setAttribute('class', 'collectionButton');
+        newCollection.setAttribute('type', 'button');
+        newCollection.setAttribute('id', comicId);
+        newCollection.setAttribute('value', collectionName);
+        newCollection.setAttribute('innerText', collectionName);
+        dropdown.appendChild(newCollection);
+        responseMessage.innerHTML = ''
+        responseMessage.classList.remove('error')
+        responseMessage.innerHTML = message
+    } else {
+        responseMessage.innerHTML = error;
+        responseMessage.classList.add('error')
+    }
+
 })
