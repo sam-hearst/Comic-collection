@@ -63,6 +63,9 @@ div {
 .section__readStatus {
     grid-area: readStatus;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -180,24 +183,33 @@ background: transparent; /* Optional: just make scrollbar invisible */
   display: flex;
   flex-direction: column;
   position:absolute;
+  height: auto;
+  width: 200px;
+  background-color:rgba(8,15,31,1);
+}
+.shelfButton:hover {
+  background-color: rgba(39,54,87,.22);
 }
 
 .shelf-content {
     display: none;
 }
-.shelf-content a {
-    display: block;
-    text-decoration: none;
-    color: black;
+.shelf-content p {
+  align-self: center;
+  font-size: 20px;
+  font-weight: 600;
 }
-.shelf-content a:hover {
-    background-color: purple;
-}
+
+
 .shelfButton {
+  transition: all 0.3s ease-in-out 0s;
   width: 25%;
-  height: 45px;
-  margin: auto auto 0;
-  background-color: grey;
+  height: 65px;
+  margin: auto;
+  background-color: none;
+  border: 2px solid #424e6f;
+  border-radius: 5%;
+
   align-self: center;
 }
 .shelfButton__text {
@@ -205,15 +217,27 @@ background: transparent; /* Optional: just make scrollbar invisible */
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
   padding: 30px 20px;
+  height: 100%;
+  font-weight: 700;
 }
 .collectionButton {
   margin: 0;
+  background-color: inherit;
+  border: 2px solid #424e6f;
+  color: white;
+  transition: all 0.3s ease-in-out 0s;
+  border: 2px solid rgba(66, 78, 111, 0);
+}
+
+.collectionButton:hover {
+  border: 2px solid rgba(66, 78, 111, .7);
+  background-color: rgba(39,54,87,.22);
 }
 
 .collectionButton--active {
-  background-color: green;
+  background-color: white;
+  color: black;
 }
 
 
