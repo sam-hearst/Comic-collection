@@ -15,7 +15,7 @@ body {
 
 .fullPageGrid {
   position: relative;
-  top: 100px;
+  top: 200px;
 }
 
 
@@ -55,10 +55,20 @@ body {
 .grid__section-form button {
   width: 100px;
   grid-area: button;
+  transition: all 0.3s ease-in-out 0s;
+  background-color: rgba( 13, 26, 54, .7);
+  border: 2px solid rgba(66, 78, 111, .5);
+  border-radius: 5%;
+  color: white;
+;
 }
 
+.grid__section-form button:hover {
+  border: 2px solid rgba(66, 78, 111, 1);
+  background-color: rgba(39,54,87,.44);
+}
 
-
+.section__revi
 
 
 

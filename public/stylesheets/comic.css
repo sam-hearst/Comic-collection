@@ -116,14 +116,14 @@ div {
   height: 65px;
   margin: 30px auto;
   background-color: rgba( 13, 26, 54, .7);
-  border: 2px solid #424e6f;
-  border-radius: 5%;
   align-self: center;
+  border: 2px solid rgba(66, 78, 111, .5);
+  border-radius: 5%;
   color: white;
 }
 
 .section__reviews button:hover {
-  border: 2.5px solid #424e6f;
+  border: 2px solid rgba(66, 78, 111, .5); 
   background-color: rgba(39,54,87,.44);
 }
 .review__tools {
@@ -304,14 +304,13 @@ background: transparent; /* Optional: just make scrollbar invisible */
 .collectionButton {
   margin: 0;
   background-color: inherit;
-  border: 2px solid #424e6f;
   color: white;
   transition: all 0.3s ease-in-out 0s;
   border: 2px solid rgba(66, 78, 111, 0);
 }
 
 .collectionButton:hover {
-  border: 3px solid rgba(66, 78, 111, .4);
+  border: 2px solid rgba(66, 78, 111, .3);
   background-color: rgba(39,54,87,.22);
 }
 
