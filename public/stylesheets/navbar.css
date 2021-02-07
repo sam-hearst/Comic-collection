@@ -224,8 +224,8 @@
 
 /* notify div */
 #notify-div {
-  width: 120px;
-  margin-right: 120px;
+  width: 200px;
+  margin: 20px;
 }
 
 /* notify button */
@@ -363,11 +363,15 @@
   overflow-y: scroll;
 }
 
-.dev_info:hover .info_person {
+.info_person {
   display: flex;
 }
 .dev_info {
-  width: 1400px;
+  width: 175px;
+  margin-top: 350px;
+}
+#notify-btn {
+  width: 400px;
 }
 /* media queries */
 
