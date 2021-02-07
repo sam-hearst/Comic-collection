@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap");
+
+/*  */
+body {
+  font-family: sans-serif;
+  background-color: rgba(8, 15, 31, 1);
+  color: #9ba8c7;
+}
+
+/*  div container of text title h1*/
+.container__text-title > h1 {
+  font-size: medium;
+  margin-top: auto;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 2em;
+  color: #fff;
+  font-family: "Exo", sans-serif;
+}
+
+/* div container of intro text p */
+.container__text-intro {
+  font-family: sans-serif;
+  color: #9ba8c7;
+}
+
+/* main div container of the page */
+
+.mainContentContainer {
+  margin-top: 20px;
+  /* background-color: transparent; */
+}
+
+/* for div Container of the form */
+/*   background-color: rgb(28, 40, 68); */
+
+.contentContainer {
+  background-color: rgb(28, 40, 68);
+
+  border-right: 2px solid rgba(67, 83, 112, 0.2);
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-left: 2px solid rgba(67, 83, 112, 0.2);
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: rgba(255, 255, 255, 0.2);
+  border-top: 2px solid rgba(67, 83, 112, 0.2);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(67, 83, 112, 0.2);
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+/* email input containers */
+#email__div-container,
+#password__div-container {
+  background-color: transparent;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: textfield;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+}
+
+#email__div-container > input,
+#password__div-container > input {
+  background-color: transparent;
+
+  margin-top: auto;
+
+  color: #fff;
+  font-family: "Exo", sans-serif;
+}
+
+input::placeholder {
+  color: rgb(255, 255, 255);
+  font-family: "Exo", sans-serif;
+  background-color: transparent;
+}
+
+/* log in button div */
+
+#submit__div-container > button {
+  background-color: rgb(28, 40, 68);
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+  margin-left: 20px;
+}
+
+#submit__div-container > button:hover {
+  color: #ff865b;
+  cursor: pointer;
+  transform: translateY(-0.1rem);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: rgba(8, 15, 31, 1);
+}
+
+#submit__div-container > a {
+  background-color: rgb(28, 40, 68);
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+  margin-left: 10px;
+}
+
+#submit__div-container > a:hover {
+  cursor: pointer;
+  color: #ff865b;
+  transform: translateY(-0.1rem);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); */
+  /* background-color: rgba(8, 15, 31, 1); */
+}
+
+/* text for demo user */
+
+.container__text-demo {
+  /* padding-bottom: 40px; */
+  justify-content: center;
+}
+
+#demoUser__div-container > form > input {
+  width: 93px;
+  height: 44px;
+  top: 40px;
+  justify-content: center;
+}
+
+#demoUser__div-container > form > input {
+  background-color: rgb(28, 40, 68);
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+  margin-left: 20px;
+}
+
+#demoUser__div-container > form > input:hover {
+  color: #ff865b;
+  cursor: pointer;
+  transform: translateY(-0.1rem);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: rgba(8, 15, 31, 1);
+}
+
+/* footer text/link */
+footer {
+  margin-top: 10px;
+}
+#demoUser__div-container {
+  margin-bottom: 20px;
+}
+
+/* #text__container-end:nth-child(0) {
+  color: #ff865b;
+} */
+
+a {
+  color: #fff;
+
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #ff865b;
+  transform: translateY(-0.1rem);
+}
