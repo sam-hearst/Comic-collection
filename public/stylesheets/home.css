@@ -11,23 +11,43 @@
   height: 600px;
   /* border: 1px solid red; */
   grid-template-rows: 1fr;
-  grid-template-columns: 1.2fr 4fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-areas: "sidebar content";
   padding-left: 20px;
 }
 
-/* .grid__section {
-  border: 1px solid purple;
-} */
-
-/* .grid__section.img-1 {
-  background-image: url();
-} */
-
 .sidebar {
   grid-area: sidebar;
-  background-color: wheat;
-  opacity: 90%;
+
+  /* positioning of the side bar */
+  /* padding-left: 20px; */
+
+  /* sidebar borders */
+  background-color: transparent;
+  border-right: 2px solid rgba(67, 83, 112, 0.2);
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-left: 2px solid rgba(67, 83, 112, 0.2);
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: rgba(255, 255, 255, 0.2);
+  border-top: 2px solid rgba(67, 83, 112, 0.2);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(67, 83, 112, 0.2);
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.grid__section {
+  padding-left: 75px;
+}
+
+/* position comics grid */
+.grid__image-container {
 }
 
 .content {
@@ -41,6 +61,7 @@
   width: 200px;
   height: 300px;
   margin: 10px;
+  /* padding-left: 5px; */
 }
 
 .grid__image-title,
@@ -62,12 +83,26 @@
   padding-left: 100px;
   padding-bottom: 60px;
   font-size: 2em;
-  color: blue;
+  color: #fff;
 }
 
 /* let me know if u like a bg like this */
 
 body {
   font-family: sans-serif;
-  background-color: #111d4a;
+  background-color: rgba(8, 15, 31, 1);
+  color: #9ba8c7;
 }
+
+/* colors for a links, also remove the line */
+/* color: #fff; */
+
+/* for the navbar */
+/* color for the text of navBar bottoms */
+/* color: #d5dced; */
+/* background-color: transparent; */
+/* for the icons */
+/* color: #8fa0ca; */
+
+/* for the main home text */
+/* color: #f36a26; */
