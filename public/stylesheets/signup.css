@@ -1,19 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap");
+
+body {
+  font-family: sans-serif;
+  background-color: rgba(8, 15, 31, 1);
+  color: #9ba8c7;
+}
+
 h1 {
   color: #555555;
 }
 
 /* .mainContentContainer {
-  width: 100%;
-  text-align: center;
-  padding-bottom: 25px;
+  margin-top: 20px;
 } */
- 
+
 .mainContentContainer {
   width: 600px;
   margin: 0 auto;
   text-align: center;
   padding-bottom: 25px;
-} 
+}
+
+/* new stuff */
+.container__text-title > h1 {
+  font-size: medium;
+  margin-top: auto;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 2em;
+  color: #fff;
+  font-family: "Exo", sans-serif;
+}
+
+.container__text-intro {
+  font-family: sans-serif;
+  color: #9ba8c7;
+}
+
+/* ---- */
 
 /* .contentContainer {
   border: 1px solid #d0d0c8;
@@ -38,12 +63,18 @@ pr {
 a {
   text-decoration: none;
   font-size: 12px;
+  color: #fff;
+
+  transition: all 0.3s ease-in-out;
+}
+a:hover {
+  color: #ff865b;
+  transform: translateY(-0.1rem);
 }
 
 h1 {
-  font-family: 'Merriweather', Georgia, "Times New Roman", serif;
+  font-family: "Merriweather", Georgia, "Times New Roman", serif;
   font-weight: bold;
-  color: #382110;
   margin-top: 20px;
   margin-bottom: 15px;
   line-height: 24px;
@@ -57,14 +88,35 @@ h1 {
   color: #333;
 }
 
- .contentContainer {
+.contentContainer {
+  margin-top: 20px;
   border: 1px solid #d0d0c8;
   text-align: center;
   border-radius: 3px;
   box-shadow: 0px 1px 1px #d0d0c8;
   background-color: white;
-} 
+}
 
+.contentContainer {
+  background-color: rgb(28, 40, 68);
+
+  border-right: 2px solid rgba(67, 83, 112, 0.2);
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-left: 2px solid rgba(67, 83, 112, 0.2);
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: rgba(255, 255, 255, 0.2);
+  border-top: 2px solid rgba(67, 83, 112, 0.2);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(67, 83, 112, 0.2);
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
 .inputContainer {
   display: flex;
   flex-direction: column;
@@ -72,23 +124,88 @@ h1 {
   padding: 4px;
 }
 
+/* new stuff */
+#firstName__div-container,
+#lastName__div-container,
+#email__div-container,
+#password__div-container,
+#confirmPassword__div-container {
+  background-color: transparent;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: textfield;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+}
+
+#firstName__div-container > input,
+#lastName__div-container > input,
+#email__div-container > input,
+#password__div-container > input,
+#confirmPassword__div-container > input {
+  background-color: transparent;
+
+  margin-top: auto;
+
+  color: #fff;
+  font-family: "Exo", sans-serif;
+}
+
+input::placeholder {
+  color: rgb(255, 255, 255);
+  font-family: "Exo", sans-serif;
+  background-color: transparent;
+}
+
+/* new stuff */
+
+#submit__div-container > button {
+  background-color: rgb(28, 40, 68);
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+  margin-left: 20px;
+}
+
+#submit__div-container > button:hover {
+  color: #ff865b;
+  cursor: pointer;
+  transform: translateY(-0.1rem);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: rgba(8, 15, 31, 1);
+}
+
+#submit__div-container > a {
+  background-color: rgb(28, 40, 68);
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+  margin-left: 10px;
+}
+
+#submit__div-container > a:hover {
+  cursor: pointer;
+  color: #ff865b;
+  transform: translateY(-0.1rem);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); */
+  /* background-color: rgba(8, 15, 31, 1); */
+}
+
 fieldset {
   width: 300px;
   margin: 0 auto;
 }
 
-
-.footer {
-  width: 965px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 7px;
+footer {
+  margin-top: 10px;
 }
 
-.tfooter {
-  width: 100%;
-  /* background: url(/assets/) repeat-x left bottom; */
-  text-align: center;
-  color: #666;
-  font-size: 10px;
+::marker {
+  color: #ff865b;
 }
