@@ -363,6 +363,12 @@
   overflow-y: scroll;
 }
 
+.dev_info:hover .info_person {
+  display: flex;
+}
+.dev_info {
+  width: 1400px;
+}
 /* media queries */
 
 @media screen and (max-width: 910px) {
