@@ -9,10 +9,9 @@ block content
         .grid
             .grid__section-form
                 form.custom-collection(action="/collections" method="POST")
-                    fieldset
-                        label(for="custom") Create your custom comic collection
-                        input(type="text" name="custom" maxlength="25" required)
-                        button(type="submit" value="Submit") Create
+                      label(for="custom") Create your custom comic collection
+                      input(type="text" name="custom" maxlength="25" required)
+                      button(type="submit" value="Submit") Create
             .grid__section-collections
                 each collectionName in collectionNames
                     .collection__section

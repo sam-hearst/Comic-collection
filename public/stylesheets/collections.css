@@ -10,15 +10,14 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
-  position: relative;
   width: 100%;
 }
 
 .fullPageGrid {
-    position: absolute;
-    top: 200px;
-    
+  position: relative;
+  top: 100px;
 }
+
 
 
 
@@ -34,12 +33,13 @@ body {
 
 .custom-collection {
   display: grid;
-  grid-template-rows: 70px 1fr;
+  grid-template-rows: 50px 1fr;
   grid-template-columns: 500px 1fr;
   grid-template-areas: 
   "header header"
   "text button"
   ;
+  padding: 30px;
 
 }
 
