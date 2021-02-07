@@ -8,6 +8,12 @@ block content
     .fullPageGrid
         .grid
             .grid__section
+                form.custom-collection(action="/collections" method="POST")
+                    fieldset
+                        label(for="custom") Create your custom comic collection
+                        input(type="text" name="custom" maxlength="25" required)
+                        button(type="submit" value="Submit") Create
+            .grid__section
                 each collectionName in collectionNames
                     .collection__section
                         h1= collectionName
