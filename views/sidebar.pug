@@ -1,31 +1,25 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" href="/stylesheets/sidebar.css")
-    body
-        div.grid__section.sidebar
-            p.sidebar__collections-title View your collections
-                div.sidebar__collections
-                    each collectionName in collectionNames
-                        a(class="sidebar__want-to-read" href="/collections") #{collectionName}
-                            div.sidebar__img-container
-                                    - var x = 0
-                                    each collection in collections
-                                        if collection.name === collectionName
-                                            - x+= 1
-                                            if x < 4
-                                                a(href=`/comics/${collection.comicId}`): img(src=collection.Comic.imageUrl class="sidebar__img")
-
-
-                        //- a(class="sidebar__currently-reading" href="/collections") Currently Reading
-                        //-     div.sidebar__img-container
-                        //-         a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
-                        //-         a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
-                        //-         a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
-                        //- a(class="sidebar__read" href="/collections") Read
-                        //-     div.sidebar__img-container
-                        //-         a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
-                        //-         a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
-                        //-         a(href=`/`): img(src="https://s3.amazonaws.com/comicgeeks/comics/covers/large-6916207.jpg?1465744035" class="sidebar__img")
+mixin sidebar
+    div.grid__section.sidebar
+        if locals.authenticated
+            p.sidebar__welcome-msg Hi #{collections[0].User.firstName}
+            p.sidebar__collections-title View your collections!
+                    div.sidebar__collections
+                        each collectionName in collectionNames
+                            div.sidebar__collection
+                                a(class="sidebar__want-to-read" href="/collections") #{collectionName}
+                                    div.sidebar__img-container
+                                            - var x = 0
+                                            each collection in collections
+                                                if collection.name === collectionName
+                                                    - x+= 1
+                                                    if x < 4
+                                                        a(href=`/comics/${collection.comicId}`): img(src=collection.Comic.imageUrl class="sidebar__img")
+        else
+            p.sidebar__no-login-collections-title Sign in and start adding to your collections!
+                div.sidebar__no-login
+                    div.sidebar__no-login-collections
+                        a(class="sidebar__currently-reading" href="/collections") Want to Read
+                    div.sidebar__no-login-collections
+                        a(class="sidebar__currently-reading" href="/collections") Currently Reading
+                    div.sidebar__no-login-collections
+                        a(class="sidebar__read" href="/collections") Read
