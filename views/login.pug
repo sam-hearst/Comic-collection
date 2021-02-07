@@ -27,6 +27,10 @@ block content
                         button(type="submit" value="Submit") Log in
                         span.signInOption       Not a member?
                         a(href="signup")        Sign Up
+            div.demo-user
+              p Or, try us out!
+              form(action="/users/demo" method="POST")
+                input(type="submit" value="Demo User Login")
             pr    By clicking “Sign up” I agree to the Comic-Collection
                 a(href="/about/terms")     Term of Service
             pr    and confirm that I am at least 13 years of age
