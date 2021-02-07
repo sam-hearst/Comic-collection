@@ -13,13 +13,14 @@
   background-color: rgb(28, 40, 68);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   width: 100%;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   align-items: center;
   display: flex;
   margin: 0;
   line-height: 20px;
   font-size: 16px;
   margin-bottom: 25px;
+  padding: 0px 50px 0px 10px;
 }
 
 .navbar a {
@@ -120,8 +121,8 @@
 
 .dropdown {
   position: relative;
-  display: flex;
   /* margin-right: 100px; */
+  margin: auto;
 }
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -310,6 +311,8 @@
 
 .autocom-box {
   top: 100px;
+  position: absolute;
+  background-color: white;
 }
 
 /* search bar display text*/
