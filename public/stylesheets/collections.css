@@ -1,15 +1,69 @@
+html {
+  background-color: rgba(8, 15, 31, 1);
+}
 
 body {
   font-family: sans-serif;
   background-color: rgba(8, 15, 31, 1);
   color: #9ba8c7;
+  background: linear-gradient(110deg, rgba(8, 15, 31, 1) 60%, rgba(12, 31, 74, 1) 60%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  position: relative;
+  width: 100%;
 }
 
 .fullPageGrid {
-    position: relative;
+    position: absolute;
     top: 200px;
     
 }
+
+
+
+
+
+
+
+
+
+
+/* Add collection form */
+
+
+.custom-collection {
+  display: grid;
+  grid-template-rows: 70px 1fr;
+  grid-template-columns: 500px 1fr;
+  grid-template-areas: 
+  "header header"
+  "text button"
+  ;
+
+}
+
+.grid__section-form label {
+  grid-area: header;
+  font-size: 25px;
+}
+.grid__section-form input {
+  width: 100%;
+  grid-area: text;
+  margin: 20px 0;
+}
+.grid__section-form button {
+  width: 100px;
+  grid-area: button;
+}
+
+
+
+
+
+
+
+/* Collection display */
 
 .collection__section {
     display: block;
