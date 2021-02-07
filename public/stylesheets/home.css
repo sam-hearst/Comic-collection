@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap");
 /* make space for navbar */
 .homeContent {
   position: relative;
@@ -11,17 +12,13 @@
   height: 600px;
   /* border: 1px solid red; */
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 200px 4fr;
   grid-template-areas: "sidebar content";
   padding-left: 20px;
 }
 
 .sidebar {
   grid-area: sidebar;
-
-  /* positioning of the side bar */
-  /* padding-left: 20px; */
-
   /* sidebar borders */
   background-color: transparent;
   border-right: 2px solid rgba(67, 83, 112, 0.2);
@@ -43,11 +40,8 @@
 }
 
 .grid__section {
-  padding-left: 75px;
-}
-
-/* position comics grid */
-.grid__image-container {
+  padding-left: 85px;
+  margin-right: 20px;
 }
 
 .content {
@@ -71,22 +65,30 @@
   padding-left: 13px;
 }
 
-.grid__image--active:hover {
+.grid__image-title {
+  color: #fff;
+}
+.grid__image-title:link {
+  text-decoration: none;
+  /* color: #9ba8c700; */
+}
+
+/* .grid__image--active:hover {
   cursor: pointer;
   transform: translateY(-0.5rem);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
+} */
 
-.grid-title {
+.grid__title-text {
   font-size: medium;
   margin-top: auto;
   padding-left: 100px;
-  padding-bottom: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   font-size: 2em;
   color: #fff;
+  font-family: "Exo", sans-serif;
 }
-
-/* let me know if u like a bg like this */
 
 body {
   font-family: sans-serif;
@@ -94,15 +96,32 @@ body {
   color: #9ba8c7;
 }
 
-/* colors for a links, also remove the line */
-/* color: #fff; */
+/* space between div */
+#div__container {
+  margin-bottom: 10px;
+  margin-right: 1px;
+}
 
-/* for the navbar */
-/* color for the text of navBar bottoms */
-/* color: #d5dced; */
-/* background-color: transparent; */
-/* for the icons */
-/* color: #8fa0ca; */
-
-/* for the main home text */
-/* color: #f36a26; */
+#div__container:hover {
+  cursor: pointer;
+  transform: translateY(-0.5rem);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.678);
+  box-sizing: border-box;
+  background-color: transparent;
+  border-right: 2px solid rgba(67, 83, 112, 0.2);
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-left: 2px solid rgba(67, 83, 112, 0.2);
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: rgba(255, 255, 255, 0.2);
+  border-top: 2px solid rgba(67, 83, 112, 0.2);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(67, 83, 112, 0.2);
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}

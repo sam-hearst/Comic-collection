@@ -303,6 +303,16 @@ body {
   display: flex;
 }
 
+
+/* for the navbar */
+/* color for the text of navBar bottoms */
+/* color: #d5dced; */
+/* background-color: transparent; */
+/* for the icons */
+/* color: #8fa0ca; */
+
+
+
 /* media queries */
 
 @media screen and (max-width: 910px) {
