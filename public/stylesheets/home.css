@@ -11,7 +11,7 @@
   height: 600px;
   /* border: 1px solid red; */
   grid-template-rows: 1fr;
-  grid-template-columns: 1.2fr 4fr;
+  grid-template-columns: 3fr 4fr;
   grid-template-areas: "sidebar content";
   padding-left: 20px;
 }
