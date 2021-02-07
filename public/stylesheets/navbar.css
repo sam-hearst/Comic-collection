@@ -2,28 +2,18 @@
 
 /* Navigation */
 
-body {
+/* body {
   padding: 0px;
-}
-
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: #382110;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+} */
 
 .navbar {
   position: fixed;
   z-index: 1;
   height: 100px;
-  background-color: #f4f1ea;
+  background-color: rgb(28, 40, 68);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   width: 100%;
-  /* color: #382110; */
-  justify-content: space-around;
+  /* justify-content: space-between; */
   align-items: center;
   display: flex;
   margin: 0;
@@ -32,8 +22,18 @@ body {
   margin-bottom: 25px;
 }
 
+.navbar a {
+  /* float: left; */
+  font-size: 16px;
+  color: #d5dced;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Logo button/ animation */
 .navbar__logo {
-  background-color: #e6e1d8;
+  background-color: transparent;
   border-radius: 35% 10%;
   width: 150px;
   display: flex;
@@ -44,7 +44,7 @@ body {
 .navbar__logo:hover {
   transform: rotate(-10deg);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  background-color: #d1ccc0;
+  background-color: rgba(8, 15, 31, 1);
 }
 .logo__1 {
   font-family: "Indie Flower", cursive;
@@ -57,11 +57,10 @@ body {
   padding: 5px;
 }
 
-/* site-nav part of nav bar */
-
-.site-nav {
-  width: 600px;
-  background-color: rgba(219, 216, 210, 0.2);
+/* navbar div of home and collection */
+.site__nav-btns {
+  width: 300px;
+  background-color: transparent;
   display: flex;
   justify-content: space-around;
   padding: 0;
@@ -69,97 +68,192 @@ body {
   height: 100%;
   margin: 0;
   align-items: center;
-  transition: all 0.3s ease-in-out;
-  border: 1px solid rgba(219, 216, 210, 0.3);
-}
-.site-nav:hover {
-  background-color: rgba(219, 216, 210, 0.4);
-  border: 1px solid rgba(219, 216, 210, 0.7);
 }
 
+/* the a inside home and collection btns */
+
+.nav__child a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+/* HOME and Collection Btn */
 .nav__child {
-  height: 100%;
-  width: 100%;
-}
-.nav__child__dropdown {
-  margin: auto;
+  background-color: rgb(28, 40, 68);
+  transition: all 0.3s ease-in-out;
+  margin-left: 20px;
 }
 
-.nav__collections,
-.nav__home {
-  display: flex;
-}
-.nav__child a {
-  line-height: 1.35em;
-  padding: 0 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.nav__child .dropbtn,
-.nav__child a {
-  height: 100%;
-  width: 100%;
+.nav__child:hover {
+  cursor: pointer;
+  transform: translateY(-0.5rem);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: rgba(8, 15, 31, 1);
 }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out 0s;
+/* Collection  BOTTON */
+#collection__btn {
+  margin-right: auto;
 }
 
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: #382110;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-.site-nav a,
-.dropdown .dropbtn {
+/* ------------------------------------- */
+.site__nav-btns a {
   border: 1px solid rgba(219, 216, 210, 0);
   transition: all 0.3s ease-in-out 0s;
   font-size: 20px;
   font-weight: 1em;
 }
 
-.site-nav a:hover,
-.dropdown:hover .dropbtn {
-  background-color: rgba(219, 216, 210, 0.7);
-  border: 1px solid rgba(219, 216, 210, 0.7);
+/* dropdown menu 2nd take */
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  color: #d5dced;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
 }
 
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+  position: relative;
+  display: flex;
+  /* margin-right: 100px; */
+}
+/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 120px;
+  background-color: rgba(8, 15, 31, 1);
+  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  overflow: visible;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #d5dced;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-/* search bar */
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-right: 2px solid rgba(67, 83, 112, 0.2);
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-left: 2px solid rgba(67, 83, 112, 0.2);
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: rgba(255, 255, 255, 0.2);
+  border-top: 2px solid rgba(67, 83, 112, 0.2);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(67, 83, 112, 0.2);
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: rgba(8, 15, 31, 1);
+}
+
+/* html reference */
+/* <div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div> */
+
+/* for the navbar */
+/* color for the text of navBar bottoms */
+/* color: #d5dced; */
+/* background-color: transparent; */
+/* for the icons */
+/* color: #8fa0ca; */
+
+/* ------------------------ */
+
+/* need to finish the stying of the notification and demo user */
+
+.personal-nav {
+  padding-bottom: 20px;
+  background-color: transparent;
+  /* width: 60px; */
+  display: flex;
+  flex-direction: row;
+  color: #d5dced;
+}
+
+/* notify div */
+#notify-div {
+  width: 120px;
+  margin-right: 120px;
+}
+
+/* notify button */
+/* #notify-btn {
+  padding-bottom: 20px;
+  background-color: transparent;
+
+  display: flex;
+  flex-direction: row;
+  color: #d5dced;
+} */
+
+#user__pic-profile {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  height: 55px;
+  width: 55px;
+}
+
+/* ------------------------ */
+
+/* search bar  */
+.search-input {
+  background-color: transparent;
+  color: #8fa0ca;
+  background-color: rgb(28, 40, 68);
+  transition: all 0.3s ease-in-out;
+}
 
 .search-input::after {
-  /* display: block; */
   content: "🔎";
   position: absolute;
-  /* padding-left: 275px;
-  padding-bottom: 10px; */
-  height: 55px;
+  height: 50px;
   width: 55px;
   line-height: 55px;
   top: 0;
-  /* left: 0px; */
   right: -12px;
-  /* bottom: 0px; */
   text-align: center;
   font-size: 20px;
   cursor: pointer;
+}
+
+.search-input:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: rgba(8, 15, 31, 1);
 }
 
 #searchBar {
@@ -167,14 +261,16 @@ body {
 }
 
 .search-bar {
-  max-width: 450px;
+  min-width: 450px;
+  /* max-width: 650px; */
   margin: 150px auto;
-  /* display: flex; */
+  margin-left: 10px;
 }
 
 .search-bar .search-input {
   position: relative;
   background: #fff;
+
   width: 100%;
   border-radius: 5px;
   box-shadow: 0px 1px 5px 3px rgba(0, 0 0, 0.12);
@@ -216,102 +312,15 @@ body {
   top: 100px;
 }
 
-/* .search-bar__submit {
-  margin: 0;
-  height: 100%;
-}
-.search-bar__text {
-  height: 100%;
-  margin: 0;
-} */
-
-/*
-.search-bar {
-  box-sizing: inherit;
-  display: inline-block;
-  flex: 1;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
-  width: 100px;
-}
-
-.search-bar form {
-  width: 100%;
-  margin-bottom: 0em;
-  display: block;
-  margin-top: 0em;
-}
-
-.search-bar input {
-  border-right: 3px;
-  height: 32px;
-  flex: 1;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
-  padding: 4px 26px 4px 8px;
-  width: 100%;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-transform: none;
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: start;
-  appearance: textfield;
-}
-
-.search-bar button {
-  background-image: url(https://s.gr-assets.com/assets/layout/header/icn_nav_search.svg);
-  background-position-x: initial;
-  background-position-y: initial;
-  background-size: initial;
-  background-repeat: no-repeat;
-  background-attachment: initial;
-  background-origin: initial;
-  background-clip: initial;
-  background-color: initial;
-  display: inline-block;
-}
-*/
-.sign-out-btn {
-  font-size: small;
-}
-
-.personal-nav {
+/* search bar display text*/
+#searchText {
   display: flex;
-}
-.personal-nav > a {
-  padding-bottom: 40px;
-}
-
-.nav__child > a {
-  display: flex;
-}
-
-#notify-btn {
-  padding-bottom: 20px;
+  color: black;
 }
 
 ::marker {
   color: #f4f1ea;
 }
-
-/* search bar display */
-#searchText {
-  display: flex;
-}
-
-
-/* for the navbar */
-/* color for the text of navBar bottoms */
-/* color: #d5dced; */
-/* background-color: transparent; */
-/* for the icons */
-/* color: #8fa0ca; */
-
-
 
 /* media queries */
 
