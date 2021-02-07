@@ -209,8 +209,9 @@ div {
 .details__title{ 
   grid-area: title;
   font-size: 90px;
-  font-weight: bold;
   padding: 10px 30px;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-weight: 800;
 }
 
 .details__author {

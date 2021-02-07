@@ -15,13 +15,14 @@ block content
             .grid__section-collections
                 each collectionName in collectionNames
                     .collection__section
+                      div.collection__item
                         h1.collection__title= collectionName
-                            .collection__images
-                                each collection in collections
-                                    if collection.name === collectionName && collection.Comic
-                                        div.grid__image-container
-                                            a(href=`/comics/${collection.Comic.id}`): img(src=collection.Comic.imageUrl class="grid__image grid__image--active")
-                                            a(class="grid__image-title" href=`/comics/${collection.Comic.id}`)= collection.Comic.title
-                                            p.grid__image-publisher= collection.Comic.publisher
+                        .collection__images
+                            each collection in collections
+                                if collection.name === collectionName && collection.Comic
+                                    div.grid__image-container
+                                        a(href=`/comics/${collection.Comic.id}`): img(src=collection.Comic.imageUrl class="grid__image grid__image--active")
+                                        a(class="grid__image-title" href=`/comics/${collection.Comic.id}`)= collection.Comic.title
+                                        p.grid__image-publisher= collection.Comic.publisher
 
         .sidebar

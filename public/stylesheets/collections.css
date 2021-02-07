@@ -34,19 +34,18 @@ body {
 
 .custom-collection {
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 70px 1fr;
   grid-template-columns: 500px 1fr;
   grid-template-areas: 
   "header header"
   "text button"
   ;
   padding: 40px;
-
 }
 
 .grid__section-form label {
   grid-area: header;
-  font-size: 25px;
+  font-size: 35px;
   border-bottom: 2px solid rgba(186,210,255,.08);
 }
 .grid__section-form input {
@@ -57,9 +56,7 @@ body {
   font-weight: 400;
   font-size: 30px;
   justify-self: end;
-}
-.grid__section-form button {
-  width: 100px;
+} .grid__section-form button { width: 100px;
   grid-area: button;
   transition: all 0.3s ease-in-out 0s;
   background-color: rgba( 13, 26, 54, .7);
@@ -81,50 +78,60 @@ body {
 
 .collection__section {
     display: block;
+  border-left: 2px solid rgba(186,210,255,.08);
+  border-top: 2px solid rgba(186,210,255,.08);
+  padding: 50px;
+  transition: all 0.3s ease-in-out 0s;
+}
+.collection__section:hover  {
+  background-color: rgba(39,54,87,.1);
+}
+
+.collection__section:hover .collection__title {
+  color: white;
+}
+.collection__title {
+  font-size: 40px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 .collection__images {
     display: flex;
     flex-wrap: wrap;
-    min-height: 350px;
 }
 
 .collection__images img {
-    padding: 20px;
     height: 350px;
 }
 
 .collection__images img:hover {
   cursor: pointer;
-  transform: translateY(-0.50rem);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
+
 
 .grid__image-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+  border: 2px solid rgba(67, 83, 112, 0);
+  padding: 20px;
+  margin: 20px 30px;
 }
 
 .grid__image-container:hover {
   cursor: pointer;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.678);
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.678);
   box-sizing: border-box;
   background-color: transparent;
-  border-right: 2px solid rgba(67, 83, 112, 0.2);
-  border-right-width: 2px;
-  border-right-style: solid;
-  border-right-color: rgba(255, 255, 255, 0.2);
-  border-left: 2px solid rgba(67, 83, 112, 0.2);
-  border-left-width: 2px;
-  border-left-style: solid;
-  border-left-color: rgba(255, 255, 255, 0.2);
-  border-top: 2px solid rgba(67, 83, 112, 0.2);
-  border-top-width: 2px;
-  border-top-style: solid;
-  border-top-color: rgba(255, 255, 255, 0.2);
-  border-bottom: 2px solid rgba(67, 83, 112, 0.2);
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(67, 83, 112, .2);
+  transform: translateY(-0.25rem);
+}
+
+.grid__image-container a {
+  text-decoration: none;
+  font-family: inherit;
+  color: white;
+  margin: 5px;
 }
