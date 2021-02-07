@@ -330,4 +330,6 @@ background: transparent; /* Optional: just make scrollbar invisible */
   display: none;
 }
 
-
+.error {
+  color: red;
+}

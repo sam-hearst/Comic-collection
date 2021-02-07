@@ -28,10 +28,11 @@ block content
                       button.collectionButton(type="button" id=comic.id value=customCollection.name)= customCollection.name
               .addButton
                 .addButton__text New Collection
-                  form.customForm.customForm--hidden(action="/collections" method="POST")
-                      label(for="custom") Create your custom comic collection
-                      input(type="text" name="custom" maxlength="25" required)
-                      button(type="submit" value="Submit") Create    
+                p.response
+                form.customForm.customForm--hidden
+                    label(for="custom") Create your custom comic collection
+                    input(type="text" name="custom" id="collectionName" maxlength="25" required)
+                    button(type="submit" value="Submit" class="custom-submit") Create    
 
 
           .grid__section.section__details

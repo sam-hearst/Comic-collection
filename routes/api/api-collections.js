@@ -50,4 +50,33 @@ router.post("/:name/comics/:id", requireAuth, asyncHandler(async (req,res) => {
     return res.status(200);
 }))
 
+//add a custom collection to the database
+router.post('/', requireAuth, asyncHandler(async (req, res) => {
+    //find if the custom collection exists for the user
+    const comicId = req.body.comicId;
+    const collectionName = req.body.collectionName;
+    const userId = req.session.auth.userId;
+    console.log('comicId: ', comicId, 'collectionName: ', collectionName, 'userId: ', userId)
+    const record = await Collection.findOne({
+        where: {
+            userId,
+            name: collectionName
+        }
+    })
+    //if it doesn't exits create else throw duplicate error
+    let response = {};
+    if (!record) {
+        await Collection.create({
+            name: collectionName,
+            userId,
+            comicId,
+            readStatus: false
+        })
+        response.message = 'Updated your collections'
+    } else {
+        response.error = 'That collection already exists';
+    }
+    res.json(response)
+}))
+
 module.exports = router;
