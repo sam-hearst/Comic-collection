@@ -40,7 +40,6 @@ body {
 
 .grid__image-container:hover {
   cursor: pointer;
-  transform: translateY(-0.5rem);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.678);
   box-sizing: border-box;
   background-color: transparent;
