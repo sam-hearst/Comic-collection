@@ -24,10 +24,14 @@ block content
                     button.collectionButton.readStatus__currentlyReading.defaultCollection(type="button" id=comic.id value="Currently Reading") Currently Reading
                     button.collectionButton.readStatus__read.defaultCollection(type="button" id=comic.id value="Read") Read
                     p Collections
-                    //-     each collection in collections
-                    //-         a(href="collections/#{collection.id}")= collection.name
-                    button.collectionButton(type="button" id=comic.id value="my favorites") my favorites
-                    button.collectionButton(type="button" id=comic.id value="Not great") Not great
+                    each customCollection in customCollections
+                      button.collectionButton(type="button" id=comic.id value=customCollection.name)= customCollection.name
+              .addButton
+                .addButton__text New Collection
+                  form.customForm.customForm--hidden(action="/collections" method="POST")
+                      label(for="custom") Create your custom comic collection
+                      input(type="text" name="custom" maxlength="25" required)
+                      button(type="submit" value="Submit") Create    
 
 
           .grid__section.section__details

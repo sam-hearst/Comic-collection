@@ -48,3 +48,16 @@ document
             button.classList.add('collectionButton--active')
         }
 })
+
+//display the custom collections add form when the button is clicked
+const addButton = document.querySelector('.addButton')
+addButton.addEventListener('click', async (e) => {
+    const addForm = document.querySelector('.customForm')
+    if (addForm.classList.contains('customForm--active')) {
+        addForm.classList.remove('customForm--active')
+        addForm.classList.add('customForm--hidden')
+    } else {
+        addForm.classList.add('customForm--active')
+        addForm.classList.remove('customForm--hidden')
+    }
+})
