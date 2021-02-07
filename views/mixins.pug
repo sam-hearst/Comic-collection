@@ -3,6 +3,7 @@ mixin navbar
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Londrina+Solid&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Indie+Flower&family=Londrina+Solid&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   div.navbar
     div.navbar__logo
       a(href="/")
@@ -41,9 +42,21 @@ mixin navbar
     if locals.authenticated
       div.personal-nav
         div(class="dropdown" id="notify-div")
-          button(class="dropbtn" id="notify-btn") 🔔 Members
-          div.dropdown-content
-            a(href="") No notifications
+          //button(class="dropbtn" id="notify-btn") 🔔 Members
+          button(class="dropbtn" id="notify-btn") Meet the team: 
+          div.dropdown-content.dev_info
+            .info_peron
+              Dorn Holland 
+              a(href="") <i class="fa fa-github"></i>
+              a(href="") 
+            .info_peron
+              Dorn Holland 
+              a(href="") <i class="fa fa-github"></i>
+              a(href="") 
+            .info_peron
+              Dorn Holland 
+              a(href="") <i class="fa fa-github"></i>
+              a(href="") 
         //- a(href="") 💬 Chat
         //- a(href="") Messages
         //- a(href="") Friends
