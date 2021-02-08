@@ -8,6 +8,17 @@ body{
   font-family: "Exo", sans-serif;
 }
 
+textarea {
+	width: 600px;
+	height: 200px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+  margin: 10px;
+}
+
 .hidden {
   display: none;
 }
@@ -142,6 +153,10 @@ div {
   height: 55px;
 }
 
+.reviewTool {
+  width: 80px;
+  margin: 30px
+}
 
 .review-form label {
   font-size: 20px;
@@ -157,7 +172,6 @@ div {
 	border: 3px solid #cccccc;
 	padding: 5px;
 	font-family: Tahoma, sans-serif;
-	background-image: url(bg.gif);
 	background-position: bottom right;
 	background-repeat: no-repeat;
 }
