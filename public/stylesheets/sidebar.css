@@ -23,7 +23,7 @@
 
 .sidebar__collections a {
     text-decoration: none;
-    color: rgb(201, 195, 195);
+    color: rgb(182, 174, 174);
     font-size: 1.2rem;
 }
 
@@ -69,7 +69,8 @@
 
 .sidebar__no-login a {
     text-decoration: none;
-    color: rgb(136, 133, 133);
+    color: rgb(182, 174, 174);
+    font-size: 1.2rem;
 }
 
 .sidebar__no-login a:hover {
@@ -83,5 +84,7 @@
 }
 
 .sidebar__no-login-collections-title {
-    font-size: 16px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 27px;
 }
