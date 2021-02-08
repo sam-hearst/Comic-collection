@@ -209,6 +209,20 @@
 /* for the icons */
 /* color: #8fa0ca; */
 
+/* not logged in */
+.dropdown__start {
+  padding: 0;
+  justify-self: flex-end;
+}
+.button__start {
+  width: 140px;
+  font-size: 20px;
+
+}
+.button__start:hover {
+  transform: translateY(-0.5rem);
+}
+
 /* ------------------------ */
 
 /* need to finish the stying of the notification and demo user */
