@@ -336,7 +336,7 @@
   width: 200px;
   min-width: 0px;
 }
-.dropdown-content__logins input{
+.dropdown-content__logins input {
   width: 200px;
 }
 .input__demo-user {
@@ -373,6 +373,13 @@
 #notify-btn {
   width: 400px;
 }
+
+.site__nav-btns > div > a {
+  width: 110px;
+  height: 60px;
+  justify-content: center;
+}
+
 /* media queries */
 
 @media screen and (max-width: 910px) {
