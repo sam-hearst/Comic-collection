@@ -7,9 +7,7 @@ const editButtons = [...document.getElementsByClassName('review--edit')];
 btn.addEventListener("click", async (e) => {
   e.preventDefault();
 
-
   const input = document.getElementById('user-review');
-
 
   let comicId = e.target.id;
 

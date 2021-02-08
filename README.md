@@ -127,6 +127,10 @@ searchBar.addEventListener("keyup", (e) => {
 ```
 
 
+### handler function for edit routes
+This is our code for editing reviews.  After having edited a review, the user then clicks submit and the new review is posted at the bottom.
+=======
+
 Sample code used in our front-end scripts to update collection tables when a 
 user adds a comic to their collection.
 ```javascript
@@ -146,9 +150,29 @@ const updateCollections = async (comicId, route) => {
 }
 ```
 
-
 ```javascript
-    
+const editHandler = async (e) => {
+
+  const reviewId = e.target.id.slice(2);
+  const reviewContainer = document.querySelector('#rd' + reviewId).parentNode.parentNode;
+  const reviewTools = reviewContainer.children[0];
+  const descriptionContainer = reviewContainer.children[2];
+
+  const description = descriptionContainer.children[0].innerHTML;
+
+  reviewTools.classList.add('hidden');
+  descriptionContainer.classList.add('hidden');
+  const formContainer = document.createElement('div');
+  formContainer.innerHTML = `
+  <textarea id="et${reviewId}"name="description" >${description}</textarea>
+  <button id="es${reviewId}">Save Changes </button>
+  <button id="ec${reviewId}" class="editForm--cancel">Delete Changes</button>
+  `
+  reviewContainer.appendChild(formContainer);
+
+  document.querySelector('#ec' + reviewId).addEventListener('click', cancelEditHandler)
+  document.querySelector('#es' + reviewId).addEventListener('click', submitEditHandler)
+}
 ```
 
 
