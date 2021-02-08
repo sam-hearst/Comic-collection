@@ -54,6 +54,7 @@ body {
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 30px;
 }
 
 /* email input containers */
@@ -71,7 +72,7 @@ body {
   background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
   -webkit-rtl-ordering: logical;
   cursor: text;
-  margin: 0em;
+  margin: 4px 0px;
   font: 400 13.3333px Arial;
 }
 
