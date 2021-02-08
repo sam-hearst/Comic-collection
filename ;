@@ -63,6 +63,7 @@ div {
     border-top: 2px solid rgba(186,210,255,.08);
     border-right: 2px solid rgba(186,210,255,.08);
     background-color: rgba(8, 15, 31, .3) ;
+    padding: 10px
 }
 
 
@@ -300,11 +301,6 @@ background: transparent; /* Optional: just make scrollbar invisible */
   cursor: pointer;
   align-self: center;
 }
-
-.addButton {
-  position: relative;
-}
-
 .shelfButton__text,
 .addButton__text {
   text-align: center;
@@ -323,8 +319,6 @@ background: transparent; /* Optional: just make scrollbar invisible */
   border: 2px solid rgba(66, 78, 111, 0);
 }
 
-
-
 .collectionButton:hover {
   border: 2px solid rgba(66, 78, 111, .3);
   background-color: rgba(39,54,87,.22);
@@ -335,23 +329,8 @@ background: transparent; /* Optional: just make scrollbar invisible */
   border: 1px solid rgba(39,54,87,.7);
 }
 
-.customForm {
-  position: absolute;
-  background-color: red;
-  /*background-color: rgba(8,15,31,1);*/
-  width: 500px;
-  height: auto;
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  grid-template-rows: 100px 1fr;
-  grid-template-areas:
-  "header header"
-  "input submit";
-}
-
 .customForm--active {
-  position: absolute;
-  background-color: red;
+  position: relative;
   top: 100px;
 }
 .customForm--hidden {
