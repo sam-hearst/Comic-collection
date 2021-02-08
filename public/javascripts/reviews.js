@@ -30,8 +30,8 @@ btn.addEventListener("click", async (e) => {
   const newReview = document.createElement('div');
   newReview.classList.add('review')
   newReview.innerHTML = ` <div class="review__tools">
-                            <button class="reviewTool review--delete" id=rd${reviewId}>delete review </button>
-                            <button class="reviewTool review--edit" id="re${reviewId}">edit review</button>
+                            <button class="reviewTool review--delete" id=rd${reviewId}><i class="fa fa-trash-o" style="font-size:28px;color:red"></i></button>
+                            <button class="reviewTool review--edit" id="re${reviewId}">edit</button>
                           </div>
                           <div class="review__info">
                             <h2 class="review__info__name">${firstName} ${lastName}</h2> </div>
