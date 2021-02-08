@@ -53,10 +53,11 @@
   flex-direction: row;
 }
 
+
 .grid__image {
-  width: 200px;
-  height: 300px;
-  margin: 10px;
+    width: 200px;
+    height: 300px;
+    margin: 10px;
   /* padding-left: 5px; */
 }
 
@@ -98,10 +99,11 @@ body {
   color: #9ba8c7;
 }
 
-/* space between div */
+/* space between div and establishing size of image container */
 #div__container {
   margin-bottom: 10px;
   margin-right: 1px;
+  width: 220px;
 }
 
 #div__container:hover {
