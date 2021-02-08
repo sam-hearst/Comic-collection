@@ -57,7 +57,12 @@ for comics from our database by name, price, author, publisher or description. S
 #### Discussion of two features that show off the team's technical abilities
 
 ### AJAX for the reviews
-    A key feature that shows our team's technical abilities is using AJAX on the reviews portion of our site.  A user is able to navigate to a comic and add a review for that comic.  Without refreshing, the review shows up on the page and the user then has the ability to edit and remove that review after having created it.  We accomplished this by using an api routes.
+A key feature that shows our team's technical abilities is using AJAX on the reviews portion of our site.  A user is able to navigate to a comic and add a review for that comic.  Without refreshing, the review shows up on the page and the user then has the ability to edit and remove that review after having created it.  We accomplished this by using api routes. When the user clicks "submit review" a fetch call is made to an api which updates our database with the review and then sends back a JSON review object.  The JSON object is parsed and the information for the review is then added to the document as shown in the image below.
+
+
+![Reviews](./readme-assets/reviews.png)
+
+
 
 
 ### Custom backgrounds for specific comics
