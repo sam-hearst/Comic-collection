@@ -240,8 +240,8 @@
 
 /* notify div */
 #notify-div {
-  width: 200px;
-  margin: 20px;
+  width: 300px;
+  margin-top: 40px;
 }
 
 /* notify button */
@@ -402,9 +402,10 @@
 }
 
 .site__nav-btns > div > a {
-  width: 110px;
-  height: 60px;
   justify-content: center;
+  align-items: center;
+  height: 55px;
+  padding: 16px;
 }
 
 .personal-nav > .dropdown > .dropdown-content > form > input {
