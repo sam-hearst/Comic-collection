@@ -2,14 +2,14 @@
 
 <p align="center">See our site hosted on heroku
 <br><a href="https://comic-collections.herokuapp.com/">Comic-Collection</a></br></p>
-&nbsp  
+&nbsp
 
 ## About
 
 ___
 
 Comic-Collection is a clone of Goodreads but for comics. Users can view and search
-for comics from our database. Signing up allows users to create collections of 
+for comics from our database. Signing up allows users to create collections of
 comics and track their read status.
 
 <p>&nbsp;</p>
@@ -49,6 +49,14 @@ ___
 
 Discussion of two features that show off the team's technical abilities
 
+### AJAX for the reviews
+    A key feature that shows our team's technical abilities is using AJAX on the reviews portion of our site.  A user is able to navigate to a comic and add a review for that comic.  Without refreshing, the review shows up on the page and the user then has the ability to edit and remove that review after having created it.  We accomplished this by using an api routes.
+
+
+### Custom backgrounds for specific comics
+
+
+
 <p>&nbsp;</p>
 
 ## Obstacles
@@ -58,9 +66,9 @@ ___
 Discussion of both challenges faced and the way the team solved them
 
 ### Database Schema
-Since this was our first project, we had limited experience developing a full 
-database schema from the ground up. As we moved through the project, there were 
-times when we discovered features would be easier to implement with changes to 
+Since this was our first project, we had limited experience developing a full
+database schema from the ground up. As we moved through the project, there were
+times when we discovered features would be easier to implement with changes to
 our database schema.
 <p>&nbsp;</p>
 
@@ -87,8 +95,7 @@ are:
   - Searching across more tags than just titles including publishers and genres.
   - Updating the database to include genres of comics to allow more refined
   browsing.
-  - Updating the database to include a table of collection names to simplify 
+  - Updating the database to include a table of collection names to simplify
   queries and make code easier to read.
   - Generating comic book recommendations for users based on past searches and
   selections.
-  
