@@ -89,7 +89,8 @@ h1 {
 }
 
 .contentContainer {
-  margin-top: 20px;
+  padding: 10px 30px;
+  margin-top: 45px;
   border: 1px solid #d0d0c8;
   text-align: center;
   border-radius: 3px;
@@ -142,7 +143,7 @@ h1 {
   background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
   -webkit-rtl-ordering: logical;
   cursor: text;
-  margin: 0em;
+  margin: 4px 0px;
   font: 400 13.3333px Arial;
 }
 
