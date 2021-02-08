@@ -17,10 +17,10 @@ btn.addEventListener("click", async (e) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
-    }, 
-    body: JSON.stringify({ description: input.value }), 
+    },
+    body: JSON.stringify({ description: input.value }),
   });
-  let data = await res.json();   //parses into json
+  let data = await res.json();
    const { review: dataInfo, user: userInfo } = data;
   const { id: reviewId, description } = dataInfo;
   const {firstName, lastName } = userInfo;
@@ -51,11 +51,11 @@ btn.addEventListener("click", async (e) => {
 
 
 
-//handler function for handling delete routes 
+//handler function for handling delete routes
 const deleteHandler = async(e) => {
   const reviewId = e.target.id.slice(2);
-  const res = await fetch(`/api/reviews/${reviewId}`, 
-    { method: 'DELETE', 
+  const res = await fetch(`/api/reviews/${reviewId}`,
+    { method: 'DELETE',
       'Content-Type': 'application/json'
     })
   const data = await res.json();
@@ -112,7 +112,7 @@ const submitEditHandler = async (e) => {
   const newDescription = reviewForm.children[0].value;
 
   const res = await fetch(`/api/reviews/${reviewId}`, {
-    method: 'PUT', 
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
