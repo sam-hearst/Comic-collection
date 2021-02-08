@@ -351,6 +351,7 @@
 .dropdown-content__logins {
   width: 200px;
   min-width: 0px;
+  margin-top: 200px;
 }
 .dropdown-content__logins input {
   width: 200px;
@@ -413,9 +414,7 @@
   background-color: transparent;
   color: #fff;
 }
-
 .personal-nav > .dropdown > .dropdown-content > form > input:hover {
-  color: #ff865b;
 }
 .navbar > .demo__user-btn > form {
   margin: 0;
