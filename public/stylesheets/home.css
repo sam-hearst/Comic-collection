@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap");
 /* make space for navbar */
+* {
+  transition: all 0.3s ease-in-out 0s;
+  }
+
 .homeContent {
   position: relative;
   top: 100px;
@@ -45,7 +49,6 @@
   padding-left: 10px;
 }
 
-
 .content {
   grid-area: content;
   display: flex;
@@ -65,7 +68,6 @@
 .grid__image-publisher {
   display: block;
   margin: 4px;
-  padding-left: 13px;
 }
 
 .grid__image-title {
@@ -85,12 +87,14 @@
 .grid__title-text {
   font-size: medium;
   margin-top: auto;
+  margin-bottom: 50px;
   padding-left: 100px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  font-size: 2em;
+  padding-top: 70px;
+  padding-bottom: 25px;
+  font-size: 3em;
   color: #fff;
   font-family: "Exo", sans-serif;
+  border-bottom: 2px solid rgba(186,210,255,.08);
 }
 
 body {
@@ -101,31 +105,57 @@ body {
 
 /* space between div and establishing size of image container */
 #div__container {
-  margin-bottom: 10px;
-  margin-right: 1px;
-  width: 220px;
+  margin: 10px;
+  width: auto;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid rgba(67, 83, 112, 0);
 }
 
 #div__container:hover {
   cursor: pointer;
   transform: translateY(-0.5rem);
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.678);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.678);
   box-sizing: border-box;
   background-color: transparent;
-  border-right: 2px solid rgba(67, 83, 112, 0.2);
-  border-right-width: 2px;
-  border-right-style: solid;
-  border-right-color: rgba(255, 255, 255, 0.2);
-  border-left: 2px solid rgba(67, 83, 112, 0.2);
-  border-left-width: 2px;
-  border-left-style: solid;
-  border-left-color: rgba(255, 255, 255, 0.2);
-  border-top: 2px solid rgba(67, 83, 112, 0.2);
-  border-top-width: 2px;
-  border-top-style: solid;
-  border-top-color: rgba(255, 255, 255, 0.2);
-  border-bottom: 2px solid rgba(67, 83, 112, 0.2);
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(67, 83, 112, .2);
+}
+
+/* media queries */
+/* Mobile */
+/* Small Desktops */
+@media (min-width: 768px) and (max-width: 1096px) {
+  .grid {
+    grid-area: content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    grid-template-rows: 1fr;
+    grid-template-areas: "content content";
+  }
+}
+/* Small Tablets */
+@media (min-width: 321px) and (max-width: 767px) {
+  .grid {
+    grid-area: content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    grid-template-rows: 1fr;
+    grid-template-areas: "content content";
+  }
+}
+
+/* Mobile */
+@media (max-width: 320px) {
+  .grid {
+    grid-area: content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    grid-template-rows: 1fr;
+    grid-template-areas: "content content";
+  }
 }
