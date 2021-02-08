@@ -32,7 +32,7 @@ block content
                 form.customForm.customForm--hidden
                     label(for="custom") Create your custom comic collection
                     input(type="text" name="custom" id="collectionName" maxlength="25" required)
-                    button(type="submit" value="Submit" class="custom-submit") Create    
+                    button(type="submit" value="Submit" class="custom-submit") Create
 
 
           .grid__section.section__details
@@ -59,7 +59,7 @@ block content
               h1.reviews__title__element Reviews
             .reviews__add.reviewTool__text
                 form(class="review-form")
-                    label(for="description") What did you think? 
+                    label(for="description") What did you think?
                     textarea(type="text" name="description" id="user-review" class="user-review text__input" placeholder="Your thoughts here...")
                     button(type="submit" value="Submit" class="review-submit" id=comic.id) Submit your Review!
             .reviews__container
@@ -67,7 +67,7 @@ block content
                 .review
                   .review__tools
                     if userId === review.userId
-                      button.reviewTool.review--delete(id=`rd${review.id}`) 
+                      button.reviewTool.review--delete(id=`rd${review.id}`)
                         i(class="fa fa-trash-o" style="font-size:28px;color:red")
                       button.reviewTool.review--edit(id=`re${review.id}`) edit
                   .review__info
@@ -75,9 +75,4 @@ block content
                   .review__description
                     p.description__text= review.description
         .sidebar
-          +sidebar
-        
-
-
-
-
+        //-   +sidebar
