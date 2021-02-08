@@ -336,26 +336,64 @@ background: transparent; /* Optional: just make scrollbar invisible */
 }
 
 .customForm {
+  margin: 0;
   position: absolute;
   background-color: red;
   /*background-color: rgba(8,15,31,1);*/
-  width: 500px;
   height: auto;
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 500px 150px;
   grid-template-rows: 100px 1fr;
   grid-template-areas:
   "header header"
   "input submit";
+  justify-items: center;
+  align-items: center;
+  padding: 0px 5px 10px 5px;
 }
 
 .customForm--active {
   position: absolute;
   background-color: red;
   top: 100px;
+  border-radius: 5px;
+  border: 2px solid rgba(66, 78, 111, .5);
+  background-color: rgba(8,15,31,.95);
 }
 .customForm--hidden {
   display: none;
+}
+.customForm label {
+  grid-area: header;
+  font-family: 'exo', sans-serif; 
+  font-size: 30px;
+}
+
+.customForm input {
+  grid-area: input;
+  width: 80%;
+  justify-self: end;
+  margin-right: 30px;
+}
+
+.customForm button {
+  grid-area: submit;
+  margin: 0;
+  justify-self: start;
+  background-color: transparent;
+  border: 2px solid rgba(66, 78, 111, .5);
+  border-radius: 5%;
+  color: white;
+}
+.response {
+  font-family: exo;
+  font-size: 25px;
+  position: absolute;
+  width: 600px;
+}
+
+.customForm button:hover {
+  background-color: rgba(39,54,87,.22);
 }
 
 .error {
