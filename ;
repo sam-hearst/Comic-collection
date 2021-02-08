@@ -8,17 +8,6 @@ body{
   font-family: "Exo", sans-serif;
 }
 
-textarea {
-	width: 600px;
-	height: 200px;
-	border: 3px solid #cccccc;
-	padding: 5px;
-	font-family: Tahoma, sans-serif;
-	background-position: bottom right;
-	background-repeat: no-repeat;
-  margin: 10px;
-}
-
 .hidden {
   display: none;
 }
@@ -74,6 +63,7 @@ div {
     border-top: 2px solid rgba(186,210,255,.08);
     border-right: 2px solid rgba(186,210,255,.08);
     background-color: rgba(8, 15, 31, .3) ;
+    padding: 10px
 }
 
 
@@ -153,10 +143,6 @@ div {
   height: 55px;
 }
 
-.reviewTool {
-  width: 80px;
-  margin: 30px
-}
 
 .review-form label {
   font-size: 20px;
@@ -172,6 +158,7 @@ div {
 	border: 3px solid #cccccc;
 	padding: 5px;
 	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
 	background-position: bottom right;
 	background-repeat: no-repeat;
 }
@@ -314,11 +301,6 @@ background: transparent; /* Optional: just make scrollbar invisible */
   cursor: pointer;
   align-self: center;
 }
-
-.addButton {
-  position: relative;
-}
-
 .shelfButton__text,
 .addButton__text {
   text-align: center;
@@ -337,8 +319,6 @@ background: transparent; /* Optional: just make scrollbar invisible */
   border: 2px solid rgba(66, 78, 111, 0);
 }
 
-
-
 .collectionButton:hover {
   border: 2px solid rgba(66, 78, 111, .3);
   background-color: rgba(39,54,87,.22);
@@ -349,65 +329,12 @@ background: transparent; /* Optional: just make scrollbar invisible */
   border: 1px solid rgba(39,54,87,.7);
 }
 
-.customForm {
-  margin: 0;
-  position: absolute;
-  background-color: red;
-  /*background-color: rgba(8,15,31,1);*/
-  height: auto;
-  display: grid;
-  grid-template-columns: 500px 150px;
-  grid-template-rows: 100px 1fr;
-  grid-template-areas:
-  "header header"
-  "input submit";
-  justify-items: center;
-  align-items: center;
-  padding: 0px 5px 10px 5px;
-}
-
 .customForm--active {
-  position: absolute;
-  background-color: red;
+  position: relative;
   top: 100px;
-  border-radius: 5px;
-  border: 2px solid rgba(66, 78, 111, .5);
-  background-color: rgba(8,15,31,.95);
 }
 .customForm--hidden {
   display: none;
-}
-.customForm label {
-  grid-area: header;
-  font-family: 'exo', sans-serif; 
-  font-size: 30px;
-}
-
-.customForm input {
-  grid-area: input;
-  width: 80%;
-  justify-self: end;
-  margin-right: 30px;
-}
-
-.customForm button {
-  grid-area: submit;
-  margin: 0;
-  justify-self: start;
-  background-color: transparent;
-  border: 2px solid rgba(66, 78, 111, .5);
-  border-radius: 5%;
-  color: white;
-}
-.response {
-  font-family: exo;
-  font-size: 25px;
-  position: absolute;
-  width: 600px;
-}
-
-.customForm button:hover {
-  background-color: rgba(39,54,87,.22);
 }
 
 .error {
