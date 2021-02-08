@@ -71,8 +71,8 @@ mixin navbar
             form(action="/users/logout" method="POST")
               input(class="sign-out-btn" type="submit" value="Log Out" placeholder="Log Out")
     else
-        div.dropdown
-          button.dropbtn Start
+        div.dropdown.dropdown__start
+          button.dropbtn.button__start Start
           div.dropdown-content
             a(href="/signup") Sign Up
             a(href="/login") Log In
