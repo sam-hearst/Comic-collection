@@ -98,29 +98,11 @@
   .grid__section {
     display: none;
   }
-
-  .grid {
-    grid-area: content;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    grid-template-rows: 1fr;
-    grid-template-areas: "content content";
-  }
 }
 /* Small Tablets */
 @media (min-width: 321px) and (max-width: 767px) {
   .grid__section {
     display: none;
-  }
-
-  .grid {
-    grid-area: content;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    grid-template-rows: 1fr;
-    grid-template-areas: "content content";
   }
 }
 
@@ -128,13 +110,5 @@
 @media (max-width: 320px) {
   .grid__section {
     display: none;
-  }
-  .grid {
-    grid-area: content;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    grid-template-rows: 1fr;
-    grid-template-areas: "content content";
   }
 }

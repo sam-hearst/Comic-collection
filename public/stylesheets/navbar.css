@@ -209,6 +209,22 @@
 /* for the icons */
 /* color: #8fa0ca; */
 
+/* not logged in */
+.dropdown__start {
+  margin: 0;
+  margin-right: 45px;
+  padding: 0;
+  justify-self: flex-end;
+}
+.button__start {
+  width: 140px;
+  font-size: 20px;
+
+}
+.button__start:hover {
+  transform: translateY(-0.5rem);
+}
+
 /* ------------------------ */
 
 /* need to finish the stying of the notification and demo user */
@@ -224,8 +240,8 @@
 
 /* notify div */
 #notify-div {
-  width: 200px;
-  margin: 20px;
+  width: 300px;
+  margin-top: 40px;
 }
 
 /* notify button */
@@ -335,13 +351,22 @@
 .dropdown-content__logins {
   width: 200px;
   min-width: 0px;
+  margin-top: 200px;
 }
 .dropdown-content__logins input {
   width: 200px;
 }
 .input__demo-user {
-  width: 100px;
+  width: auto;
+  padding: 16px;
 }
+
+.input__demo-user:hover {
+  cursor: pointer;
+  transform: translateY(-0.5rem);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
 
 /* search bar display text*/
 #searchText {
@@ -371,13 +396,17 @@
   margin-top: 350px;
 }
 #notify-btn {
-  width: 400px;
+  width: 200px;
+  font-size: 20px;
+  margin: 0;
+
 }
 
 .site__nav-btns > div > a {
-  width: 110px;
-  height: 60px;
   justify-content: center;
+  align-items: center;
+  height: 55px;
+  padding: 16px;
 }
 
 .personal-nav > .dropdown > .dropdown-content > form > input {
@@ -385,19 +414,24 @@
   background-color: transparent;
   color: #fff;
 }
-
 .personal-nav > .dropdown > .dropdown-content > form > input:hover {
-  color: #ff865b;
+}
+.navbar > .demo__user-btn > form {
+  margin: 0;
 }
 
 .navbar > .demo__user-btn > form > input {
   background-color: transparent;
   color: #fff;
   border: none;
+  font-size: 20px;
+}
+.navbar > .demo__user-btn {
+
 }
 
 .navbar > .demo__user-btn > form > input:hover {
-  color: #ff865b;
+  background-color: rgba(8, 15, 31, 1);
 }
 
 /* media queries */
