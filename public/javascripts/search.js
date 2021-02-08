@@ -44,7 +44,7 @@ const displayComics = (comics) => {
       return `
   <div class="dropdown__search-bar>
         <li class="search__dropdown-bar" id="comicsSearch">
-            <a id=searchText href="http://localhost:8080/comics/${comic.id}"> ${comic.title}</a>
+            <a id=searchText href="/comics/${comic.id}"> ${comic.title}</a>
          </li>
   </div>
   `;
