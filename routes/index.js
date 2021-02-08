@@ -29,7 +29,9 @@ router.get(
         const collectionNames = [...new Set(collectionArray)];
 
 
+
         res.render("index", { collections, collectionNames, comics, userId });
+        // res.render("sidebar", { collections, collectionNames, comics, userId });
     })
 );
 
