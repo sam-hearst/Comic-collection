@@ -94,11 +94,12 @@ createButton.addEventListener('click', async (e) => {
     if (message) {
         const dropdown = document.querySelector('.shelf-content');
         const newCollection = document.createElement('button');
-        newCollection.setAttribute('class', 'collectionButton');
+        newCollection.classList.add('collectionButton');
+        newCollection.classList.add('collectionButton--active');
         newCollection.setAttribute('type', 'button');
         newCollection.setAttribute('id', comicId);
         newCollection.setAttribute('value', collectionName);
-        newCollection.setAttribute('innerText', collectionName);
+        newCollection.innerText = collectionName;
         dropdown.appendChild(newCollection);
         responseMessage.innerHTML = ''
         responseMessage.classList.remove('error')
