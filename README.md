@@ -10,7 +10,9 @@
 
 Comic-Collection is a clone of Goodreads but for comics. Users can view and search
 for comics from our database by name, price, author, publisher or description. Signing up allows
+
 users to create collections of comics, track their read status, and add or remove their reviews.
+
 
 
 <p>&nbsp;</p>
@@ -124,6 +126,7 @@ searchBar.addEventListener("keyup", (e) => {
 });
 ```
 
+
 Sample code used in our front-end scripts to update collection tables when a 
 user adds a comic to their collection.
 ```javascript
@@ -142,6 +145,7 @@ const updateCollections = async (comicId, route) => {
     return data;
 }
 ```
+
 
 ```javascript
     
