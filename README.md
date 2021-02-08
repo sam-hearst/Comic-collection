@@ -9,13 +9,8 @@
 ---
 
 Comic-Collection is a clone of Goodreads but for comics. Users can view and search
-<<<<<<< HEAD
-for comics from our database by name, price, author, publisher or description. Signing up allows 
-users to create collections of comics, track their read status, and add or remove their reviews.
-=======
 for comics from our database by name, price, author, publisher or description. Signing up allows
-users to create collections of comics and track their read status and add our remove their reviews.
->>>>>>> 357002672af2f534e6bf4999494c6ac6d619bc28
+users to create collections of comics, track their read status, and add or remove their reviews.
 
 
 <p>&nbsp;</p>
@@ -67,6 +62,7 @@ is able to navigate to a comic and add a review for that comic.  Without refresh
 
 
 ![Reviews](./readme-assets/reviews.png)
+![Reviews](./readme-assets/reviews-clip.gif)
 
 
 
