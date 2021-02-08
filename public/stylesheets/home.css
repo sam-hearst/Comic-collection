@@ -85,12 +85,14 @@
 .grid__title-text {
   font-size: medium;
   margin-top: auto;
+  margin-bottom: 50px;
   padding-left: 100px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  font-size: 2em;
+  padding-top: 70px;
+  padding-bottom: 25px;
+  font-size: 3em;
   color: #fff;
   font-family: "Exo", sans-serif;
+  border-bottom: 2px solid rgba(186,210,255,.08);
 }
 
 body {
