@@ -123,6 +123,8 @@ searchBar.addEventListener("keyup", (e) => {
 });
 ```
 
+
+
 <p>&nbsp;</p>
 
 ## Future Improvements
