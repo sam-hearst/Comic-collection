@@ -13,6 +13,7 @@ mixin sidebar
                                                 if collection.name === collectionName
                                                     - x+= 1
                                                     if x < 4
+                                                    if collection.Comic.imageUrl
                                                         a(href=`/comics/${collection.comicId}`): img(src=collection.Comic.imageUrl class="sidebar__img")
         else
             p.sidebar__no-login-collections-title Sign in and start adding to your collections!
