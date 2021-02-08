@@ -35,10 +35,11 @@ div {
     margin: 0 auto;
     width: 100%;
     grid-template-rows: 100px 1fr;
-    grid-template-columns: 250px 50px 5fr;
+    grid-template-columns: 350px 50px 5fr;
     grid-template-areas: 
-    "nothing"
-    "sidebar break content"
+    "nothing nothing nothing"
+    "sidebar break content";
+    padding-left: 30px;
 }
 .grid {
     background-color: none;
@@ -56,8 +57,11 @@ div {
 }
 .sidebar {
     grid-area: sidebar;
-    border-radius: 5px;
+    background-color: transparent;
+    border-top: 2px solid rgba(186,210,255,.08);
+    border-right: 2px solid rgba(186,210,255,.08);
 }
+
 
 
 
