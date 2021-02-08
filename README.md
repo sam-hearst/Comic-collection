@@ -14,6 +14,8 @@ comics and track their read status.
 
 <p>&nbsp;</p>
 
+![Home Page](./readme-assets/home-page.png)
+
 ## Technologies used
 
 ___
