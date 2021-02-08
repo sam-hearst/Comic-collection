@@ -123,6 +123,10 @@ searchBar.addEventListener("keyup", (e) => {
 });
 ```
 
+```javascript
+    
+```
+
 
 
 <p>&nbsp;</p>
