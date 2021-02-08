@@ -88,3 +88,49 @@
 .sidebar__collections > div > a:hover {
   color: #ff865b;
 }
+
+/* Small Desktops */
+@media (min-width: 768px) and (max-width: 1096px) {
+  .grid__section {
+    display: none;
+  }
+
+  .grid {
+    grid-area: content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    grid-template-rows: 1fr;
+    grid-template-areas: "content content";
+  }
+}
+/* Small Tablets */
+@media (min-width: 321px) and (max-width: 767px) {
+  .grid__section {
+    display: none;
+  }
+
+  .grid {
+    grid-area: content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    grid-template-rows: 1fr;
+    grid-template-areas: "content content";
+  }
+}
+
+/* Mobile */
+@media (max-width: 320px) {
+  .grid__section {
+    display: none;
+  }
+  .grid {
+    grid-area: content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    grid-template-rows: 1fr;
+    grid-template-areas: "content content";
+  }
+}
