@@ -34,12 +34,11 @@ users to create collections of comics and track their read status and add our re
 
 ---
 
-- The project can be run locally through the command line with `npm start`
-- Is require to create, migrate and seed the database using the sequelize commands:
+- The database should be generated and seeded with the sequelize commands:
 - `npx dotenv sequelize-cli db:create`
 - `npx dotenv sequelize-cli db:migrate`
 - `npx dotenv sequelize-cli db:seed:all`
-
+- The project can be run locally through the command line with `npm start`
 <p>&nbsp;</p>
 
 ## Wiki Documentation
@@ -55,8 +54,6 @@ users to create collections of comics and track their read status and add our re
 ## Key Technical Features
 
 ---
-
-#### Discussion of two features that show off the team's technical abilities
 
 
 ### AJAX for the reviews
@@ -82,14 +79,14 @@ is able to navigate to a comic and add a review for that comic.  Without refresh
 
 ---
 
-Discussion of both challenges faced and the way the team solved them
 
 ### Database Schema
 
 Since this was our first project, we had limited experience developing a full
 database schema from the ground up. As we moved through the project, there were
 times when we discovered features would be easier to implement with changes to
-our database schema.
+our database schema. We were able to work through this with some minor database
+updates and using eager loading with sequelize queries.
 
 <p>&nbsp;</p>
 
