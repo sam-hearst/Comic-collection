@@ -1,7 +1,7 @@
 mixin sidebar
     div.grid__section.sidebar
         if locals.authenticated
-            p.sidebar__welcome-msg Hi #{collections[0].User.firstName}
+            p.sidebar__welcome-msg= `Hi ${user.firstName}`
             p.sidebar__collections-title View your collections!
                     div.sidebar__collections
                         each collectionName in collectionNames
