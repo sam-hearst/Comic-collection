@@ -10,16 +10,17 @@
   position: fixed;
   z-index: 1;
   height: 100px;
-  background-color: rgb(28, 40, 68);
+  background-color: rgb(17, 26, 48);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   width: 100%;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   align-items: center;
   display: flex;
   margin: 0;
   line-height: 20px;
   font-size: 16px;
   margin-bottom: 25px;
+  padding: 0px 50px 0px 10px;
 }
 
 .navbar a {
@@ -69,6 +70,9 @@
   margin: 0;
   align-items: center;
 }
+.site_-nav-btns a {
+  background-color: transparent;
+}
 
 /* the a inside home and collection btns */
 
@@ -80,7 +84,6 @@
 
 /* HOME and Collection Btn */
 .nav__child {
-  background-color: rgb(28, 40, 68);
   transition: all 0.3s ease-in-out;
   margin-left: 20px;
 }
@@ -120,8 +123,8 @@
 
 .dropdown {
   position: relative;
-  display: flex;
   /* margin-right: 100px; */
+  margin: auto;
   text-align: center;
   display: flex;
   align-items: center;
@@ -221,8 +224,8 @@
 
 /* notify div */
 #notify-div {
-  width: 120px;
-  margin-right: 120px;
+  width: 200px;
+  margin: 20px;
 }
 
 /* notify button */
@@ -326,6 +329,18 @@
 
 .autocom-box {
   top: 100px;
+  position: absolute;
+  background-color: white;
+}
+.dropdown-content__logins {
+  width: 200px;
+  min-width: 0px;
+}
+.dropdown-content__logins input {
+  width: 200px;
+}
+.input__demo-user {
+  width: 100px;
 }
 
 /* search bar display text*/
@@ -346,6 +361,23 @@
   border-radius: 3px;
   position: fixed;
   overflow-y: scroll;
+}
+
+.info_person {
+  display: flex;
+}
+.dev_info {
+  width: 175px;
+  margin-top: 350px;
+}
+#notify-btn {
+  width: 400px;
+}
+
+.site__nav-btns > div > a {
+  width: 110px;
+  height: 60px;
+  justify-content: center;
 }
 
 /* media queries */

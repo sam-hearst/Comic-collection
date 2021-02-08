@@ -8,9 +8,8 @@ block content
    title= title
    div.mainContentContainer
       div.contentContainer
-         .column_right
-            h1 Sign up for Comic-Collection
-            p.intro Sign up to see what your friends are reading, get comic recommendations, and join the world’s largest community of comic readers.
+         div.container__text-title: h1 Sign Up for Comic-Collection
+         div.container__text-intro: p Sign up to see what your friends are reading, get comic recommendations, and join the world’s largest community of comic readers.
          .signup Sign Up with Email
          if errors
             ul
@@ -20,23 +19,23 @@ block content
             div.form_input
                input(type ="hidden" name="_csrf" value=csrfToken)
                fieldset
-                  div.inputContainer
+                  div(class="inputContainer" id="firstName__div-container")
                      label(for="firstName") First Name
                      input(type="text" name="firstName" placeholder="First Name" value=user.firstName required)
-                  div.inputContainer
+                  div(class="inputContainer" id="lastName__div-container")
                      label(for="lastName") Last Name
                      input(type="text" name="lastName" placeholder="Last Name" value=user.lastName required)
-                  div.inputContainer
+                  div(class="inputContainer" id="email__div-container")
                      label(for="email") Email Address
                      input(type="text" name="email" placeholder="you@yours.com" value=user.email required)
-                  div.inputContainer
+                  div(class="inputContainer" id="password__div-container")
                      label(for="password") Password
                      input(type="password" name="password"  value=user.password required)
-                  div.inputContainer
+                  div(class="inputContainer" id="confirmPassword__div-container")
                      label(for="confirmPassword") Confirm Password
                      input(type="password" name="confirmPassword"   value=user.email required)
-                  div.submit
-                     button(type="submit" value="Submit") Sign up
+                  div(class="submit" id="submit__div-container")
+                     button(type="submit" value="Submit") Sign Up
                      span.signInOption       Already a member?
                      a(href="/login")        Log In
          pr    By clicking “Sign up” I agree to the Comic-Collection

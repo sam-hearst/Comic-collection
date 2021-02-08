@@ -7,8 +7,8 @@ append head
 block content
     div.mainContentContainer
         div.contentContainer
-            h1 Login In to Comic-Collection
-            p.intro Login to your account and see what your friends are reading, get comic recommendations, and join the world’s largest community of comic readers.
+            div.container__text-title: h1 Log In to Comic-Collection
+            div.container__text-intro: p Login to your account and see what your friends are reading, get comic recommendations, and join the world’s largest community of comic readers.
             if errors
                 ul
                     for error in errors
@@ -17,23 +17,24 @@ block content
                 fieldset
                     div
                         input(type="hidden" name="_csrf" value=csrfToken)
-                    div.inputContainer
+                    div(class="inputContainer" id="email__div-container")
                         label(for="email") Email
                         input(type="text", name="email", placeholder="Email", value=email)
-                    div.inputContainer
+                    div(class="inputContainer" id="password__div-container")
                         label(for="password") Password
                         input(type="password", name="password", placeholder="Password")
-                    div.submit
+                    div(class="submit" id="submit__div-container")
                         button(type="submit" value="Submit") Log in
                         span.signInOption       Not a member?
                         a(href="signup")        Sign Up
-            div.demo-user
-              p Or, try us out!
+            div(class="demo-use" id="demoUser__div-container")
               form(action="/users/demo" method="POST")
-                input(type="submit" value="Demo User Login")
-            pr    By clicking “Sign up” I agree to the Comic-Collection
-                a(href="/about/terms")     Term of Service
-            pr    and confirm that I am at least 13 years of age
-                a(href="/about.privacy")   Read our Privacy Policy
-    footer
-        pr @ 2021 Comic-Collection Inc
+                span.container__text-demo Or, try us out!
+                input(type="submit" value="Demo")
+            div(id="text__container-end")
+                pr    By clicking “Sign up” I agree to the Comic-Collection
+                    a(href="/about/terms")     Term of Service
+                pr    and confirm that I am at least 13 years of age
+                    a(href="/about.privacy")   Read our Privacy Policy
+        footer
+            pr @ 2021 Comic-Collection Inc

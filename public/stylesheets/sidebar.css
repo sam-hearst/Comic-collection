@@ -16,35 +16,31 @@
   background-color: #bfbbb0;
 }
 
-
 .sidebar__collections {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .sidebar__collections a {
-    text-decoration: none;
-    color: rgb(201, 195, 195);
-    font-size: 1.2rem;
+  text-decoration: none;
+  color: rgb(201, 195, 195);
+  font-size: 1.2rem;
 }
 
-
 .sidebar__collections a:hover {
-    cursor: pointer;
-    text-decoration: underline;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .sidebar__collections img {
-    height: 100px;
-    width: 80px;
-    margin: 15px;
+  height: 100px;
+  width: 80px;
+  margin: 15px;
 }
-
 
 .sidebar__img-container {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
-
 
 .sidebar__img-container img:hover {
   cursor: pointer;
@@ -53,35 +49,42 @@
 }
 
 .sidebar__collections-title {
-    font-family: "Exo", sans-serif;
-    font-size: 25px;
+  font-family: "Exo", sans-serif;
+  font-size: 25px;
 }
 
 .sidebar__welcome-msg {
-    font-family: "Exo", sans-serif;
-    font-size: 25px;
+  font-family: "Exo", sans-serif;
+  font-size: 25px;
 }
 
 .sidebar__collection {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .sidebar__no-login a {
-    text-decoration: none;
-    color: rgb(136, 133, 133);
+  text-decoration: none;
+  color: rgb(136, 133, 133);
 }
 
 .sidebar__no-login a:hover {
-    cursor: pointer;
-    text-decoration: underline;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .sidebar__no-login-collections {
-    margin-top: 50px;
-    margin-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .sidebar__no-login-collections-title {
-    font-size: 16px;
+  font-size: 16px;
+}
+
+.sidebar__collections > div > a:link {
+  text-decoration: none;
+}
+.sidebar__collections > div > a:hover {
+  color: #ff865b;
 }

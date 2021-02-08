@@ -15,7 +15,7 @@ router.get("/:id(\\d+)", asyncHandler(async (req, res, next) => {
   if (req.session.auth) {
     userId = req.session.auth.userId;
   }
-  const collections = await Collection.findAll({
+  let collections = await Collection.findAll({
     where: {
       userId
     }
@@ -26,7 +26,21 @@ router.get("/:id(\\d+)", asyncHandler(async (req, res, next) => {
     return !defaultCollections.includes(collection.name)
   });
 
-  res.render("comic", { comic, reviews, userId, customCollections });
+
+        collections = await Collection.findAll({
+            where: {
+                userId
+            },
+            include: [User, Comic]
+        })
+        let collectionArray = []
+        for (let collection of collections) {
+            collectionArray.push(collection.name)
+        }
+        const collectionNames = [...new Set(collectionArray)];
+
+
+  res.render("comic", { comic, reviews, userId, customCollections, collectionNames, collections  });
 }));
 
 
