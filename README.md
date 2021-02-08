@@ -10,7 +10,9 @@
 
 Comic-Collection is a clone of Goodreads but for comics. Users can view and search
 for comics from our database by name, price, author, publisher or description. Signing up allows
-users to create collections of comics and track their read status and add our remove their reviews.
+
+users to create collections of comics, track their read status, and add or remove their reviews.
+
 
 
 <p>&nbsp;</p>
@@ -62,6 +64,7 @@ is able to navigate to a comic and add a review for that comic.  Without refresh
 
 
 ![Reviews](./readme-assets/reviews.png)
+![Reviews](./readme-assets/reviews-clip.gif)
 
 
 
@@ -123,8 +126,29 @@ searchBar.addEventListener("keyup", (e) => {
 });
 ```
 
+
 ### handler function for edit routes
 This is our code for editing reviews.  After having edited a review, the user then clicks submit and the new review is posted at the bottom.
+=======
+
+Sample code used in our front-end scripts to update collection tables when a 
+user adds a comic to their collection.
+```javascript
+// query the database and update the collection table for the specific comic and user
+const updateCollections = async (comicId, route) => {
+    const response = await fetch(`/api/collections/${route}/comics/${comicId}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            collection: "Want to Read"
+        })
+    });
+    const data = await response.json()
+    return data;
+}
+```
 
 ```javascript
 const editHandler = async (e) => {
