@@ -9,7 +9,7 @@
 ---
 
 Comic-Collection is a clone of Goodreads but for comics. Users can view and search
-for comics from our database by name, price, author, publisher or description. Signing up allows 
+for comics from our database by name, price, author, publisher or description. Signing up allows
 users to create collections of comics and track their read status and add our remove their reviews.
 
 
@@ -57,7 +57,7 @@ users to create collections of comics and track their read status and add our re
 
 
 ### AJAX for the reviews
-A key feature that shows our team's technical abilities is using AJAX on the reviews portion of our site.  A user 
+A key feature that shows our team's technical abilities is using AJAX on the reviews portion of our site.  A user
 is able to navigate to a comic and add a review for that comic.  Without refreshing, the review shows up on the page and the user then has the ability to edit and remove that review after having created it.  We accomplished this by using api routes. When the user clicks "submit review" a fetch call is made to an api which updates our database with the review and then sends back a JSON review object.  The JSON object is parsed and the information for the review is then added to the document as shown in the image below.
 
 
@@ -72,7 +72,6 @@ is able to navigate to a comic and add a review for that comic.  Without refresh
 
 - Creating the search bar logic querying for all the database information was definitely one of toughest implementations.
 - Using AJAX to create a dynamic and responsive UI for the Website was one of the challenges we accomplished on this project.
-
 <p>&nbsp;</p>
 
 ## Obstacles
@@ -81,7 +80,6 @@ is able to navigate to a comic and add a review for that comic.  Without refresh
 
 
 ### Database Schema
-
 Since this was our first project, we had limited experience developing a full
 database schema from the ground up. As we moved through the project, there were
 times when we discovered features would be easier to implement with changes to
@@ -125,6 +123,12 @@ searchBar.addEventListener("keyup", (e) => {
 });
 ```
 
+```javascript
+    
+```
+
+
+
 <p>&nbsp;</p>
 
 ## Future Improvements
@@ -143,4 +147,3 @@ are:
   selections.
 - Overall styling of the all the pages on the website.
 - Add more users features likes friends, followers, following, chat and notifications.
-
