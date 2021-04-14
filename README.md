@@ -1,17 +1,15 @@
-<h1 align="center">Comic-Collection</h1>
+<h1 align="center">Comic Collection</h1>
 
 <p align="center">See our site hosted on heroku
-<br><a href="https://comic-collections.herokuapp.com/">Comic-Collection</a></br></p>
+<br><a href="https://comic-collections.herokuapp.com/">Comic Collection</a></br></p>
 &nbsp
 
 ## About
 
 ---
 
-Comic-Collection is a clone of Goodreads but for comics. Users can view and search
-for comics from our database by name, price, author, publisher or description. Signing up allows
-
-users to create collections of comics, track their read status, and add or remove their reviews.
+Comic Collection is a Goodreads inspired site for comics. Users can view and search
+for comics from our database by name, price, author, publisher or description. Signing up allows users to create collections of comics, track comic read statuses, and review comics.
 
 
 
@@ -28,7 +26,7 @@ users to create collections of comics, track their read status, and add or remov
 - npm
 - Express.js
 - Pug.js
-- Java-Script
+- JavaScript
 - All styling was done with raw CSS, no frameworks were used.
 <p>&nbsp;</p>
 
@@ -62,9 +60,9 @@ users to create collections of comics, track their read status, and add or remov
 A key feature that shows our team's technical abilities is using AJAX on the reviews portion of our site.  A user
 is able to navigate to a comic and add a review for that comic.  Without refreshing, the review shows up on the page and the user then has the ability to edit and remove that review after having created it.  We accomplished this by using api routes. When the user clicks "submit review" a fetch call is made to an api which updates our database with the review and then sends back a JSON review object.  The JSON object is parsed and the information for the review is then added to the document as shown in the image below.
 
-
-![Reviews](./readme-assets/reviews.png)
-![Reviews](./readme-assets/reviews-clip.gif)
+<p align="center">
+  <img src="./readme-assets/reviews-clip.gif" />
+</p>
 
 
 
@@ -73,8 +71,7 @@ is able to navigate to a comic and add a review for that comic.  Without refresh
 
 
 
-- Creating the search bar logic querying for all the database information was definitely one of toughest implementations.
-- Using AJAX to create a dynamic and responsive UI for the Website was one of the challenges we accomplished on this project.
+Creating the search bar logic querying for all the database information was one of toughest implementations.
 <p>&nbsp;</p>
 
 ## Obstacles
@@ -93,7 +90,11 @@ updates and using eager loading with sequelize queries.
 
 ### User Reviews
 
-Using AJAX to add user reviews was our first AJAX implementation of dynamic UI and was hard to make it work.
+This was our first project creating a dynamic user interface from scratch. Using AJAX to add user reviews was our first AJAX implementation and required a lot of research in the documentation.
+
+<p>&nbsp;</p>
+
+### Styling
 
 Styling the the website pages using raw CSS was another obstacle we had. There are hundred of lines of code just for the CSS styling. We use mixins Pug templates in order to reuse most of the code for the styling and the html/pug. This save us probably hundred of lines code as well.
 
@@ -103,10 +104,9 @@ Styling the the website pages using raw CSS was another obstacle we had. There a
 
 ---
 
-Code snippets to highlight the best code
+Event listener code for the search bar. 
 
 ```javascript
-// filter search listening with keyup case insensitive
 searchBar.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();
   if (!searchString.length || searchString.length < 3) {
@@ -126,15 +126,9 @@ searchBar.addEventListener("keyup", (e) => {
 });
 ```
 
-
-### handler function for edit routes
-This is our code for editing reviews.  After having edited a review, the user then clicks submit and the new review is posted at the bottom.
-=======
-
-Sample code used in our front-end scripts to update collection tables when a 
+Sample code used in our front-end event handling to update collection tables when a 
 user adds a comic to their collection.
 ```javascript
-// query the database and update the collection table for the specific comic and user
 const updateCollections = async (comicId, route) => {
     const response = await fetch(`/api/collections/${route}/comics/${comicId}`, {
         method: "POST",
@@ -150,6 +144,8 @@ const updateCollections = async (comicId, route) => {
 }
 ```
 
+
+This is our code for editing reviews.  After having edited a review, the user then clicks submit and the new review is posted at the bottom.
 ```javascript
 const editHandler = async (e) => {
 
