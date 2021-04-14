@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { asyncHandler } = require("../../utils");
-const { requireAuth } = require('../../auth'); 
+const { requireAuth } = require('../../auth');
 
 const { Comic, Review, User, Collection } = require("../../db/models");
 
@@ -10,8 +10,9 @@ const { Comic, Review, User, Collection } = require("../../db/models");
 router.post("/:name/comics/:id", requireAuth, asyncHandler(async (req,res) => {
     const collectionName = req.params.name.split('-').join(' ');
     const comicId = req.params.id;
-    // console.log(comicId, collectionName)
     const userId = req.session.auth.userId
+
+
     const defaultCollectionNames = ['Want to Read', 'Read', 'Currently Reading'];
     if (defaultCollectionNames.includes(collectionName)) {
         await Collection.destroy( {where: {
@@ -47,7 +48,9 @@ router.post("/:name/comics/:id", requireAuth, asyncHandler(async (req,res) => {
             })
         }
     }
-    return res.status(200);
+
+    const comic = await Comic.findByPk(comicId);
+    return res.json({ comic });
 }))
 
 //add a custom collection to the database
