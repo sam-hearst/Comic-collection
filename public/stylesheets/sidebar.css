@@ -48,6 +48,10 @@
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
+* {
+    transition: all 0.3s ease-in-out 0s;
+}
+
 .sidebar__collections-title {
   font-family: "Exo", sans-serif;
   font-size: 25px;
