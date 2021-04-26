@@ -181,6 +181,10 @@ a:hover {
   transform: translateY(-0.1rem);
 }
 
+.anchor--disabled {
+  pointer-events: none;
+}
+
 /* Change Autocomplete styles in Chrome*/
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

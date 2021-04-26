@@ -73,6 +73,11 @@ a {
 
   transition: all 0.3s ease-in-out;
 }
+
+.anchor--disabled {
+  pointer-events: none;
+}
+
 a:hover {
   color: #ff865b;
   transform: translateY(-0.1rem);
