@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { asyncHandler } = require("../utils");
-const { requireAuth } = require('../auth'); 
+const { requireAuth } = require('../auth');
 
 const { Comic, Collection, User } = require("../db/models");
 
@@ -32,13 +32,13 @@ router.post("/", asyncHandler(async (req, res) => {
     // bootleg: prepopulate the collection with a random comic because it is too
     //     late to update our database to include a table with collection names
     // const comicId = Math.floor(Math.random() * 20)
-    
+
     await Collection.create({
         name: collectionName,
         userId,
         readStatus: true
     })
-    
+
     const collections = await Collection.findAll({
         where: {
             userId

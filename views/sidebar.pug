@@ -7,13 +7,12 @@ mixin sidebar
                         each collectionName in collectionNames
                             div.sidebar__collection
                                 a(class="sidebar__want-to-read" href="/collections") #{collectionName}
-                                    div.sidebar__img-container
-                                            - var x = 0
+                                    div(class="sidebar__img-container" id=`${collectionName.split(' ').join('-').toLowerCase()}`)
+                                            - var count = 0
                                             each collection in collections
                                                 if collection.name === collectionName
-                                                    - x+= 1
-                                                    if x < 4
-                                                    if collection.Comic
+                                                    - count = count + 1
+                                                    if (count < 4 && collection.Comic)
                                                         a(href=`/comics/${collection.comicId}`): img(src=collection.Comic.imageUrl class="sidebar__img")
         else
             p.sidebar__no-login-collections-title Sign in and start adding to your collections!

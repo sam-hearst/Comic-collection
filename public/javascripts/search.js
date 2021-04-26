@@ -29,7 +29,6 @@ const loadComics = async () => {
     const res = await fetch("/api/titles");
     comics = await res.json();
     // displayComics(comics);
-    console.log(comics);
   } catch (err) {
     console.error(err);
   }
