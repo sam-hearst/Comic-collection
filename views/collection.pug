@@ -16,7 +16,12 @@ block content
                 each collectionName in collectionNames
                     .collection__section
                       div.collection__item
-                        h1.collection__title= collectionName
+                        .collection__item__header
+                          h1.collection__title= collectionName
+                          .collection__tools
+                            button.collectionTool.collection--delete(id=`rd${collectionName.id}`)
+                              i(class="fa fa-trash-o" style="font-size:28px;color:red")
+                            button.collectionTool.collection--edit(id=`re${collectionName.id}`) edit
                         .collection__images
                             each collection in collections
                                 if collection.name === collectionName && collection.Comic
