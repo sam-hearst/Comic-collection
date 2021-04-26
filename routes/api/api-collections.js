@@ -82,4 +82,19 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
     res.json(response)
 }))
 
+router.delete("/", asyncHandler(async (req, res) => {
+    const { name } = req.body
+    try {
+        await Collection.destroy({
+            where: {
+                name
+            }
+        })
+        res.json({ status: 200 })
+    } catch {
+        res.json({ status: 500 })
+    }
+}))
+
+
 module.exports = router;

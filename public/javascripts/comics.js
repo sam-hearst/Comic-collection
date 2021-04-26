@@ -70,6 +70,7 @@ addButton.addEventListener('click', async (e) => {
 const createButton = document.querySelector('.custom-submit');
 createButton.addEventListener('click', async (e) => {
     e.preventDefault();
+    console.log('hitting the create custom collection listener')
     const collectionName = document.getElementById('collectionName').value;
     const url = window.location.href.split('/')
     const comicId = url[url.length - 1]

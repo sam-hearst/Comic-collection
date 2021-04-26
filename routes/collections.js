@@ -29,9 +29,6 @@ router.get("/", requireAuth, asyncHandler(async (req, res) => {
 router.post("/", asyncHandler(async (req, res) => {
     const collectionName = req.body.custom;
     const userId = req.session.auth.userId;
-    // bootleg: prepopulate the collection with a random comic because it is too
-    //     late to update our database to include a table with collection names
-    // const comicId = Math.floor(Math.random() * 20)
 
     await Collection.create({
         name: collectionName,

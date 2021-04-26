@@ -18,8 +18,8 @@ const updateCollections = async (comicId, route) => {
     }
 }
 
+// side bar collection event
 const collections = document.querySelector(".shelf-content")
-
 collections.addEventListener('click', async (e) => {
     if (e.target.type === "button") {
         const collection = e.target.value.split(' ').join('-');
@@ -40,4 +40,29 @@ collections.addEventListener('click', async (e) => {
             }
         }
     }
+})
+
+// collections route collection events
+const deleteCollectionBtns = [...document.getElementsByClassName('collection--delete')]
+const editCollectionBtns = [...document.getElementsByClassName('collection--edit')]
+
+console.log('delete collection buttons: ', deleteCollectionBtns)
+
+// function for deleting a collection
+const deleteCollection = async (e) => {
+    const collectionName = e.target.id;
+    console.log('collection name: ', collectionName)
+    const res = await fetch(`/api/collections`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name: collectionName })
+    })
+    const data = await res.json();
+    console.log('here is the return from trying to delete a collection', data)
+}
+
+deleteCollectionBtns.forEach(btn => {
+    btn.addEventListener('click', deleteCollection);
 })

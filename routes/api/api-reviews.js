@@ -75,6 +75,7 @@ router.delete(
   `/reviews/:id(\\d+)`,
   asyncHandler(async (req, res) => {
     const id = req.params.id;
+    console.log('from the delete route in reviews: ', id)
     try {
       await Review.destroy({
         where: {

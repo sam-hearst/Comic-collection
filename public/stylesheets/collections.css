@@ -117,6 +117,7 @@ body {
 .collection__tools button:hover {
   border: 2px solid rgba(66, 78, 111, .5); 
   background-color: rgba(39,54,87,.44);
+  cursor: pointer;
 }
 
 .collection__tools {
