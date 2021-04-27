@@ -3,9 +3,10 @@
 body {
   font-family: sans-serif;
   color: #9ba8c7;
-  background: url("https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") no-repeat 0 0;
+  background: url("https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+    no-repeat 0 0;
   background-size: cover;
-  background-color: rgba(8,15,31,1);
+  background-color: rgba(8, 15, 31, 1);
   background-blend-mode: overlay;
   z-index: 0;
 }
@@ -72,6 +73,11 @@ a {
 
   transition: all 0.3s ease-in-out;
 }
+
+.anchor--disabled {
+  pointer-events: none;
+}
+
 a:hover {
   color: #ff865b;
   transform: translateY(-0.1rem);
@@ -103,7 +109,7 @@ h1 {
 }
 
 .contentContainer {
-  background-color: rgba(28, 40, 68, .85);
+  background-color: rgba(28, 40, 68, 0.85);
 
   border-right: 2px solid rgba(67, 83, 112, 0.2);
   border-right-width: 2px;
