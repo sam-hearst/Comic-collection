@@ -64,7 +64,7 @@ const deleteCollection = async (e) => {
     console.log('here is the return from trying to delete a collection', data)
     //update the DOM here
 
-    
+
 }
 
 deleteCollectionBtns.forEach(btn => {
