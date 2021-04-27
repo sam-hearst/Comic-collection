@@ -84,6 +84,7 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
 
 router.delete("/", asyncHandler(async (req, res) => {
     const { name } = req.body
+    console.log('NAME IN THE API ROUTE: ', name)
     try {
         await Collection.destroy({
             where: {
