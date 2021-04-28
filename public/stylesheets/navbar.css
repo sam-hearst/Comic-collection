@@ -219,7 +219,6 @@
 .button__start {
   width: 140px;
   font-size: 20px;
-
 }
 .button__start:hover {
   transform: translateY(-0.5rem);
@@ -344,7 +343,7 @@
 }
 
 .autocom-box {
-  top: 100px;
+  top: 50;
   position: absolute;
   background-color: white;
 }
@@ -366,7 +365,6 @@
   transform: translateY(-0.5rem);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-
 
 /* search bar display text*/
 #searchText {
@@ -399,7 +397,6 @@
   width: 200px;
   font-size: 20px;
   margin: 0;
-
 }
 
 .site__nav-btns > div > a {
@@ -427,7 +424,6 @@
   font-size: 20px;
 }
 .navbar > .demo__user-btn {
-
 }
 
 .navbar > .demo__user-btn > form > input:hover {
@@ -452,8 +448,6 @@
     display: none;
   }
 }
-
-
 
 /* Small Desktops */
 @media (min-width: 768px) and (max-width: 1096px) {
