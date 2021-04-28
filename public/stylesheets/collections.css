@@ -19,19 +19,34 @@ body {
   padding: 0px 60px;
 }
 
+/* Collection List */
+.grid__section-list {
+  display: flex;
+  flex-direction: column;
+}
 
+.collection__list-title {
+  font-size: 35px;
+}
 
+.collection__list-allnames {
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+}
 
+.collection__list-name {
+  color: #9ba8c7;
+  margin-right: 24px;
+}
 
-
-
-
-
+.collection__list-name:hover {
+  color: white;
+  cursor: pointer;
+}
 
 
 /* Add collection form */
-
-
 .custom-collection {
   display: grid;
   grid-template-rows: 70px 1fr;
@@ -48,6 +63,7 @@ body {
   font-size: 35px;
   border-bottom: 2px solid rgba(186,210,255,.08);
 }
+
 .grid__section-form input {
   width: 90%;
   grid-area: text;
@@ -56,7 +72,9 @@ body {
   font-weight: 400;
   font-size: 30px;
   justify-self: end;
-} .grid__section-form button { width: 100px;
+} 
+
+.grid__section-form button { width: 100px;
   grid-area: button;
   transition: all 0.3s ease-in-out 0s;
   background-color: rgba( 13, 26, 54, .7);
@@ -102,9 +120,9 @@ body {
   transition: all 0.3s ease-in-out 0s;
 }
 
-.collection__tools button {
+.collectionTool {
   transition: all 0.3s ease-in-out 0s;
-  width: auto;
+  width: 80px;
   height: 55px;
   margin: 0px 10px;
   background-color: rgba( 13, 26, 54, .7);
@@ -112,9 +130,10 @@ body {
   border: 2px solid rgba(66, 78, 111, .5);
   border-radius: 5%;
   color: white;
+  padding: 0px;
 }
 
-.collection__tools button:hover {
+.collectionTool:hover {
   border: 2px solid rgba(66, 78, 111, .5); 
   background-color: rgba(39,54,87,.44);
   cursor: pointer;
@@ -123,6 +142,7 @@ body {
 .collection__tools {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .collection__images {

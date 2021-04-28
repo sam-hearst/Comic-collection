@@ -46,13 +46,9 @@
 const deleteCollectionBtns = [...document.getElementsByClassName('collection--delete')]
 const editCollectionBtns = [...document.getElementsByClassName('collection--edit')]
 
-console.log('delete collection buttons: ', deleteCollectionBtns)
-
 // function for deleting a collection
 const deleteCollection = async (e) => {
     const collectionName = e.target.id;
-    console.log('event target: ', e.target)
-    console.log('collection name: ', collectionName)
     const res = await fetch(`/api/collections`, {
         method: 'DELETE',
         headers: {
@@ -61,12 +57,32 @@ const deleteCollection = async (e) => {
         body: JSON.stringify({ name: collectionName })
     })
     const data = await res.json();
-    console.log('here is the return from trying to delete a collection', data)
     //update the DOM here
-
+    if (data.status === 200) {
+        const deletedCollection = document.getElementById(collectionName);
+        const deletedSection = deletedCollection.parentNode.parentNode.parentNode.parentNode
+        // deletedSection.innerHTML = '';
+        deletedSection.remove();
+    }
 
 }
 
 deleteCollectionBtns.forEach(btn => {
     btn.addEventListener('click', deleteCollection);
 })
+
+// events to scroll each collection into view
+const collectionNames = [...document.getElementsByClassName('collection__list-name')]
+collectionNames.forEach(name => {
+    name.addEventListener('click', () => {
+        console.log('the name in the listener: ', `scroll-${name.innerHTML}`)
+        document.getElementById(`scroll-${name.innerHTML}`).scrollIntoView({
+            behavior: "smooth"
+        })
+    })
+})
+// const overviewClick = () => {
+//     document.getElementById('overview').scrollIntoView({
+//         behavior: "smooth"
+//     });
+// }

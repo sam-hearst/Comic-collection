@@ -8,6 +8,11 @@ block content
       +navbar
     .fullPageGrid
         .grid
+            .grid__section-list
+                h2.collection__list-title My Collections
+                .collection__list-allnames
+                    each collectionName in collectionNames 
+                        p.collection__list-name= collectionName
             .grid__section-form
                 form.custom-collection(action="/collections" method="POST")
                       label(for="custom") Create your custom comic collection
@@ -15,14 +20,14 @@ block content
                       button(type="submit" value="Submit") Create
             .grid__section-collections
                 each collectionName in collectionNames
-                    .collection__section
+                    .collection__section(id=`scroll-${collectionName}`)
                       div.collection__item
                         .collection__item__header
                           h1.collection__title= collectionName
                           if collectionName !== "Want to Read" && collectionName !== "Currently Reading" && collectionName !== "Read"
                             .collection__tools
-                              button.collectionTool
-                                i(class="fa fa-trash-o collection--delete" id=`${collectionName}` style="font-size:28px;color:red")
+                              button.collectionTool.collection--delete(id=`${collectionName}`)
+                                i(class="fa fa-trash-o" id=`${collectionName}` style="font-size:28px;color:red;display:flex;justify-content:center;align-items:center")
                               button.collectionTool.collection--edit(id=`${collectionName}`) edit
                         .collection__images
                             each collection in collections
