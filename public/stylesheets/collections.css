@@ -23,16 +23,21 @@ body {
 .grid__section-list {
   display: flex;
   flex-direction: column;
+  border-bottom: 2px solid rgba(186,210,255,.08);
+  padding: 50px;
 }
 
 .collection__list-title {
   font-size: 35px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .collection__list-allnames {
   display: flex;
   flex-wrap: wrap;
   position: sticky;
+  top: 150px;
+  margin: 24px 10px 0px 24px;
 }
 
 .collection__list-name {
@@ -55,19 +60,18 @@ body {
   "header header"
   "text button"
   ;
-  padding: 40px;
+  padding: 50px;
 }
 
 .grid__section-form label {
   grid-area: header;
   font-size: 35px;
-  border-bottom: 2px solid rgba(186,210,255,.08);
 }
 
 .grid__section-form input {
   width: 90%;
   grid-area: text;
-  margin: 20px 0;
+  margin: 24px 24px;
   font-family: inherit;
   font-weight: 400;
   font-size: 30px;
@@ -95,7 +99,7 @@ body {
 /* Collection display */
 
 .collection__section {
-    display: block;
+  display: block;
   border-left: 2px solid rgba(186,210,255,.08);
   border-top: 2px solid rgba(186,210,255,.08);
   padding: 50px;

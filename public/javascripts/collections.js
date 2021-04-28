@@ -59,10 +59,15 @@ const deleteCollection = async (e) => {
     const data = await res.json();
     //update the DOM here
     if (data.status === 200) {
-        const deletedCollection = document.getElementById(collectionName);
-        const deletedSection = deletedCollection.parentNode.parentNode.parentNode.parentNode
+        // delete the collection container
+        const deletedCollection = document.getElementById(`scroll-${collectionName}`);
+        // const deletedSection = deletedCollection.parentNode.parentNode.parentNode.parentNode
+        deletedCollection.remove();
+        // delete the collection name in the top list of names
+        const deletedName = document.getElementById(`list-${collectionName}`)
+        deletedName.remove();
         // deletedSection.innerHTML = '';
-        deletedSection.remove();
+
     }
 
 }

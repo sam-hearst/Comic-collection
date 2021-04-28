@@ -12,7 +12,7 @@ block content
                 h2.collection__list-title My Collections
                 .collection__list-allnames
                     each collectionName in collectionNames 
-                        p.collection__list-name= collectionName
+                        p.collection__list-name(id=`list-${collectionName}`)= collectionName
             .grid__section-form
                 form.custom-collection(action="/collections" method="POST")
                       label(for="custom") Create your custom comic collection
