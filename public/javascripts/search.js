@@ -3,14 +3,18 @@ const comicList = document.getElementById("comicsList");
 const searchBar = document.getElementById("searchBar");
 
 let comics = [];
-
+let counter = 0;
 // filter search listening with keyup case insensitive
 searchBar.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();
+
+  counter = searchString.length;
+  console.log(counter);
   if (!searchString.length || searchString.length < 3) {
+    comicList.innerHTML = "";
   } else {
     const filteredComics = comics.comics.filter((comic) => {
-      console.log(comic.title);
+      // console.log(comic.title);
       return (
         comic.title.toLowerCase().includes(searchString) ||
         comic.description.toLowerCase().includes(searchString) ||
@@ -38,6 +42,8 @@ const loadComics = async () => {
 // it could be done this way!
 
 const displayComics = (comics) => {
+  console.log(comics);
+
   const htmlString = comics
     .map((comic) => {
       return `
