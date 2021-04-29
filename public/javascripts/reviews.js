@@ -52,6 +52,7 @@ btn.addEventListener("click", async (e) => {
 //handler function for handling delete routes
 const deleteHandler = async(e) => {
   const reviewId = e.target.id.slice(2);
+  console.log('review Id: ', reviewId)
   const res = await fetch(`/api/reviews/${reviewId}`,
     { method: 'DELETE',
       'Content-Type': 'application/json'

@@ -1,5 +1,5 @@
 const comicList = document.getElementById("comicsList");
-console.log(comicList);
+// console.log(comicList);
 const searchBar = document.getElementById("searchBar");
 
 let comics = [];

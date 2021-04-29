@@ -19,19 +19,39 @@ body {
   padding: 0px 60px;
 }
 
+/* Collection List */
+.grid__section-list {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid rgba(186,210,255,.08);
+  padding: 50px;
+}
 
+.collection__list-title {
+  font-size: 35px;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
+.collection__list-allnames {
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 150px;
+  margin: 24px 10px 0px 24px;
+}
 
+.collection__list-name {
+  color: #9ba8c7;
+  margin-right: 24px;
+}
 
-
-
-
-
+.collection__list-name:hover {
+  color: white;
+  cursor: pointer;
+}
 
 
 /* Add collection form */
-
-
 .custom-collection {
   display: grid;
   grid-template-rows: 70px 1fr;
@@ -40,23 +60,25 @@ body {
   "header header"
   "text button"
   ;
-  padding: 40px;
+  padding: 50px;
 }
 
 .grid__section-form label {
   grid-area: header;
   font-size: 35px;
-  border-bottom: 2px solid rgba(186,210,255,.08);
 }
+
 .grid__section-form input {
   width: 90%;
   grid-area: text;
-  margin: 20px 0;
+  margin: 24px 24px;
   font-family: inherit;
   font-weight: 400;
   font-size: 30px;
   justify-self: end;
-} .grid__section-form button { width: 100px;
+} 
+
+.grid__section-form button { width: 100px;
   grid-area: button;
   transition: all 0.3s ease-in-out 0s;
   background-color: rgba( 13, 26, 54, .7);
@@ -77,7 +99,7 @@ body {
 /* Collection display */
 
 .collection__section {
-    display: block;
+  display: block;
   border-left: 2px solid rgba(186,210,255,.08);
   border-top: 2px solid rgba(186,210,255,.08);
   padding: 50px;
@@ -90,10 +112,41 @@ body {
 .collection__section:hover .collection__title {
   color: white;
 }
+
+.collection__item__header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .collection__title {
   font-size: 40px;
   margin-bottom: 30px;
   transition: all 0.3s ease-in-out 0s;
+}
+
+.collectionTool {
+  transition: all 0.3s ease-in-out 0s;
+  width: 80px;
+  height: 55px;
+  margin: 0px 10px;
+  background-color: rgba( 13, 26, 54, .7);
+  align-self: center;
+  border: 2px solid rgba(66, 78, 111, .5);
+  border-radius: 5%;
+  color: white;
+  padding: 0px;
+}
+
+.collectionTool:hover {
+  border: 2px solid rgba(66, 78, 111, .5); 
+  background-color: rgba(39,54,87,.44);
+  cursor: pointer;
+}
+
+.collection__tools {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .collection__images {
@@ -112,9 +165,9 @@ body {
 
 
 .grid__image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 2px solid rgba(67, 83, 112, 0);
   padding: 20px;
   margin: 20px 30px;
@@ -134,4 +187,40 @@ body {
   font-family: inherit;
   color: white;
   margin: 5px;
+}
+
+/* Edit form */
+.edit__collection-form {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgba(66, 78, 111, .5);
+  border-radius: 5px;
+  background-color: rgba(8, 15, 31, 0.95);
+  padding: 10px;
+}
+
+.edit__collection-form label {
+  font-family: 'exo', sans-serif;
+  font-size: 30px;
+  color: white;
+  margin: 20px 10px;
+}
+
+.edit__collection-form input {
+  margin: 0px 10px;
+  width: 350px;
+}
+
+.edit__collection-form button {
+  border: 2px solid rgba(66, 78, 111, .5);
+  border-radius: 5%;
+  color: white;
+  background-color: rgba(8, 15, 31, 1);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.edit__collection-form button:hover {
+  cursor: pointer;
+  border: 2px solid rgba(66, 78, 111, 1);
+  background-color: rgba(39,54,87,.44);
 }
