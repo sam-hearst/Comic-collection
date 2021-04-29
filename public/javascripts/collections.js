@@ -41,6 +41,25 @@ const cancelEditCollection = async (e) => {
 }
 
 const submitEditCollection = async (e) => {
+    // e.preventDefault();
+    const oldName = e.target.id.split('-')[1]
+    const thisForm = e.target.parentNode.parentNode;
+    const newName = thisForm.children[1].value;
+
+    // update the database here
+    const res = await fetch(`/api/collections`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            newName,
+            oldName
+        })
+    })
+    const data = await res.json();
+
+    // update the dom?
 
 }
 

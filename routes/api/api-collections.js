@@ -96,5 +96,20 @@ router.delete("/", asyncHandler(async (req, res) => {
     }
 }))
 
+// update the name of a collection
+router.put('/', asyncHandler(async (req, res) => {
+    const { newName, oldName } = req.body;
+    console.log(newName, oldName)
+    try {
+        await Collection.update({
+            name: newName
+        }, {
+            where: {name: oldName}
+        })
+        res.json({ status: 200 })
+    } catch {
+        res.json({ status: 500 })
+    }
+}))
 
 module.exports = router;
