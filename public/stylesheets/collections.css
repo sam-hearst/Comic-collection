@@ -188,3 +188,39 @@ body {
   color: white;
   margin: 5px;
 }
+
+/* Edit form */
+.edit__collection-form {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgba(66, 78, 111, .5);
+  border-radius: 5px;
+  background-color: rgba(8, 15, 31, 0.95);
+  padding: 10px;
+}
+
+.edit__collection-form label {
+  font-family: 'exo', sans-serif;
+  font-size: 30px;
+  color: white;
+  margin: 20px 10px;
+}
+
+.edit__collection-form input {
+  margin: 0px 10px;
+  width: 350px;
+}
+
+.edit__collection-form button {
+  border: 2px solid rgba(66, 78, 111, .5);
+  border-radius: 5%;
+  color: white;
+  background-color: rgba(8, 15, 31, 1);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.edit__collection-form button:hover {
+  cursor: pointer;
+  border: 2px solid rgba(66, 78, 111, 1);
+  background-color: rgba(39,54,87,.44);
+}
