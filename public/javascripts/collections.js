@@ -41,7 +41,7 @@ const cancelEditCollection = async (e) => {
 }
 
 const submitEditCollection = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const oldName = e.target.id.split('-')[1]
     const thisForm = e.target.parentNode.parentNode;
     const newName = thisForm.children[1].value;
@@ -58,8 +58,8 @@ const submitEditCollection = async (e) => {
         })
     })
     const data = await res.json();
-
-    // update the dom?
+    // refresh the page since the html references the collection name
+    location.reload();
 
 }
 
