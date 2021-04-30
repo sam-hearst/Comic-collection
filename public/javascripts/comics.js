@@ -33,6 +33,10 @@ document
         // if the target is already active -> remove the active class
         if(button.classList.contains('collectionButton--active')) {
             button.classList.remove('collectionButton--active')
+            // remove the image from the sidebar
+
+
+
         } else { 
 
             //first need to check if it is a default shelf
@@ -47,6 +51,9 @@ document
             }
             // add the active class to the button
             button.classList.add('collectionButton--active')
+            // add the image to the sidebar
+
+            
         }
 })
 
