@@ -3,7 +3,7 @@ mixin sidebar
         if locals.authenticated
             p.sidebar__welcome-msg= `Hi ${user.firstName}`
             p.sidebar__collections-title View your collections!
-                    div.sidebar__collections
+                    div.sidebar__collections(id="sidebar-coll-container")
                         each collectionName in collectionNames
                             div.sidebar__collection
                                 a(class="sidebar__want-to-read" href="/collections") #{collectionName}
