@@ -20,7 +20,7 @@ router.get("/:id(\\d+)", asyncHandler(async (req, res, next) => {
       userId
     }
   })
-  //still need to make sure duplicates are not included
+  //populate the collection list dropdown
   const defaultCollections = ['Want to Read', 'Read', 'Currently Reading'];
   const customColls = collections.filter(collection => {
     return !defaultCollections.includes(collection.name)
