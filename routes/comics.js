@@ -20,24 +20,28 @@ router.get("/:id(\\d+)", asyncHandler(async (req, res, next) => {
       userId
     }
   })
-  //still need to make sure duplicates are not included
+  //populate the collection list dropdown
   const defaultCollections = ['Want to Read', 'Read', 'Currently Reading'];
-  const customCollections = collections.filter(collection => {
+  const customColls = collections.filter(collection => {
     return !defaultCollections.includes(collection.name)
   });
-
-
-        collections = await Collection.findAll({
-            where: {
-                userId
-            },
-            include: [User, Comic]
-        })
-        let collectionArray = []
-        for (let collection of collections) {
-            collectionArray.push(collection.name)
-        }
-        const collectionNames = [...new Set(collectionArray)];
+  let customNames = []
+  customColls.forEach(coll => {
+    customNames.push(coll.name)
+  })
+  const customCollections = [...new Set(customNames)]
+  
+    collections = await Collection.findAll({
+        where: {
+            userId
+        },
+        include: [User, Comic]
+    })
+    let collectionArray = []
+    for (let collection of collections) {
+        collectionArray.push(collection.name)
+    }
+    const collectionNames = [...new Set(collectionArray)];
 
 
   res.render("comic", { comic, reviews, userId, customCollections, collectionNames, collections  });
