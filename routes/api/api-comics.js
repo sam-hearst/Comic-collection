@@ -24,4 +24,11 @@ router.get("/:id", requireAuth, asyncHandler(async (req, res) => {
   })
 );
 
+router.get('/image/:id', requireAuth, asyncHandler(async (req, res) => {
+  const comicId = req.params.id;
+  const comic = await Comic.findByPk(comicId);
+  const imageUrl = comic.imageUrl;
+  return res.json(imageUrl);
+}))
+
 module.exports = router;

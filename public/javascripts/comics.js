@@ -53,7 +53,7 @@ document
             button.classList.add('collectionButton--active')
             // add the image to the sidebar
 
-            
+
         }
 })
 
@@ -74,10 +74,11 @@ addButton.addEventListener('click', async (e) => {
 // Create the new collection when the 'Create' button is clicked
 //     add the collection to the drop down list
 //     add the comic to the collection
+//     add the comic to the sidebar
 const createButton = document.querySelector('.custom-submit');
 createButton.addEventListener('click', async (e) => {
     e.preventDefault();
-    console.log('hitting the create custom collection listener')
+    // console.log('hitting the create custom collection listener')
     const collectionName = document.getElementById('collectionName').value;
     const url = window.location.href.split('/')
     const comicId = url[url.length - 1]
@@ -112,6 +113,35 @@ createButton.addEventListener('click', async (e) => {
         responseMessage.innerHTML = ''
         responseMessage.classList.remove('error')
         responseMessage.innerHTML = message
+        
+        // grab the sidebar collections container and add the new collection as a child
+        const sideCollections = document.getElementById("sidebar-coll-container")
+        const sidebar__collection = document.createElement('div');
+        sidebar__collection.classList.add('sidebar__collection');
+        sideCollections.appendChild(sidebar__collection);
+
+        const sideNewCollection = document.createElement('a');
+        sideNewCollection.classList.add('sidebar__want-to-read');
+        sideNewCollection.setAttribute('href', '/collections');
+        sideNewCollection.innerText = collectionName;
+        sidebar__collection.appendChild(sideNewCollection);
+
+        const imageContainer = document.createElement('div');
+        imageContainer.classList.add('sidebar__img-container');
+        imageContainer.setAttribute('id', `${collectionName.split(' ').join('-').toLowerCase()}`)
+        sidebar__collection.appendChild(imageContainer);
+
+        const sideNewComic = document.createElement('a');
+        sideNewComic.setAttribute('href', `/comics/${comicId}`)
+        const res = await fetch(`/api/comics/image/${comicId}`);
+        const imageUrl = await res.json()
+        const newComicImg = document.createElement('img');
+        newComicImg.setAttribute('src', imageUrl)
+        imageContainer.appendChild(sideNewComic);
+        sideNewComic.appendChild(newComicImg);
+
+
+
     } else {
         responseMessage.innerHTML = error;
         responseMessage.classList.add('error')
