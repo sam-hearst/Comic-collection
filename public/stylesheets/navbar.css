@@ -414,6 +414,9 @@
   display: flex;
   color: black;
 }
+#comicsSearch {
+  color: black;
+}
 
 ::marker {
   color: #f4f1ea;
