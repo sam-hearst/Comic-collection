@@ -9,7 +9,7 @@ searchBar.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();
 
   counter = searchString.length;
-  console.log(counter);
+  // console.log(counter);
   if (!searchString.length || searchString.length < 3) {
     comicList.innerHTML = "";
   } else {
@@ -42,20 +42,31 @@ const loadComics = async () => {
 // it could be done this way!
 
 const displayComics = (comics) => {
-  console.log(comics);
+  // console.log(comics);
 
-  const htmlString = comics
-    .map((comic) => {
-      return `
+  if (comics[0]?.id !== undefined) {
+    const htmlString = comics
+      .map((comic) => {
+        return `
   <div class="dropdown__search-bar>
         <li class="search__dropdown-bar" id="comicsSearch">
             <a id=searchText href="/comics/${comic.id}"> ${comic.title}</a>
          </li>
   </div>
   `;
-    })
-    .join("");
-  comicList.innerHTML = htmlString;
+      })
+      .join("");
+    comicList.innerHTML = htmlString;
+  } else {
+    // console.log(comics[0]?.id === undefined);
+    const htmlNoResults = `<div class="dropdown__search-bar">
+        <li class="search__dropdown-bar" id="comicsSearch">
+          No Results. 
+         </li>
+         </div>`;
+
+    comicList.innerHTML = htmlNoResults;
+  }
 };
 
 loadComics();
