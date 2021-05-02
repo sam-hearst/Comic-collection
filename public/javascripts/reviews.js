@@ -56,7 +56,8 @@ const deleteHandler = async (e) => {
   console.log(data);
   const reviewToDelete = document.getElementById(`rd${reviewId}`);
   if (data.status === 200) {
-    reviewToDelete.parentNode.parentNode.innerHTML = "";
+    review = reviewToDelete.parentNode.parentNode;
+    review.parentNode.removeChild(review);
   } else {
     const customError = document.createElement("p");
     customError.innerHTML = "Something happened, please try again!";
