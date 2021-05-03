@@ -3,7 +3,6 @@ const deleteCollectionBtns = [...document.getElementsByClassName('collection--de
 
 const deleteCollection = async (e) => {
     const collectionName = e.target.id.split('-')[1];
-    console.log('collectionName: ', collectionName)
     const res = await fetch(`/api/collections`, {
         method: 'DELETE',
         headers: {

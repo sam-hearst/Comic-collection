@@ -59,7 +59,6 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
     const comicId = req.body.comicId;
     const collectionName = req.body.collectionName;
     const userId = req.session.auth.userId;
-    console.log('comicId: ', comicId, 'collectionName: ', collectionName, 'userId: ', userId)
     const record = await Collection.findOne({
         where: {
             userId,
@@ -99,7 +98,7 @@ router.delete("/", asyncHandler(async (req, res) => {
 // update the name of a collection
 router.put('/', asyncHandler(async (req, res) => {
     const { newName, oldName } = req.body;
-    console.log(newName, oldName)
+
     try {
         await Collection.update({
             name: newName
