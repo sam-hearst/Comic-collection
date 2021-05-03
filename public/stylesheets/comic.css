@@ -4,6 +4,8 @@
 body{
   background-color: rgba(8,15,31,1);
 }
+
+
 .sidebar * {
   font-family: "Exo", sans-serif;
 }
@@ -22,6 +24,8 @@ textarea {
 .hidden {
   display: none;
 }
+
+
 .backgroundImage {
   top: 100px;
   position: absolute;
@@ -29,17 +33,21 @@ textarea {
   height: 1000px;
   overflow: hidden;
 }
+
+
 .backgroundImage img {
   width: 100%;
   height: auto;
 }
 
-p, 
+p,
 h1,
 h2,
 div {
   color: white;
 }
+
+
 .fullPageGrid {
     background-image: linear-gradient(to bottom, rgba(8,15,31,0.75), rgba(8, 15, 31, .9) 400px, rgba(8, 15, 31, 1) 1000px);
     min-height: 100%;
@@ -50,11 +58,13 @@ div {
     width: 100%;
     grid-template-rows: 100px 1fr;
     grid-template-columns: 350px 50px 5fr;
-    grid-template-areas: 
+    grid-template-areas:
     "nothing nothing nothing"
     "sidebar break content";
     padding-left: 30px;
 }
+
+
 .grid {
     background-color: none;
     border-radius: 1%;
@@ -63,12 +73,14 @@ div {
     grid-area: content;
     grid-template-rows: 800px 100px 1fr;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
+    grid-template-areas:
     "image details"
     "readStatus blank"
     "reviews reviews";
     padding: 30px;
 }
+
+
 .sidebar {
     grid-area: sidebar;
     border-top: 2px solid rgba(186,210,255,.08);
@@ -85,6 +97,16 @@ div {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.read-statuses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.read-statuses > button {
+    width: 100%;
 }
 
 
@@ -139,7 +161,7 @@ div {
 }
 
 .section__reviews button:hover {
-  border: 2px solid rgba(66, 78, 111, .5); 
+  border: 2px solid rgba(66, 78, 111, .5);
   background-color: rgba(39,54,87,.44);
 }
 .review__tools {
@@ -176,7 +198,7 @@ div {
 	background-repeat: no-repeat;
 }
 
-.review{ 
+.review{
   border-top: 2px solid rgba(186,210,255,.08);
   border-bottom: 2px solid rgba(186,210,255,.08);
   padding: 50px 50px;
@@ -226,7 +248,7 @@ div {
   padding: 0px 30px;
 }
 
-.details__title{ 
+.details__title{
   grid-area: title;
   font-size: 90px;
   padding: 10px 30px;
@@ -274,12 +296,12 @@ div {
 ::-webkit-scrollbar {
 width: 0px; /* Remove scrollbar space */
 background: transparent; /* Optional: just make scrollbar invisible */
-} 
+}
 
 
 /* Add to bookshelf button  */
 
-.shelfButton:hover .shelf-content { 
+.shelfButton:hover .shelf-content {
   display: flex;
   flex-direction: column;
   position:absolute;
@@ -379,7 +401,7 @@ background: transparent; /* Optional: just make scrollbar invisible */
 }
 .customForm label {
   grid-area: header;
-  font-family: 'exo', sans-serif; 
+  font-family: 'exo', sans-serif;
   font-size: 30px;
 }
 

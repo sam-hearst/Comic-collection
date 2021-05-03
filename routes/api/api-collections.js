@@ -7,7 +7,7 @@ const { Comic, Review, User, Collection } = require("../../db/models");
 
 //Add a comic to a collection
 //   update if the colllection is a ReadStatus
-router.post("/:name/comics/:id", requireAuth, asyncHandler(async (req,res) => {
+router.post("/:name/comics/:id", requireAuth, asyncHandler(async (req, res) => {
     const collectionName = req.params.name.split('-').join(' ');
     const comicId = req.params.id;
     const userId = req.session.auth.userId
@@ -15,11 +15,13 @@ router.post("/:name/comics/:id", requireAuth, asyncHandler(async (req,res) => {
 
     const defaultCollectionNames = ['Want to Read', 'Read', 'Currently Reading'];
     if (defaultCollectionNames.includes(collectionName)) {
-        await Collection.destroy( {where: {
-            userId,
-            comicId,
-            readStatus: true,
-        }})
+        await Collection.destroy({
+            where: {
+                userId,
+                comicId,
+                readStatus: true,
+            }
+        })
         await Collection.create({
             name: collectionName,
             userId,
@@ -104,7 +106,7 @@ router.put('/', asyncHandler(async (req, res) => {
         await Collection.update({
             name: newName
         }, {
-            where: {name: oldName}
+            where: { name: oldName }
         })
         res.json({ status: 200 })
     } catch {
