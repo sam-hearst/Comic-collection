@@ -33,7 +33,7 @@ router.post("/", asyncHandler(async (req, res) => {
     await Collection.create({
         name: collectionName,
         userId,
-        readStatus: true
+        readStatus: false
     })
 
     const collections = await Collection.findAll({

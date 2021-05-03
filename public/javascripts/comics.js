@@ -1,6 +1,6 @@
 
-//function to find the active collections (those that the comic is added to)
-//   and append the 'collectionButton--active' class to each classList
+//function to find active collections and append the 'collectionButton--active' class to each classList
+
 async function highlightActiveCollections() {
     //find the comic id from the url
     const url = window.location.href.split('/')
@@ -12,7 +12,6 @@ async function highlightActiveCollections() {
 
     // Edit the DOM here to alter classes for the buttons
     const collectionButtons = document.getElementsByClassName('collectionButton')
-    // console.log('collectionButtons: ', collectionButtons)
     for (let i = 0; i < collectionButtons.length; i++) {
         let button = collectionButtons[i];
         if (collectionList.includes(button.value)) {
@@ -25,7 +24,7 @@ async function highlightActiveCollections() {
 document.addEventListener('DOMContentLoaded', highlightActiveCollections)
 
 
-// this is a helper function for CRUD operations in AJAX
+// this is a helper function for CRUD operations in the sidebar
 function isAddRoute() {
     const defaultCollections = document.getElementsByClassName('defaultCollection');
 
@@ -39,22 +38,22 @@ function isAddRoute() {
 }
 
 
-// Trying to split up the read status buttons with those of the collections so this is solely
+// CRUD operations for sidebar --> soley default collections
+// Trying to split up default and custom
 // selecting buttons within read status
-
 document
     .querySelector('.read-statuses')
     .addEventListener('click', async (e) => {
         const button = e.target
-        // if the target is already active -> remove the active class
-        // because target was already action, you know its a delete route
-        // once you remove the class it has to hit a removeComic function
+
+        // first if is for the delete route
+        // if the button has active and is clicked then must be a delete route
         if (button.classList.contains('collectionButton--active')) {
             button.classList.remove("collectionButton--active");
             const collection = e.target.value.split(' ').join('-');
             const comicId = e.target.id
 
-            // removeComic function
+            // remove comic from collection and return comic
             async function deleteComicFromReadCollection(comicId, collection) {
                 console.log("hitting delete comic from collection route", comicId, collection);
                 const response = await fetch(`/api/comics/${comicId}`, {
@@ -71,10 +70,9 @@ document
                 }
             }
 
-            // now I have to check if the comic is displayed within the collection in the sidebar,
-            // if it is, have to remove a tag and img tag and if it isn't then I don't have to do anything
-            // check to see if the comic is in the image container for the right collection --> if it is then remove it,
-            // if it isnt then you dont have to do anything.
+            // now have to check if comic is display in sidebar collection
+            // if it is, have to remove
+            // if it isnt then do nothing
 
             const comic = await deleteComicFromReadCollection(comicId, collection);
             const rightCollection = collection.toLowerCase();
@@ -82,36 +80,30 @@ document
 
             for (let i = 0; i < imgContainers.length; i++) {
                 let imgContainer = imgContainers[i];
-                if (imgContainer.id === rightCollection) {
+                if (imgContainer.id === rightCollection) { // iterate through collections and find right one
                     const children = imgContainer.children
 
                     for (let j = 1; j < children.length; j++) {
                         let child = children[j];
                         const hrefArr = child.href.split('/');
                         console.log(hrefArr[hrefArr.length - 1]);
-                        if (hrefArr[hrefArr.length - 1] === comicId) {
-                            child.innerHTML = '';
+                        if (hrefArr[hrefArr.length - 1] === comicId) { // check if comic is in collection
+                            child.innerHTML = '';  // if it is then remove
                             child.remove();
                         }
                     }
                 } // this logic sees if the comic is in sidebar, and if it is then deletes it
             }
 
-
-
-
-
-
-        } else if (isAddRoute()) { // if all class lists dont contain the active class, then it must be
-            // an add route!!
-            // this is where I add an ajax call for add route
+        } else if (isAddRoute()) {
+            // This is a create route
+            // if active button isn't on any button, then must be an add/create route
 
             const collection = e.target.value.split(' ').join('-');
             const comicId = e.target.id
             button.classList.add("collectionButton--active");  // add active class to button
 
             // add comic to collection function
-
             async function addComicToReadCollection(comicId, collection) {
                 console.log("hitting add comic from collection route", comicId, collection);
                 const response = await fetch(`/api/comics/${comicId}`, {
@@ -132,8 +124,9 @@ document
                 }
             }
 
-            const comic = await addComicToReadCollection(comicId, collection);
-            // change the side bar inner HTML here
+            const comic = await addComicToReadCollection(comicId, collection);  // database upated
+
+            // changing the side bar inner HTML below
             // This logic is for adding a comic through AJAX
             const rightCollection = e.target.value.split(' ').join('-').toLowerCase();
             const imgContainers = document.getElementsByClassName("sidebar__img-container")
@@ -144,20 +137,17 @@ document
                     aTag.setAttribute("href", `/comics/${comic.id}`)
                     aTag.innerHTML = `<img class="sidebar__img" src=${comic.imageUrl}>`
                     imgContainer.appendChild(aTag);
-                } // this logic appends the image to sidebar and limits it to three!
+                } // this logic appends the image to sidebar and limits it to three
             }
 
-        } else { // this now has to be an update route!!
-            let prevCollectionName;
+        } else {  // this now has to be an update route
+            let prevCollectionName;  // must save previous and new collection for comic
 
-            // I have to remove the active class on the current button, and add it to the new button
-            // and then also get the update route to work so that it updates the collection for the comic
             const defaultCollections = document.getElementsByClassName('defaultCollection'); // get buttons
-
             for (let i = 0; i < defaultCollections.length; i++) {
                 if (defaultCollections[i].classList.contains('collectionButton--active')) {
                     defaultCollections[i].classList.remove('collectionButton--active') // remove active from button it was on before
-                    prevCollectionName = defaultCollections[i].value; // getting this cause need it to update on backend
+                    prevCollectionName = defaultCollections[i].value; // get previous collection name
                 }
             }
 
@@ -189,20 +179,11 @@ document
 
 
             const comic = await updateComicInCollections(comicId, newCollection);
-            const modifiedNewCollection = e.target.value.split(' ').join('-').toLowerCase();
+            const modifiedNewCollection = e.target.value.split(' ').join('-').toLowerCase();  // old and new collections
             const modifiedOldCollection = prevCollectionName.split(' ').join('-').toLowerCase();
 
 
-            // have to find the img in previous collection and if its there, then remove it, if
-            // it isn't there then do nothing
-            // then have to see if img containers for newCollection is < 3 and if it is, then make new child
-            // in that collection
-
-            console.log(modifiedNewCollection);
-            console.log(modifiedOldCollection);
-            console.log(comicId);
-
-
+            // AJAX for updating sidebar, combination of delete and add logic above
             const imgContainers = document.getElementsByClassName("sidebar__img-container")
 
             for (let i = 0; i < imgContainers.length; i++) {
@@ -226,7 +207,7 @@ document
                     aTag.setAttribute("href", `/comics/${comic.id}`)
                     aTag.innerHTML = `<img class="sidebar__img" src=${comic.imageUrl}>`
                     imgContainer.appendChild(aTag);
-                } // this logic appends the image to sidebar and limits it to three!
+                } // this logic appends the image to new collection if less than three comics
             }
         }
     })
@@ -260,6 +241,8 @@ document
 //         }
 //     })
 
+
+
 //display the custom collections add form when the button is clicked
 const addButton = document.querySelector('.addButton__text')
 addButton.addEventListener('click', async (e) => {
@@ -277,10 +260,11 @@ addButton.addEventListener('click', async (e) => {
 // Create the new collection when the 'Create' button is clicked
 //     add the collection to the drop down list
 //     add the comic to the collection
+//     add the comic to the sidebar
 const createButton = document.querySelector('.custom-submit');
 createButton.addEventListener('click', async (e) => {
     e.preventDefault();
-    console.log('hitting the create custom collection listener')
+    // console.log('hitting the create custom collection listener')
     const collectionName = document.getElementById('collectionName').value;
     const url = window.location.href.split('/')
     const comicId = url[url.length - 1]
@@ -315,6 +299,35 @@ createButton.addEventListener('click', async (e) => {
         responseMessage.innerHTML = ''
         responseMessage.classList.remove('error')
         responseMessage.innerHTML = message
+
+        // grab the sidebar collections container and add the new collection as a child
+        const sideCollections = document.getElementById("sidebar-coll-container")
+        const sidebar__collection = document.createElement('div');
+        sidebar__collection.classList.add('sidebar__collection');
+        sideCollections.appendChild(sidebar__collection);
+
+        const sideNewCollection = document.createElement('a');
+        sideNewCollection.classList.add('sidebar__want-to-read');
+        sideNewCollection.setAttribute('href', '/collections');
+        sideNewCollection.innerText = collectionName;
+        sidebar__collection.appendChild(sideNewCollection);
+
+        const imageContainer = document.createElement('div');
+        imageContainer.classList.add('sidebar__img-container');
+        imageContainer.setAttribute('id', `${collectionName.split(' ').join('-').toLowerCase()}`)
+        sidebar__collection.appendChild(imageContainer);
+
+        const sideNewComic = document.createElement('a');
+        sideNewComic.setAttribute('href', `/comics/${comicId}`)
+        const res = await fetch(`/api/comics/image/${comicId}`);
+        const imageUrl = await res.json()
+        const newComicImg = document.createElement('img');
+        newComicImg.setAttribute('src', imageUrl)
+        imageContainer.appendChild(sideNewComic);
+        sideNewComic.appendChild(newComicImg);
+
+
+
     } else {
         responseMessage.innerHTML = error;
         responseMessage.classList.add('error')

@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap");
 /* body */
 /* Content Grid */
-body{
-  background-color: rgba(8,15,31,1);
+body {
+  background-color: rgba(8, 15, 31, 1);
 }
 
 
@@ -11,20 +11,15 @@ body{
 }
 
 textarea {
-	width: 600px;
-	height: 200px;
-	border: 3px solid #cccccc;
-	padding: 5px;
-	font-family: Tahoma, sans-serif;
-	background-position: bottom right;
-	background-repeat: no-repeat;
+  width: 600px;
+  height: 200px;
+  border: 3px solid #cccccc;
+  padding: 5px;
+  font-family: Tahoma, sans-serif;
+  background-position: bottom right;
+  background-repeat: no-repeat;
   margin: 10px;
 }
-
-.hidden {
-  display: none;
-}
-
 
 .backgroundImage {
   top: 100px;
@@ -49,54 +44,56 @@ div {
 
 
 .fullPageGrid {
-    background-image: linear-gradient(to bottom, rgba(8,15,31,0.75), rgba(8, 15, 31, .9) 400px, rgba(8, 15, 31, 1) 1000px);
-    min-height: 100%;
-    display: grid;
-    position: relative;
-    top: 100px;
-    margin: 0 auto;
-    width: 100%;
-    grid-template-rows: 100px 1fr;
-    grid-template-columns: 350px 50px 5fr;
-    grid-template-areas:
+  background-image: linear-gradient(
+    to bottom,
+    rgba(8, 15, 31, 0.75),
+    rgba(8, 15, 31, 0.9) 400px,
+    rgba(8, 15, 31, 1) 1000px
+  );
+  min-height: 100%;
+  display: grid;
+  position: relative;
+  top: 100px;
+  margin: 0 auto;
+  width: 100%;
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 350px 50px 5fr;
+  grid-template-areas:
     "nothing nothing nothing"
     "sidebar break content";
-    padding-left: 30px;
+  padding-left: 30px;
 }
 
 
 .grid {
-    background-color: none;
-    border-radius: 1%;
-    display: grid;
-    width: 100%;
-    grid-area: content;
-    grid-template-rows: 800px 100px 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
+  background-color: none;
+  border-radius: 1%;
+  display: grid;
+  width: 100%;
+  grid-area: content;
+  grid-template-rows: 800px 100px 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
     "image details"
     "readStatus blank"
     "reviews reviews";
-    padding: 30px;
+  padding: 30px;
 }
 
 
 .sidebar {
-    grid-area: sidebar;
-    border-top: 2px solid rgba(186,210,255,.08);
-    border-right: 2px solid rgba(186,210,255,.08);
-    background-color: rgba(8, 15, 31, .3) ;
+  grid-area: sidebar;
+  border-top: 2px solid rgba(186, 210, 255, 0.08);
+  border-right: 2px solid rgba(186, 210, 255, 0.08);
+  background-color: rgba(8, 15, 31, 0.3);
 }
 
-
-
-
 .section__readStatus {
-    grid-area: readStatus;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  grid-area: readStatus;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .read-statuses {
@@ -113,13 +110,13 @@ div {
 /* review section of grid */
 
 .section__reviews {
-    margin-top: 40px;
-    grid-area: reviews;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top: 2px solid rgba(186,210,255,.08);
-    border-bottom: 2px solid rgba(186,210,255,.08);
+  margin-top: 40px;
+  grid-area: reviews;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2px solid rgba(186, 210, 255, 0.08);
+  border-bottom: 2px solid rgba(186, 210, 255, 0.08);
 }
 .reviews__title {
   display: flex;
@@ -153,17 +150,18 @@ div {
   width: 25%;
   height: 65px;
   margin: 30px auto;
-  background-color: rgba( 13, 26, 54, .7);
+  background-color: rgba(13, 26, 54, 0.7);
   align-self: center;
-  border: 2px solid rgba(66, 78, 111, .5);
+  border: 2px solid rgba(66, 78, 111, 0.5);
   border-radius: 5%;
   color: white;
 }
 
 .section__reviews button:hover {
-  border: 2px solid rgba(66, 78, 111, .5);
-  background-color: rgba(39,54,87,.44);
+  border: 2px solid rgba(66, 78, 111, 0.5);
+  background-color: rgba(39, 54, 87, 0.44);
 }
+
 .review__tools {
   display: flex;
   justify-content: flex-end;
@@ -177,37 +175,34 @@ div {
 
 .reviewTool {
   width: 80px;
-  margin: 30px
+  margin: 30px;
 }
 
 .review-form label {
   font-size: 20px;
   margin: 30px;
-  color:  #859fda;
+  color: #859fda;
 }
-
-
 
 .review-form textarea {
-	width: 1000px;
-	height: 200px;
-	border: 3px solid #cccccc;
-	padding: 5px;
-	font-family: Tahoma, sans-serif;
-	background-position: bottom right;
-	background-repeat: no-repeat;
+  width: 1000px;
+  height: 200px;
+  border: 3px solid #cccccc;
+  padding: 5px;
+  font-family: Tahoma, sans-serif;
+  background-position: bottom right;
+  background-repeat: no-repeat;
 }
 
-.review{
-  border-top: 2px solid rgba(186,210,255,.08);
-  border-bottom: 2px solid rgba(186,210,255,.08);
+.review {
+  border-top: 2px solid rgba(186, 210, 255, 0.08);
+  border-bottom: 2px solid rgba(186, 210, 255, 0.08);
   padding: 50px 50px;
-
 }
 .review__info__name {
-   color: #859fda;
-   font-size: 1.45em;
-   font-weight: 500;
+  color: #859fda;
+  font-size: 1.45em;
+  font-weight: 500;
 }
 
 .description__text {
@@ -221,38 +216,36 @@ div {
 /* image section of grid */
 
 .image__actual {
-    padding: 35px 10px 10px 10px;
-    height: 100%;
-
+  padding: 35px 10px 10px 10px;
+  height: 100%;
 }
 
 .section__image {
-    grid-area: image;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  grid-area: image;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
-
 
 /* Section Details of grid */
 
 .section__details {
-    padding: 30px 10px 0px 0px;
-    grid-area: details;
-    display: flex;
-    flex-direction: column;
-    border-left: 2px solid rgba(186,210,255,.08);
+  padding: 30px 10px 0px 0px;
+  grid-area: details;
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid rgba(186, 210, 255, 0.08);
 }
 .details__element {
   padding: 0px 30px;
 }
 
-.details__title{
+.details__title {
   grid-area: title;
   font-size: 90px;
   padding: 10px 30px;
-  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
   font-weight: 800;
 }
 
@@ -263,14 +256,14 @@ div {
 }
 
 .details__infoRow {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0;
-    margin-top: auto;
-    padding: 30px 20px;
-    border-top: 2px solid rgba(186,210,255,.08);
-    border-bottom: 2px solid rgba(186,210,255,.08);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  margin-top: auto;
+  padding: 30px 20px;
+  border-top: 2px solid rgba(186, 210, 255, 0.08);
+  border-bottom: 2px solid rgba(186, 210, 255, 0.08);
 }
 .infoElement .label {
   font-weight: 800;
@@ -280,7 +273,7 @@ div {
 }
 
 .infoElement .info {
-  color: #9ba8c7
+  color: #9ba8c7;
 }
 
 .details__description {
@@ -291,39 +284,47 @@ div {
   color: #9ba8c7;
 }
 
-
-
 ::-webkit-scrollbar {
-width: 0px; /* Remove scrollbar space */
-background: transparent; /* Optional: just make scrollbar invisible */
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
 }
-
 
 /* Add to bookshelf button  */
 
 .shelfButton:hover .shelf-content {
   display: flex;
   flex-direction: column;
-  position:absolute;
+  position: absolute;
   height: auto;
   width: 200px;
-  background-color:rgba(8,15,31,1);
+  background-color: rgba(8, 15, 31, 1);
 }
+
 .shelfButton:hover {
-  background-color: rgba(39,54,87,.22);
+  background-color: rgba(39, 54, 87, 0.22);
 }
 
 .shelf-content {
-    display: none;
+  display: none;
+
+  max-width: 180px;
+  border-radius: 5px;
+  white-space: nowrap;
+  max-height: 273px;
+  overflow-y: scroll;
 }
 .shelf-content p {
+  /* background-color: red; */
   align-self: center;
   font-size: 24px;
   font-weight: 600;
   padding: 0px 20px;
+  margin-top: 18px;
+  margin-bottom: 18px;
 }
-
-
+.shelf-content > button {
+  cursor: pointer;
+}
 .shelfButton,
 .addButton {
   transition: all 0.3s ease-in-out 0s;
@@ -359,16 +360,14 @@ background: transparent; /* Optional: just make scrollbar invisible */
   border: 2px solid rgba(66, 78, 111, 0);
 }
 
-
-
 .collectionButton:hover {
-  border: 2px solid rgba(66, 78, 111, .3);
-  background-color: rgba(39,54,87,.22);
+  border: 2px solid rgba(66, 78, 111, 0.3);
+  background-color: rgba(39, 54, 87, 0.22);
 }
 
 .collectionButton--active {
-  background-color: rgba(39,54,87,.4);
-  border: 1px solid rgba(39,54,87,.7);
+  background-color: rgba(39, 54, 87, 0.4);
+  border: 1px solid rgba(39, 54, 87, 0.7);
 }
 
 .customForm {
@@ -381,8 +380,8 @@ background: transparent; /* Optional: just make scrollbar invisible */
   grid-template-columns: 500px 150px;
   grid-template-rows: 100px 1fr;
   grid-template-areas:
-  "header header"
-  "input submit";
+    "header header"
+    "input submit";
   justify-items: center;
   align-items: center;
   padding: 0px 5px 10px 5px;
@@ -393,15 +392,17 @@ background: transparent; /* Optional: just make scrollbar invisible */
   background-color: red;
   top: 100px;
   border-radius: 5px;
-  border: 2px solid rgba(66, 78, 111, .5);
-  background-color: rgba(8,15,31,.95);
+  border: 2px solid rgba(66, 78, 111, 0.5);
+  background-color: rgba(8, 15, 31, 0.95);
 }
+
 .customForm--hidden {
   display: none;
 }
+
 .customForm label {
   grid-area: header;
-  font-family: 'exo', sans-serif;
+  font-family: "exo", sans-serif;
   font-size: 30px;
 }
 
@@ -417,10 +418,11 @@ background: transparent; /* Optional: just make scrollbar invisible */
   margin: 0;
   justify-self: start;
   background-color: transparent;
-  border: 2px solid rgba(66, 78, 111, .5);
+  border: 2px solid rgba(66, 78, 111, 0.5);
   border-radius: 5%;
   color: white;
 }
+
 .response {
   font-family: exo;
   font-size: 25px;
@@ -429,9 +431,13 @@ background: transparent; /* Optional: just make scrollbar invisible */
 }
 
 .customForm button:hover {
-  background-color: rgba(39,54,87,.22);
+  background-color: rgba(39, 54, 87, 0.22);
 }
 
 .error {
   color: red;
+}
+
+.hidden {
+  display: none;
 }

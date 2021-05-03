@@ -17,12 +17,19 @@ router.get("/:id", requireAuth, asyncHandler(async (req, res) => {
     });
     let collectionList = [];
     collections.forEach((collection) => {
-      collectionList.push(collection.name);
+        collectionList.push(collection.name);
     });
     // console.log(collectionList);
     return res.json(collectionList);
-  })
+})
 );
+
+router.get('/image/:id', requireAuth, asyncHandler(async (req, res) => {
+    const comicId = req.params.id;
+    const comic = await Comic.findByPk(comicId);
+    const imageUrl = comic.imageUrl;
+    return res.json(imageUrl);
+}))
 
 router.delete("/:id", requireAuth, asyncHandler(async (req, res) => {
     const comicId = req.params.id;
