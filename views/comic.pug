@@ -20,9 +20,10 @@ block content
                 .shelfButton__text Add To Collection
                 div.shelf-content
                     p Read Status
-                    button.collectionButton.readStatus__wantToRead.defaultCollection(type="button" id=comic.id value="Want to Read" name=userId) Want to Read
-                    button.collectionButton.readStatus__currentlyReading.defaultCollection(type="button" id=comic.id value="Currently Reading") Currently Reading
-                    button.collectionButton.readStatus__read.defaultCollection(type="button" id=comic.id value="Read") Read
+                    div.read-statuses
+                        button.collectionButton.readStatus__wantToRead.defaultCollection(type="button" id=comic.id value="Want to Read" name=userId) Want to Read
+                        button.collectionButton.readStatus__currentlyReading.defaultCollection(type="button" id=comic.id value="Currently Reading") Currently Reading
+                        button.collectionButton.readStatus__read.defaultCollection(type="button" id=comic.id value="Read") Read
                     p Collections
                     each customCollection in customCollections
                       button.collectionButton(type="button" id=comic.id value=customCollection)= customCollection

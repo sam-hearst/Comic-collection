@@ -4,6 +4,8 @@
 body {
   background-color: rgba(8, 15, 31, 1);
 }
+
+
 .sidebar * {
   font-family: "Exo", sans-serif;
 }
@@ -26,6 +28,8 @@ textarea {
   height: 1000px;
   overflow: hidden;
 }
+
+
 .backgroundImage img {
   width: 100%;
   height: auto;
@@ -37,6 +41,8 @@ h2,
 div {
   color: white;
 }
+
+
 .fullPageGrid {
   background-image: linear-gradient(
     to bottom,
@@ -57,6 +63,8 @@ div {
     "sidebar break content";
   padding-left: 30px;
 }
+
+
 .grid {
   background-color: none;
   border-radius: 1%;
@@ -71,6 +79,8 @@ div {
     "reviews reviews";
   padding: 30px;
 }
+
+
 .sidebar {
   grid-area: sidebar;
   border-top: 2px solid rgba(186, 210, 255, 0.08);
@@ -85,6 +95,17 @@ div {
   align-items: center;
   justify-content: center;
 }
+
+.read-statuses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.read-statuses > button {
+    width: 100%;
+}
+
 
 /* review section of grid */
 
@@ -140,6 +161,7 @@ div {
   border: 2px solid rgba(66, 78, 111, 0.5);
   background-color: rgba(39, 54, 87, 0.44);
 }
+
 .review__tools {
   display: flex;
   justify-content: flex-end;
@@ -277,6 +299,7 @@ div {
   width: 200px;
   background-color: rgba(8, 15, 31, 1);
 }
+
 .shelfButton:hover {
   background-color: rgba(39, 54, 87, 0.22);
 }
@@ -372,9 +395,11 @@ div {
   border: 2px solid rgba(66, 78, 111, 0.5);
   background-color: rgba(8, 15, 31, 0.95);
 }
+
 .customForm--hidden {
   display: none;
 }
+
 .customForm label {
   grid-area: header;
   font-family: "exo", sans-serif;
@@ -397,6 +422,7 @@ div {
   border-radius: 5%;
   color: white;
 }
+
 .response {
   font-family: exo;
   font-size: 25px;
