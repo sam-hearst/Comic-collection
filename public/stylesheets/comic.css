@@ -19,9 +19,6 @@ textarea {
   margin: 10px;
 }
 
-.hidden {
-  display: none;
-}
 .backgroundImage {
   top: 100px;
   position: absolute;
@@ -413,4 +410,8 @@ div {
 
 .error {
   color: red;
+}
+
+.hidden {
+  display: none;
 }
