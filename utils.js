@@ -24,8 +24,26 @@ const handleValidationErrors = (req, res, next) => {
     next();
 }
 
-module.exports = { 
+
+function sortedCollectionNames(collectionNames) {
+    let sorted = ["Want to Read", "Currently Reading", "Read"]
+
+    for (let i = 0; i < collectionNames.length; i++) {
+        let collectionName = collectionNames[i]
+
+        if (sorted.includes(collectionName)) {
+            continue
+        }
+
+        sorted.push(collectionName);
+    }
+
+    return sorted
+}
+
+module.exports = {
     asyncHandler,
     handleValidationErrors,
-    csrfProtection
+    csrfProtection,
+    sortedCollectionNames
 };

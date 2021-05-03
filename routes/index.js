@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { csrfProtection, asyncHandler } = require("../utils");
+const { csrfProtection, asyncHandler, sortedCollectionNames } = require("../utils");
 const db = require("../db/models");
 const { Comic } = db;
 const { User } = db;
@@ -25,7 +25,9 @@ router.get(
         for (let collection of collections) {
             collectionArray.push(collection.name);
         }
-        const collectionNames = [...new Set(collectionArray)];
+        let collectionNames = [...new Set(collectionArray)];
+
+        collectionNames = sortedCollectionNames(collectionNames);  // sort the names
 
         res.render("index", { collections, collectionNames, comics, userId });
     })

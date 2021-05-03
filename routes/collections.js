@@ -48,7 +48,6 @@ router.post("/", asyncHandler(async (req, res) => {
     }
     const collectionNames = [...new Set(collectionArray)];
     res.render('collection', { collectionNames, collections });
-
 }))
 
 
