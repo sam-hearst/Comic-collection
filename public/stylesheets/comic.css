@@ -322,9 +322,17 @@ div {
   margin-top: 18px;
   margin-bottom: 18px;
 }
+
 .shelf-content > button {
   cursor: pointer;
 }
+
+.custom-collection-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 300;
+}
+
 .shelfButton,
 .addButton {
   transition: all 0.3s ease-in-out 0s;
@@ -352,12 +360,14 @@ div {
   height: 100%;
   font-weight: 700;
 }
+
 .collectionButton {
   margin: 0;
   background-color: inherit;
   color: white;
   transition: all 0.3s ease-in-out 0s;
   border: 2px solid rgba(66, 78, 111, 0);
+  width: 100%;
 }
 
 .collectionButton:hover {

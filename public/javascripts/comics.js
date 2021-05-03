@@ -55,7 +55,6 @@ document
 
             // remove comic from collection and return comic
             async function deleteComicFromReadCollection(comicId, collection) {
-                console.log("hitting delete comic from collection route", comicId, collection);
                 const response = await fetch(`/api/comics/${comicId}`, {
                     method: 'DELETE',
                     headers: {
@@ -104,8 +103,7 @@ document
             button.classList.add("collectionButton--active");  // add active class to button
 
             // add comic to collection function
-            async function addComicToReadCollection(comicId, collection) {
-                console.log("hitting add comic from collection route", comicId, collection);
+            async function addComicToCollection(comicId, collection) {
                 const response = await fetch(`/api/comics/${comicId}`, {
                     method: 'POST',
                     headers: {
@@ -119,12 +117,11 @@ document
 
                 if (response.ok) {
                     const data = await response.json();
-                    console.log(data);
                     return data.comic
                 }
             }
 
-            const comic = await addComicToReadCollection(comicId, collection);  // database upated
+            const comic = await addComicToCollection(comicId, collection);  // database upated
 
             // changing the side bar inner HTML below
             // This logic is for adding a comic through AJAX
@@ -158,7 +155,6 @@ document
 
 
             const updateComicInCollections = async (comicId, newCollection) => {
-                console.log("hitting update route!!")
                 const response = await fetch(`/api/comics/${comicId}`, {
                     method: "PUT",
                     headers: {
@@ -214,32 +210,105 @@ document
 
 
 
+// routes for the custom collections
+document
+    .querySelector('.custom-collection-container')
+    .addEventListener('click', async (e) => {
+        const button = e.target
 
-// Add a comic to a collection and update the button classes
-// NEED TO MIX IN THE COLLECTIONS SCRIPT THAT UPDATES THE DB SO THEY ARE IN SYNC
-// document
-//     .querySelector('.shelf-content')
-//     .addEventListener('click', async (e) => {
-//         const button = e.target
-//         // if the target is already active -> remove the active class
-//         if (button.classList.contains('collectionButton--active')) {
-//             button.classList.remove('collectionButton--active')
-//         } else {
+        // first statement is the delete route
+        if (button.classList.contains('collectionButton--active')) {
+            button.classList.remove('collectionButton--active');
 
-//             //first need to check if it is a default shelf
-//             const readStatus = ['Want to Read', 'Read', 'Currently Reading'];
-//             const defaultCollections = document.getElementsByClassName('defaultCollection');
-//             if (readStatus.includes(button.value)) {
-// for (let i = 0; i < defaultCollections.length; i++) {
-//     if (defaultCollections[i].classList.contains('collectionButton--active')) {
-//         defaultCollections[i].classList.remove('collectionButton--active')
-//     }
-// }
-//             }
-//             // add the active class to the button
-//             button.classList.add('collectionButton--active')
-//         }
-//     })
+            const collection = e.target.value.split(' ').join('-');
+            const comicId = e.target.id
+
+            // remove comic from collection and return comic
+            async function deleteComicFromReadCollection(comicId, collection) {
+                const response = await fetch(`/api/comics/${comicId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ collection })
+                })
+
+                if (response.ok) {
+                    const data = await response.json();
+                    return data
+                }
+            }
+
+            const comic = await deleteComicFromReadCollection(comicId, collection);
+
+            const rightCollection = collection.toLowerCase();
+            const imgContainers = document.getElementsByClassName("sidebar__img-container");
+
+            for (let i = 0; i < imgContainers.length; i++) {
+                let imgContainer = imgContainers[i];
+                if (imgContainer.id === rightCollection) { // iterate through collections and find right one
+                    const children = imgContainer.children
+
+                    for (let j = 1; j < children.length; j++) {
+                        let child = children[j];
+                        const hrefArr = child.href.split('/');
+                        console.log(hrefArr[hrefArr.length - 1]);
+                        if (hrefArr[hrefArr.length - 1] === comicId) { // check if comic is in collection
+                            child.innerHTML = '';  // if it is then remove
+                            child.remove();
+                        }
+                    }
+                } // this logic sees if the comic is in sidebar, and if it is then deletes it
+            }
+
+        } else {
+            button.classList.add("collectionButton--active");
+
+            const collection = e.target.value.split(' ').join('-');
+            const comicId = e.target.id;
+
+            // add comic to collection function
+            async function addComicToCollection(comicId, collection) {
+                console.log("hitting add route!");
+                const response = await fetch(`/api/comics/${comicId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        collection,
+                        isDefaultChange: false
+                    })
+                })
+
+                if (response.ok) {
+                    const data = await response.json();
+                    return data.comic
+                }
+            }
+
+            const comic = await addComicToCollection(comicId, collection);  // database upated
+
+            // changing the side bar inner HTML below
+            // This logic is for adding a comic through AJAX
+            const rightCollection = e.target.value.split(' ').join('-').toLowerCase();
+            const imgContainers = document.getElementsByClassName("sidebar__img-container")
+            for (let i = 0; i < imgContainers.length; i++) {
+                let imgContainer = imgContainers[i];
+                if (imgContainer.childElementCount < 4 && imgContainer.id === rightCollection) {
+                    const aTag = document.createElement('a')
+                    aTag.setAttribute("href", `/comics/${comic.id}`)
+                    aTag.innerHTML = `<img class="sidebar__img" src=${comic.imageUrl}>`
+                    imgContainer.appendChild(aTag);
+                } // this logic appends the image to sidebar and limits it to three
+            }
+
+        }
+    })
+
+
+
+
 
 
 

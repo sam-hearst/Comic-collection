@@ -25,8 +25,9 @@ block content
                         button.collectionButton.readStatus__currentlyReading.defaultCollection(type="button" id=comic.id value="Currently Reading") Currently Reading
                         button.collectionButton.readStatus__read.defaultCollection(type="button" id=comic.id value="Read") Read
                     p Collections
-                    each customCollection in customCollections
-                      button.collectionButton(type="button" id=comic.id value=customCollection)= customCollection
+                    div.custom-collection-container
+                        each customCollection in customCollections
+                            button.collectionButton(type="button" id=comic.id value=customCollection)= customCollection
               .addButton
                 .addButton__text New Collection
                 p.response
