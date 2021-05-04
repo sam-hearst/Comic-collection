@@ -69,7 +69,7 @@ mixin navbar
           div.dropdown-content.dropdown-content__logins
             p=` ${user.firstName} ${user.lastName} `
             form(action="/users/logout" method="POST")
-              input(class="sign-out-btn" type="submit" value="Log Out" placeholder="Log Out")
+              input(class="sign-out-btn cursor--pointer" type="submit" value="Log Out" placeholder="Log Out")
     else
         div.dropdown.dropdown__start
           button.dropbtn.button__start Start
