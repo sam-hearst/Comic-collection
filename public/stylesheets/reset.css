@@ -91,3 +91,9 @@ input {
 fieldset {
   border: none;
 }
+
+a,
+button,
+.cursor--pointer {
+  cursor: pointer;
+}

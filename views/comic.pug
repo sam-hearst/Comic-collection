@@ -69,9 +69,10 @@ block content
                 .review
                   .review__tools
                     if userId === review.userId
+                      button.reviewTool.review--edit(id=`re${review.id}`)
+                          i(class="fa fa-edit" style="font-size:28px;color:white")
                       button.reviewTool.review--delete(id=`rd${review.id}`)
                         i(class="fa fa-trash-o" style="font-size:28px;color:red")
-                      button.reviewTool.review--edit(id=`re${review.id}`) edit
                   .review__info
                     h2.review__info__name  #{review.User.firstName} #{review.User.lastName}
                   .review__description
