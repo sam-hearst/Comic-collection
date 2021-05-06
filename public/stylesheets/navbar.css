@@ -133,6 +133,16 @@
   height: 100%;
   font-weight: 700;
 }
+.profile-icon__container {
+  display: flex;
+  padding: 0;
+  cursor: pointer;
+  /* background-color: red; */
+}
+.profile-icon__container > span {
+  font-size: 48px;
+  /* background-color: #8fa0ca; */
+}
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
@@ -149,7 +159,7 @@
   text-align: center;
   align-items: flex-start;
   cursor: default;
-  margin-top: 145px;
+  margin-top: 135px;
 }
 /* Links inside the dropdown */
 .dropdown-content a {
@@ -166,21 +176,6 @@
   box-sizing: border-box;
   border: 1px solid gray;
   transition: all 0ms;
-  /* border-right-width: 2px;
-  border-right-style: solid;
-  border-right-color: rgba(255, 255, 255, 0.2);
-  border-left: 2px solid rgba(67, 83, 112, 0.2);
-  border-left-width: 2px;
-  border-left-style: solid;
-  border-left-color: rgba(255, 255, 255, 0.2);
-  border-top: 2px solid rgba(67, 83, 112, 0.2);
-  border-top-width: 2px;
-  border-top-style: solid;
-  border-top-color: rgba(255, 255, 255, 0.2);
-  border-bottom: 2px solid rgba(67, 83, 112, 0.2);
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: rgba(255, 255, 255, 0.2); */
 }
 
 /* Show the dropdown menu on hover */
@@ -192,16 +187,6 @@
 .dropdown:hover .dropbtn {
   background-color: rgba(8, 15, 31, 1);
 }
-
-/* html reference */
-/* <div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div> */
 
 /* for the navbar */
 /* color for the text of navBar bottoms */
@@ -227,20 +212,23 @@
 /* need to finish the stying of the notification and demo user */
 
 .personal-nav {
-  padding-bottom: 20px;
+  display: flex;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  align-items: center;
   background-color: transparent;
   /* width: 60px; */
-  display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   color: #d5dced;
   margin-right: 20px;
+  height: 100px;
 }
 
 /* notify div */
 #notify-div {
   display: inline-flex;
 
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 #notify-btn {
   display: inline-flex;
@@ -368,6 +356,8 @@
   background-color: white;
 }
 .dropdown-content__logins {
+  padding-bottom: 10px;
+  /* background-color: red; */
   width: 120px;
   min-width: 0px;
   /* margin-top: 140px; */
