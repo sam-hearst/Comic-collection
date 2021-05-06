@@ -4,6 +4,7 @@ mixin navbar
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Indie+Flower&family=Londrina+Solid&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
   div.navbar
     div.navbar__logo
       a(href="/")
@@ -65,7 +66,9 @@ mixin navbar
         //- a(href="") Messages
         //- a(href="") Friends
         div.dropdown
-          img(src="https://s.gr-assets.com/assets/nophoto/user/u_60x60-267f0ca0ea48fd3acfd44b95afa64f01.png" id="user__pic-profile")
+          div.profile-icon__container
+            <span class="material-icons md-48">account_circle</span>
+          //- img(src="https://s.gr-assets.com/assets/nophoto/user/u_60x60-267f0ca0ea48fd3acfd44b95afa64f01.png" id="user__pic-profile")
           div.dropdown-content.dropdown-content__logins
             p=` ${user.firstName} ${user.lastName} `
             form(action="/users/logout" method="POST")
