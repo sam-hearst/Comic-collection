@@ -1,7 +1,7 @@
 <h1 align="center">Comic Collection</h1>
 
-<p align="center">See our site hosted on heroku
-<br><a href="https://comic-collections.herokuapp.com/">Comic Collection</a></br></p>
+<p align="center">See our site hosted on Digital Ocean using Dokku. 
+<br><a href="https://comic-collection.dornk.top">Comic Collection</a></br></p>
 &nbsp
 
 ## About
